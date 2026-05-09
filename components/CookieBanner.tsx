@@ -34,9 +34,9 @@ export default function CookieBanner() {
         transform: 'translateX(-50%)',
         zIndex: 9999,
         background: '#111111',
-        border: '1px solid #1E1E1E',
-        borderRadius: '10px',
-        padding: '1.25rem 1.5rem',
+        border: '1px solid rgba(255,209,79,0.3)',
+        borderRadius: '12px',
+        padding: '16px 24px',
         maxWidth: '520px',
         width: 'calc(100vw - 2rem)',
         boxShadow: '0 20px 40px rgba(0,0,0,0.6)',
@@ -45,22 +45,20 @@ export default function CookieBanner() {
         gap: '1rem',
       }}
     >
-      <div>
-        <p style={{ color: '#9ca3af', fontSize: '14px', lineHeight: 1.6, margin: 0 }}>
-          We use cookies to improve your experience. By continuing, you agree to our{' '}
-          <Link href="/cookies-policy" style={{ color: '#FFD14F', textDecoration: 'underline' }}>
-            Cookie Policy
-          </Link>
-          .
-        </p>
-      </div>
+      <p style={{ color: '#9ca3af', fontSize: '14px', lineHeight: 1.6, margin: 0 }}>
+        We use cookies to improve your experience. By continuing, you agree to our{' '}
+        <Link href="/cookies-policy" style={{ color: '#FFD14F', textDecoration: 'underline' }}>
+          Cookie Policy
+        </Link>
+        .
+      </p>
       <div style={{ display: 'flex', gap: '0.75rem', justifyContent: 'flex-end' }}>
         <button
           onClick={handleDecline}
           style={{
             background: 'transparent',
-            border: '1px solid #1E1E1E',
-            color: '#6b7280',
+            border: '1px solid rgba(255,255,255,0.2)',
+            color: '#ffffff',
             padding: '0.5rem 1.25rem',
             borderRadius: '6px',
             cursor: 'pointer',

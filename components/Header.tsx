@@ -4,16 +4,39 @@ import { useState } from 'react'
 import Link from 'next/link'
 
 const CATEGORIES = [
-  { name: 'Email Marketing Basics', slug: 'email-marketing-basics' },
-  { name: 'Automation & Workflows', slug: 'automation-workflows' },
-  { name: 'Deliverability & List Management', slug: 'deliverability-list-management' },
-  { name: 'Analytics & Reporting', slug: 'analytics-reporting' },
-  { name: 'vs Competitors', slug: 'vs-competitors' },
+  {
+    name: 'Email Marketing Basics',
+    slug: 'email-marketing-basics',
+    desc: 'Setup, campaigns & best practices',
+  },
+  {
+    name: 'Automation & Workflows',
+    slug: 'automation-workflows',
+    desc: 'Triggers, sequences & drip campaigns',
+  },
+  {
+    name: 'Deliverability & List Mgmt',
+    slug: 'deliverability-list-management',
+    desc: 'Inbox rates & list hygiene',
+  },
+  {
+    name: 'Analytics & Reporting',
+    slug: 'analytics-reporting',
+    desc: 'A/B testing, stats & insights',
+  },
+  {
+    name: 'vs Competitors',
+    slug: 'vs-competitors',
+    desc: 'Brevo vs Mailchimp, MailerLite, HubSpot & more',
+    fullWidth: true,
+  },
 ]
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [topicsOpen, setTopicsOpen] = useState(false)
+  const [hoveredCard, setHoveredCard] = useState<string | null>(null)
+  const [homeHovered, setHomeHovered] = useState(false)
 
   return (
     <header
@@ -50,7 +73,28 @@ export default function Header() {
           </Link>
 
           {/* Desktop Nav */}
-          <nav style={{ display: 'flex', alignItems: 'center', gap: '2rem' }} className="desktop-nav">
+          <nav style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }} className="desktop-nav">
+            {/* Home */}
+            <Link
+              href="/"
+              onMouseEnter={() => setHomeHovered(true)}
+              onMouseLeave={() => setHomeHovered(false)}
+              style={{
+                border: '1.5px solid #FFD14F',
+                color: '#FFD14F',
+                padding: '5px 14px',
+                borderRadius: '7px',
+                textDecoration: 'none',
+                fontSize: '14px',
+                fontWeight: 600,
+                fontFamily: 'Poppins, sans-serif',
+                background: homeHovered ? 'rgba(255,209,79,0.1)' : 'transparent',
+                transition: 'background 0.2s',
+              }}
+            >
+              Home
+            </Link>
+
             <Link href="/blog" style={{ color: '#9ca3af', textDecoration: 'none', fontSize: '14px', fontWeight: 500 }}>
               All Guides
             </Link>
@@ -70,45 +114,66 @@ export default function Header() {
                   alignItems: 'center',
                   gap: '4px',
                   padding: 0,
+                  fontFamily: 'inherit',
                 }}
               >
                 Topics
-                <span style={{ fontSize: '10px' }}>▾</span>
+                <span style={{ fontSize: '10px', transition: 'transform 0.2s', display: 'inline-block', transform: topicsOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}>▾</span>
               </button>
+
               {topicsOpen && (
-                <div
-                  style={{
-                    position: 'absolute',
-                    top: 'calc(100% + 12px)',
-                    left: '-1rem',
-                    background: '#111111',
-                    border: '1px solid #1E1E1E',
-                    borderRadius: '8px',
-                    minWidth: '240px',
-                    padding: '0.5rem 0',
-                    boxShadow: '0 20px 40px rgba(0,0,0,0.5)',
-                  }}
-                >
-                  {CATEGORIES.map((cat) => (
-                    <Link
-                      key={cat.slug}
-                      href={`/category/${cat.slug}`}
-                      onClick={() => setTopicsOpen(false)}
-                      style={{
-                        display: 'block',
-                        padding: '0.6rem 1rem',
-                        color: '#9ca3af',
-                        textDecoration: 'none',
-                        fontSize: '14px',
-                        transition: 'color 0.2s',
-                      }}
-                      onMouseEnter={(e) => { e.currentTarget.style.color = '#FFD14F' }}
-                      onMouseLeave={(e) => { e.currentTarget.style.color = '#9ca3af' }}
-                    >
-                      {cat.name}
-                    </Link>
-                  ))}
-                </div>
+                <>
+                  {/* Backdrop to close on outside click */}
+                  <div
+                    style={{ position: 'fixed', inset: 0, zIndex: 40 }}
+                    onClick={() => setTopicsOpen(false)}
+                  />
+                  <div
+                    style={{
+                      position: 'absolute',
+                      top: 'calc(100% + 14px)',
+                      left: '50%',
+                      transform: 'translateX(-50%)',
+                      background: '#111111',
+                      border: '1px solid rgba(255,255,255,0.1)',
+                      borderRadius: '12px',
+                      padding: '16px',
+                      minWidth: '420px',
+                      boxShadow: '0 24px 48px rgba(0,0,0,0.6)',
+                      zIndex: 50,
+                      display: 'grid',
+                      gridTemplateColumns: '1fr 1fr',
+                      gap: '8px',
+                    }}
+                  >
+                    {CATEGORIES.map((cat) => (
+                      <Link
+                        key={cat.slug}
+                        href={`/category/${cat.slug}`}
+                        onClick={() => setTopicsOpen(false)}
+                        onMouseEnter={() => setHoveredCard(cat.slug)}
+                        onMouseLeave={() => setHoveredCard(null)}
+                        style={{
+                          display: 'block',
+                          background: hoveredCard === cat.slug ? 'rgba(255,209,79,0.05)' : 'rgba(255,255,255,0.03)',
+                          border: `1px solid ${hoveredCard === cat.slug ? 'rgba(255,209,79,0.3)' : 'rgba(255,255,255,0.07)'}`,
+                          borderRadius: '8px',
+                          padding: '12px',
+                          textDecoration: 'none',
+                          transition: 'background 0.2s, border-color 0.2s',
+                          gridColumn: cat.fullWidth ? '1 / -1' : undefined,
+                        }}
+                      >
+                        <div style={{ color: '#FFD14F', fontSize: '12px', fontWeight: 700, fontFamily: 'Poppins, sans-serif' }}>
+                          {cat.name}
+                        </div>
+                        <div style={{ color: 'rgba(255,255,255,0.45)', fontSize: '11px', marginTop: '3px', lineHeight: 1.4 }}>
+                          {cat.desc}
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                </>
               )}
             </div>
 
@@ -120,7 +185,7 @@ export default function Header() {
             </Link>
           </nav>
 
-          {/* CTA */}
+          {/* CTA + Hamburger */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
             <a
               href="https://www.brevo.com"
@@ -142,7 +207,6 @@ export default function Header() {
               Try Brevo Free
             </a>
 
-            {/* Hamburger */}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
               style={{
@@ -173,6 +237,7 @@ export default function Header() {
               gap: '0.25rem',
             }}
           >
+            <Link href="/" onClick={() => setMobileOpen(false)} style={{ color: '#FFD14F', textDecoration: 'none', padding: '0.5rem 0', fontSize: '15px', fontWeight: 600 }}>Home</Link>
             <Link href="/blog" onClick={() => setMobileOpen(false)} style={{ color: '#9ca3af', textDecoration: 'none', padding: '0.5rem 0', fontSize: '15px' }}>All Guides</Link>
             {CATEGORIES.map((cat) => (
               <Link
