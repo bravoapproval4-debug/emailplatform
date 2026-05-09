@@ -48,7 +48,7 @@ export default function Footer() {
                 </Link>
               ))}
               <Link
-                href="/category/vs-competitors"
+                href="/category/brevo-vs-competitors"
                 style={{
                   background: 'transparent',
                   border: '1px solid #1E1E1E',
@@ -152,7 +152,7 @@ export default function Footer() {
                 </li>
               ))}
               <li>
-                <Link href="/category/vs-competitors" style={{ color: '#FFD14F', textDecoration: 'none', fontSize: '13px' }}>
+                <Link href="/category/brevo-vs-competitors" style={{ color: '#FFD14F', textDecoration: 'none', fontSize: '13px' }}>
                   All Comparisons
                 </Link>
               </li>

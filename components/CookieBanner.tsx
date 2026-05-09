@@ -4,9 +4,11 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 
 export default function CookieBanner() {
+  const [mounted, setMounted] = useState(false)
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
+    setMounted(true)
     const consent = localStorage.getItem('cookie-consent')
     if (!consent) {
       setVisible(true)
@@ -23,7 +25,7 @@ export default function CookieBanner() {
     setVisible(false)
   }
 
-  if (!visible) return null
+  if (!mounted || !visible) return null
 
   return (
     <div

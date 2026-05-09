@@ -11,22 +11,22 @@ const CATEGORIES = [
   },
   {
     name: 'Automation & Workflows',
-    slug: 'automation-workflows',
+    slug: 'automation-and-workflows',
     desc: 'Triggers, sequences & drip campaigns',
   },
   {
     name: 'Deliverability & List Mgmt',
-    slug: 'deliverability-list-management',
+    slug: 'deliverability-and-list-management',
     desc: 'Inbox rates & list hygiene',
   },
   {
     name: 'Analytics & Reporting',
-    slug: 'analytics-reporting',
+    slug: 'analytics-and-reporting',
     desc: 'A/B testing, stats & insights',
   },
   {
     name: 'vs Competitors',
-    slug: 'vs-competitors',
+    slug: 'brevo-vs-competitors',
     desc: 'Brevo vs Mailchimp, MailerLite, HubSpot & more',
     fullWidth: true,
   },

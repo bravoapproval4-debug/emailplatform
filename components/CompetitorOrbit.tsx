@@ -152,7 +152,7 @@ export default function CompetitorOrbit() {
       </div>
 
       <a
-        href="/category/vs-competitors"
+        href="/category/brevo-vs-competitors"
         style={{
           background: 'transparent',
           border: '1px solid #FFD14F',

@@ -35,28 +35,23 @@ export const categories: Category[] = [
   },
   {
     name: 'Automation & Workflows',
-    slug: 'automation-workflows',
+    slug: 'automation-and-workflows',
     description: 'Build powerful automation sequences and workflows inside Brevo.',
   },
   {
     name: 'Deliverability & List Management',
-    slug: 'deliverability-list-management',
+    slug: 'deliverability-and-list-management',
     description: 'Ensure your emails land in the inbox and keep your list healthy.',
   },
   {
     name: 'Analytics & Reporting',
-    slug: 'analytics-reporting',
+    slug: 'analytics-and-reporting',
     description: 'Understand your metrics and make data-driven decisions with Brevo.',
-  },
-  {
-    name: 'vs Competitors',
-    slug: 'vs-competitors',
-    description: 'See how Brevo compares to popular alternatives in the market.',
   },
   {
     name: 'Brevo vs Competitors',
     slug: 'brevo-vs-competitors',
-    description: 'Detailed side-by-side comparisons of Brevo against leading email marketing tools.',
+    description: 'Detailed side-by-side comparisons of Brevo against Mailchimp, Klaviyo, MailerLite, and more.',
   },
 ]
 
