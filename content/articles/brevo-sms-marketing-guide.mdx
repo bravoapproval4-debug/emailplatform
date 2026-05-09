@@ -1,0 +1,159 @@
+---
+title: "Brevo SMS Marketing: Combining Email and Text Campaigns"
+description: "Learn how to use Brevo SMS marketing alongside your email campaigns. Covers sending SMS, SMS automation, compliance, and how to build a powerful multi-channel strategy."
+category: "Automation & Workflows"
+categorySlug: "automation-workflows"
+readTime: "9 min read"
+---
+
+## Why SMS Marketing Belongs in Your Brevo Strategy
+
+Email marketing is powerful. SMS marketing is immediate. When you combine both in Brevo's unified platform, you create a multi-channel strategy that reaches subscribers wherever they are most responsive — and at exactly the right moment.
+
+SMS messages have a 98% open rate. Most are read within 3 minutes of being received. No email campaign achieves this level of immediacy. For time-sensitive offers, critical notifications, appointment reminders, and cart recovery, SMS cuts through in a way that email simply cannot match.
+
+Brevo is one of the few email marketing platforms that also offers full-featured SMS marketing built into the same dashboard — with the same contact database, the same automation workflows, and the same reporting interface. This tight integration is what makes Brevo's multi-channel approach so effective.
+
+## SMS Marketing in Brevo: How It Works
+
+### SMS Credits
+
+Unlike email (which Brevo prices by volume per plan), SMS messages in Brevo are purchased as credits. One credit typically equals one standard SMS message (160 characters) to a recipient in a standard-rate country. Messages to premium-rate countries or longer messages may use more credits.
+
+Credits can be purchased in packages directly from the Brevo dashboard under "SMS" → "Buy SMS Credits."
+
+### Setting Up Your Sender ID
+
+In Brevo, your SMS messages will appear from either:
+
+- **A Sender Name (Alphanumeric ID):** A custom name like your brand name. Available in most countries. Limitation: recipients cannot reply.
+- **A Short Code or Long Code:** A dedicated phone number. Allows two-way SMS. Required for certain countries and compliance frameworks.
+
+Check Brevo's documentation for the requirements and supported sender types in your target country, as regulations vary significantly.
+
+### Opt-In Requirements
+
+SMS marketing requires explicit, written opt-in from contacts — the regulatory bar is higher than for email. In most markets (including the US under TCPA and EU under GDPR), you must:
+
+- Obtain opt-in specifically for SMS (an email opt-in does not cover SMS)
+- Clearly state what types of messages they will receive
+- Provide a clear opt-out mechanism (typically replying "STOP")
+- Honor opt-outs immediately
+
+Brevo helps you manage SMS opt-ins by allowing you to store mobile numbers and SMS consent status as contact attributes. Use a dedicated field for SMS consent, separate from your email consent tracking.
+
+## Sending Your First SMS Campaign
+
+Go to "SMS" → "SMS Campaigns" → "Create an SMS campaign."
+
+Configure:
+
+1. **Campaign name:** Internal reference only
+2. **Recipients:** Select the list(s) of contacts to receive this SMS. Brevo will only send to contacts who have a mobile number in the SMS attribute field.
+3. **Sender ID:** Choose your configured sender name or number
+4. **Message content:** Write your SMS message
+
+### Writing Effective SMS Messages
+
+SMS has strict character limits. A standard SMS is 160 characters (Latin characters). If your message exceeds 160 characters, it is split into multiple messages and may cost additional credits.
+
+Guidelines for effective SMS copy:
+
+- **Identify yourself immediately:** Start with your brand name since recipients may not recognize your sender ID
+- **State the offer or purpose clearly:** No preamble — get to the point in the first sentence
+- **Include a short URL:** Use a link shortener if needed. Brevo includes a link shortener so you can track clicks.
+- **Include an opt-out instruction:** Required by law in most markets. "Reply STOP to unsubscribe" is the standard.
+
+Example: `[BrandName] Your order #12345 has shipped! Track it here: [link] Reply STOP to opt out.`
+
+### Scheduling and Sending
+
+Choose to send immediately or schedule for a specific date and time. For promotional SMS, timing matters — send during business hours (10am-6pm) in the recipient's local time zone. Avoid early morning, late evening, and weekends unless your audience and offer specifically call for it.
+
+## SMS Automation in Brevo
+
+The most powerful use of SMS in Brevo is within automation workflows. You can add SMS actions alongside email actions in the same workflow, creating true multi-channel sequences.
+
+### Abandoned Cart Recovery with SMS
+
+A high-converting cart recovery workflow might look like:
+
+- **1 hour after abandonment:** Send an email reminder (email 1)
+- **Wait 3 hours**
+- **Check condition:** Did the contact complete the purchase?
+  - Yes: Exit the workflow
+  - No: Send an SMS message — "Hey [name], your cart is waiting. Complete your order and save 10%: [link]"
+- **Wait 24 hours**
+- **Check condition:** Did the contact complete the purchase?
+  - Yes: Exit the workflow
+  - No: Send a final email (email 2)
+
+The SMS step typically recovers an additional 5-15% of carts that did not respond to the first email.
+
+### Flash Sale Announcement
+
+Email is ideal for detailed promotional content. SMS is ideal for announcement and urgency. Use them together:
+
+- **Day before the sale:** Send an email with full details, images, and featured products
+- **Morning of the sale:** Send an SMS — "[Brand] Flash Sale is LIVE for 24 hours only. 40% off everything: [link]"
+- **3 hours before end:** Send a final SMS — "[Brand] Sale ends in 3 hours. Don't miss it: [link]"
+
+### Appointment and Event Reminders
+
+For service businesses and event organizers, automated SMS reminders dramatically reduce no-shows:
+
+- **48 hours before:** Email reminder with full details
+- **24 hours before:** SMS reminder — "Reminder: Your appointment with [Brand] is tomorrow at [time]. Reply to confirm or call [number] to reschedule."
+- **2 hours before:** Final SMS — "Your [Brand] appointment starts in 2 hours. See you at [address]."
+
+## Tracking SMS Campaign Performance
+
+From "SMS" → "Statistics," you can review:
+
+- **Sent:** Total messages sent
+- **Delivered:** Confirmed delivered to handsets
+- **Clicked:** Contacts who clicked the link in your SMS
+- **Errors:** Failed deliveries with error codes
+
+SMS click rates are significantly higher than email click rates. Benchmarks of 15-25% click rate on promotional SMS are achievable with a well-engaged list and a relevant offer.
+
+## Compliance and Best Practices Checklist
+
+Before sending any SMS campaign:
+
+- Confirm you have explicit SMS opt-in for every recipient
+- Confirm the contact's country is supported by your sender configuration
+- Include your brand name in the message
+- Include opt-out instructions
+- Do not send during restricted hours (check local regulations)
+- Have a process for handling STOP replies and manual opt-out requests
+
+Brevo handles STOP replies automatically for supported country/carrier combinations, but you should verify this works correctly in your specific configuration.
+
+## Integrating SMS with Your Email Strategy
+
+The key to a successful multi-channel strategy is not sending the same message twice — it is using each channel for what it does best:
+
+| Use Case | Best Channel |
+|----------|-------------|
+| Detailed content, long-form | Email |
+| Urgency, time-sensitive | SMS |
+| Relationship building | Email |
+| Order/shipping notifications | Email or SMS |
+| Flash sale announcements | SMS + Email |
+| Event reminders (48h) | Email |
+| Event reminders (2h) | SMS |
+| Re-engagement of cold subscribers | Email |
+
+When email and SMS work together in Brevo's unified platform, you get the benefits of both without managing two separate systems.
+
+## Brevo Plan Comparison
+
+| Plan | Price | Emails/Month | Key Features |
+|------|-------|--------------|--------------|
+| Free | $0/month | 300/day | SMS credits available for purchase, basic campaigns |
+| Starter | From $25/month | 20,000 | SMS campaigns, basic automation, no daily email limit |
+| Business | From $65/month | 20,000+ | SMS in automation workflows, multi-channel sequences |
+| Enterprise | Custom pricing | Unlimited | High-volume SMS, dedicated support, custom sender numbers |
+
+Adding SMS to your Brevo marketing strategy is one of the fastest ways to increase the reach and immediacy of your campaigns. Start with one high-value SMS automation — like cart recovery or appointment reminders — and measure the impact before expanding further.

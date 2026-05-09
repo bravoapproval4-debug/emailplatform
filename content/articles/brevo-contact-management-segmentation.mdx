@@ -1,0 +1,179 @@
+---
+title: "Brevo Contact Management: Building and Segmenting Your List"
+description: "Master Brevo contact management and list segmentation. Learn how to organize contacts, create dynamic segments, and send more relevant campaigns that convert."
+category: "Email Marketing Basics"
+categorySlug: "email-marketing-basics"
+readTime: "9 min read"
+---
+
+## Why Contact Management Is the Foundation of Email Marketing
+
+The most persuasive subject line and the most beautifully designed email will underperform if they are sent to the wrong people. Effective contact management — organizing your subscribers, capturing the right data, and segmenting intelligently — is what separates email marketing that generates revenue from email marketing that generates unsubscribes.
+
+Brevo gives you a powerful and flexible contact management system that scales from a simple single list to a sophisticated, multi-attribute database with dynamic segments. This guide covers the full scope of what Brevo's contact management can do.
+
+## How Brevo Organizes Contacts
+
+Brevo uses a flat contact model: every contact exists once in your account, identified by their email address. Contacts can belong to multiple lists simultaneously. This architecture prevents duplicates and makes managing your audience much easier than platforms where the same person can exist in multiple places.
+
+### Lists
+
+Lists are the primary organizational unit in Brevo. You can create as many lists as you need, and a contact can be in multiple lists at the same time. Common list structures include:
+
+- **By source:** Newsletter subscribers, customers, event attendees, lead magnet downloads
+- **By interest:** Product category A, Product category B, Blog readers
+- **By status:** Active subscribers, VIP customers, Trial users
+
+Lists are static by default — a contact stays in a list until you remove them manually or via automation.
+
+### Segments
+
+Segments are dynamic filters applied to your contact database. Unlike lists, segments update automatically as your contacts' data changes. A segment might be defined as "all contacts who opened an email in the last 60 days and have the attribute 'country = United States.'"
+
+Because segments are computed in real time, they always reflect your current contact data — making them far more powerful than static lists for targeted sending.
+
+## Setting Up Your Contact Attributes
+
+When you import contacts into Brevo, each contact can carry attributes — data fields that describe them. Brevo provides built-in attributes:
+
+- **EMAIL** (required)
+- **FIRSTNAME**
+- **LASTNAME**
+- **SMS** (for mobile number)
+
+You can create unlimited custom attributes to store any data relevant to your business:
+
+- **CUSTOMER_SINCE** (date)
+- **PLAN_TYPE** (text: free, pro, enterprise)
+- **LAST_PURCHASE** (date)
+- **TOTAL_SPEND** (number)
+- **CITY** (text)
+- **OPTED_IN_DATE** (date)
+
+To create a custom attribute, go to "Contacts" → "Settings" → "Contact Attributes" → "Add a New Attribute."
+
+The more useful data you capture and store as attributes, the more precisely you can segment and personalize your campaigns.
+
+## Importing Contacts
+
+### CSV Import
+
+The fastest way to add existing contacts is via CSV upload. Prepare a spreadsheet with one column per attribute — at minimum, an email address column. Then:
+
+1. Go to "Contacts" → "Import Contacts"
+2. Upload your CSV file
+3. Map each column to a Brevo attribute (or create new attributes on the fly)
+4. Select the list to add them to
+5. Confirm the import
+
+Brevo will process the file and show you a summary: new contacts added, existing contacts updated, duplicates skipped, and invalid emails rejected.
+
+### Manual Addition
+
+For adding individual contacts, go to "Contacts" → "Add a Contact." Enter the email address and any attributes, then assign to one or more lists. This is useful for adding a specific customer or lead who just came in.
+
+### Via Forms
+
+Brevo's subscription form builder lets you capture contacts directly from your website. Forms can be embedded as inline forms (inside a page), pop-up forms, or exit-intent pop-ups. Each form can be configured to add subscribers to a specific list and trigger a confirmation email.
+
+To create a form: "Contacts" → "Forms" → "Create a Subscription Form."
+
+### Via Integrations
+
+Brevo integrates natively with Shopify, WooCommerce, WordPress, Prestashop, and many other platforms to sync contacts automatically. For anything not natively supported, Brevo's Zapier and Make integrations connect it to thousands of apps.
+
+## Creating Effective Segments
+
+Segmentation is where contact management becomes truly powerful. In Brevo, go to "Contacts" → "Segments" → "Create a Segment."
+
+You will build your segment using conditions:
+
+### Demographic Conditions
+
+Filter by any contact attribute:
+- Country equals "Germany"
+- Plan type equals "Enterprise"
+- Total spend is greater than 500
+
+### Behavioral Conditions
+
+Filter by email engagement history:
+- Opened a specific campaign
+- Clicked a link in a specific campaign
+- Did not open any campaign in the last 90 days
+
+### List Membership
+
+Filter by list membership:
+- Contact is in list "Customers"
+- Contact is not in list "VIP"
+
+### Combining Conditions
+
+Combine conditions with AND (contact must meet all conditions) or OR (contact must meet at least one condition):
+
+Example: **"Customers with no purchase in 60 days"**
+- List is "Customers" AND
+- Attribute LAST_PURCHASE is before 60 days ago
+
+This segment is perfect for a re-engagement or win-back campaign.
+
+## Practical Segmentation Strategies
+
+### Engagement-Based Segmentation
+
+Divide your list into active and inactive subscribers:
+
+- **Active:** Opened or clicked in the last 90 days
+- **Inactive:** No opens or clicks in the last 90 days
+
+Send re-engagement campaigns to inactive subscribers before removing them. This keeps your list healthy and your metrics accurate.
+
+### Customer vs. Lead Segmentation
+
+If you track purchase data as contact attributes, you can segment:
+
+- **Leads:** Has not purchased (no CUSTOMER_SINCE attribute)
+- **New customers:** CUSTOMER_SINCE is within the last 30 days
+- **Repeat customers:** Total orders is greater than 1
+
+Each segment deserves different messaging — leads need educational content and social proof, new customers need onboarding and upsells, repeat customers need loyalty rewards and product discoveries.
+
+### Geographic Segmentation
+
+If you have an international audience, segmenting by country lets you send in local languages, reference local events, or time campaigns to local working hours.
+
+### Lifecycle Stage Segmentation
+
+Map your email marketing to the customer lifecycle:
+
+- **Awareness:** New subscribers who have never purchased
+- **Consideration:** Contacts who have visited pricing or product pages
+- **Decision:** Contacts who have abandoned a cart or trial
+- **Retention:** Active customers
+- **Advocacy:** High-spend customers and repeat buyers
+
+Each stage requires different content and different calls to action.
+
+## Maintaining a Clean Contact Database
+
+Even the best-segmented list becomes ineffective if the data is stale or corrupted. Regular list maintenance is essential.
+
+**Remove hard bounces immediately.** Brevo does this automatically — hard bounced email addresses are moved to a "blocked" list and will not receive future campaigns.
+
+**Suppress soft bounces after multiple failures.** Brevo monitors repeated soft bounces and will eventually suppress these addresses.
+
+**Review unsubscribes regularly.** Understand patterns in who is unsubscribing. High unsubscribe rates after specific campaigns signal a content or targeting mismatch.
+
+**Delete truly inactive contacts.** After 2-3 re-engagement attempts with no response, it is better to delete inactive contacts than to keep sending to them. This improves your sender reputation and deliverability.
+
+## Brevo Plan Comparison
+
+| Plan | Price | Emails/Month | Key Features |
+|------|-------|--------------|--------------|
+| Free | $0/month | 300/day | Unlimited contacts, custom attributes, basic segmentation |
+| Starter | From $25/month | 20,000 | Full segmentation, import from CSV, no daily limit |
+| Business | From $65/month | 20,000+ | Advanced behavioral segmentation, automation integration, A/B testing |
+| Enterprise | Custom pricing | Unlimited | Custom attribute limits, dedicated support, SSO |
+
+With Brevo's contact management tools, you have everything you need to build a highly organized, well-segmented subscriber base that responds to your campaigns with clicks and purchases rather than unsubscribes.

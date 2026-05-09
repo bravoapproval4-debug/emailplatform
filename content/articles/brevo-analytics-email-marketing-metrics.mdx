@@ -1,0 +1,181 @@
+---
+title: "Brevo Analytics: Understanding Your Email Marketing Metrics"
+description: "Learn how to read and act on your Brevo analytics data. This complete guide covers open rates, click rates, bounce rates, and how to use data to improve every campaign."
+category: "Analytics & Reporting"
+categorySlug: "analytics-reporting"
+readTime: "10 min read"
+---
+
+## Why Analytics Is the Engine of Email Improvement
+
+Sending email campaigns without reviewing analytics is like flying without instruments. You might be heading in the right direction, or you might be completely off course — but you have no way to know.
+
+Brevo provides comprehensive analytics for every campaign you send, covering everything from high-level engagement rates to granular individual contact behavior. Understanding and acting on this data is what separates marketers who consistently improve from those who send the same campaign over and over wondering why results are not better.
+
+This guide covers every key metric in Brevo's analytics dashboard, what each one means, what benchmarks to compare against, and what actions to take based on what you see.
+
+## Accessing Campaign Analytics in Brevo
+
+After sending a campaign, navigate to "Campaigns" in the left sidebar. Find your campaign and click on it to open the detailed statistics view.
+
+Brevo also provides a real-time "Dashboard" view that shows a summary of recent campaigns and overall account metrics.
+
+For transactional emails, analytics are available under "Transactional" → "Email Activity."
+
+## The Core Metrics: What They Mean
+
+### Delivered Rate
+
+**What it is:** The percentage of emails that were accepted by the recipient's email server.
+
+**Formula:** (Sent - Bounced) / Sent × 100
+
+**Benchmark:** 98% or higher
+
+**What it tells you:** Your list quality and sending infrastructure health. A delivered rate below 95% indicates significant bounce problems that need immediate attention.
+
+**What to do if it is low:**
+- Review your bounce rate breakdown (hard vs. soft)
+- Remove hard-bounced contacts
+- Verify your sender domain authentication
+- Check whether you are on any email blacklists
+
+### Open Rate
+
+**What it is:** The percentage of delivered emails that were opened by recipients.
+
+**Formula:** Unique Opens / Delivered × 100
+
+**Benchmark:** 20-25% for most industries. B2B tends to be higher (25-35%), e-commerce tends to be lower (15-20%).
+
+**Important note:** Apple Mail Privacy Protection (MPP), launched in 2021, inflates open rates for Apple Mail users by auto-loading tracking pixels. Brevo attempts to filter these pre-fetched opens, but some inflation may remain. This means open rates are less reliable than they were before 2021.
+
+**What it tells you:** The effectiveness of your subject line, sender name, and the overall trust and recognition your brand has with its audience.
+
+**What to do if it is low:**
+- A/B test subject lines (test one variable at a time)
+- Ensure your sender name is recognizable
+- Segment your list and send more targeted content
+- Clean your list of unengaged subscribers who are dragging down the average
+
+### Click-Through Rate (CTR)
+
+**What it is:** The percentage of delivered emails where at least one link was clicked.
+
+**Formula:** Unique Clicks / Delivered × 100
+
+**Benchmark:** 2-5%. Above 5% is excellent. Below 1% needs improvement.
+
+**What it tells you:** The relevance and persuasiveness of your email content and how compelling your call to action is.
+
+**What to do if it is low:**
+- Ensure your email has a clear, prominent call-to-action button
+- Remove competing links that dilute attention
+- Test different button text ("Get started" vs. "See the offer" vs. "Claim your discount")
+- Make sure the email content delivers on the promise of the subject line
+
+### Click-to-Open Rate (CTOR)
+
+**What it is:** Of the subscribers who opened the email, what percentage clicked a link?
+
+**Formula:** Unique Clicks / Unique Opens × 100
+
+**Benchmark:** 15-25%
+
+**Why CTOR matters:** CTOR filters out the influence of subject line performance and focuses purely on the email content experience. A high open rate but low CTOR means your subject line is effective but your email body is not converting. A low open rate but high CTOR means your content is compelling — you just need more people to open.
+
+**What to do if it is low:**
+- Review the relevance of the email content to the audience segment
+- Test the position, size, and wording of your CTA button
+- Reduce the number of competing calls to action
+
+### Bounce Rate
+
+**What it is:** The percentage of emails that could not be delivered.
+
+Brevo shows two types:
+
+**Hard bounces:** Permanent delivery failures (invalid or non-existent email addresses).
+- **Target:** Below 0.5%
+- **Action:** Brevo automatically blocks hard-bounced addresses. Remove them from your lists.
+
+**Soft bounces:** Temporary delivery failures.
+- **Target:** Below 2% (most will resolve when Brevo retries)
+- **Action:** Watch for repeated soft bounces on the same addresses — they may indicate permanent problems disguised as temporary ones.
+
+### Unsubscribe Rate
+
+**What it is:** The percentage of recipients who unsubscribed after receiving this campaign.
+
+**Formula:** Unsubscribes / Delivered × 100
+
+**Benchmark:** Below 0.2% per campaign. Above 0.5% is a warning sign.
+
+**What it tells you:** Whether the campaign was relevant and expected by your audience.
+
+**What to do if it is high:**
+- Review your subject line — was it misleading?
+- Review the content — was it relevant to this audience segment?
+- Review your sending frequency — are you emailing too often?
+- Audit your list acquisition — are these subscribers who opted in for something different?
+
+### Spam Complaint Rate
+
+**What it is:** The percentage of recipients who marked the email as spam.
+
+**Benchmark:** Below 0.1%. Gmail penalizes senders above 0.3%.
+
+**What it tells you:** Whether your emails are unwanted or unexpected. Complaints typically come from contacts who do not recognize you or feel they are being emailed without clear consent.
+
+**What to do if it is high:**
+- Audit your list acquisition methods
+- Add a recognizable sender name
+- Make the unsubscribe link more prominent
+- Reduce sending frequency
+- Review whether you are sending to old lists that may have forgotten you
+
+## Heat Maps and Click Maps
+
+Brevo's paid plans include a click map view that shows you which links in your email received the most clicks. This visual overlay highlights which parts of your email drive the most engagement — invaluable for optimizing future designs.
+
+Common insights from click maps:
+- The first link in an email typically gets the most clicks — make it count
+- Image clicks are often higher than text link clicks — ensure images have links
+- Footer links rarely get clicked — do not put important CTAs there
+
+## Campaign Comparison View
+
+In Brevo, you can compare metrics across multiple campaigns over time. Navigate to the "Campaigns" overview and filter by date range to see trends.
+
+Look for:
+- Campaigns that outperformed your average — what did they have in common?
+- Campaigns with unusually high unsubscribes — what went wrong?
+- Trends over time — are your open rates improving or declining?
+
+## Automation Analytics
+
+For email workflows, Brevo provides step-level analytics: how many contacts entered the workflow, how many completed each step, and the open and click rates for each automated email.
+
+This step-level data is essential for identifying the weak point in your sequence. If email 4 in a 7-email welcome series has a dramatically lower open rate, the problem is likely that email 3's subject line set incorrect expectations for what would follow.
+
+## Setting Up Conversion Tracking
+
+To connect email clicks to actual business outcomes (purchases, sign-ups, calls booked), set up conversion tracking using UTM parameters on your Brevo links.
+
+Add UTM parameters to your links:
+- `utm_source=brevo`
+- `utm_medium=email`
+- `utm_campaign=[campaign-name]`
+
+Then review these in Google Analytics or your analytics platform to see revenue and conversions attributed to each Brevo campaign.
+
+## Brevo Plan Comparison
+
+| Plan | Price | Emails/Month | Key Features |
+|------|-------|--------------|--------------|
+| Free | $0/month | 300/day | Basic campaign analytics, open and click tracking |
+| Starter | From $25/month | 20,000 | Real-time reporting, advanced metrics, no daily limit |
+| Business | From $65/month | 20,000+ | Click maps, A/B test analytics, automation step analytics |
+| Enterprise | Custom pricing | Unlimited | Custom reporting, dedicated analytics support, API data export |
+
+Making data-driven decisions with Brevo analytics is the most reliable path to continuous improvement in your email marketing results. Read your metrics after every campaign and let the numbers guide your next move.

@@ -1,0 +1,148 @@
+---
+title: "Brevo Deliverability: How to Reach the Inbox Every Time"
+description: "Master Brevo email deliverability with this complete guide. Learn domain authentication, IP reputation, list hygiene, and content best practices to land in the inbox."
+category: "Deliverability & List Management"
+categorySlug: "deliverability-list-management"
+readTime: "11 min read"
+---
+
+## Understanding Email Deliverability
+
+Deliverability is the ability of your emails to reach your subscribers' inboxes — as opposed to landing in the spam folder, getting blocked, or bouncing. It is one of the most important and least understood aspects of email marketing.
+
+You can have the perfect subject line, a flawlessly designed email, and a perfectly timed send — and none of it matters if the email never arrives in the inbox.
+
+Brevo has one of the strongest deliverability reputations in the industry, but the platform's infrastructure is only part of the equation. Your sending practices, list quality, domain setup, and content all play crucial roles in determining whether your emails reach their destination.
+
+This guide covers every major factor affecting Brevo deliverability and exactly what you can do to optimize each one.
+
+## The Factors That Determine Deliverability
+
+Email deliverability is determined by a combination of technical, reputational, and behavioral signals:
+
+### 1. Sender Reputation
+
+Every IP address and domain that sends email has a reputation score maintained by major email providers like Gmail, Yahoo, and Microsoft. This score reflects the quality and behavior of emails sent from that source.
+
+Brevo operates a pool of shared IP addresses for standard plan users. Your reputation on these shared IPs is influenced by the collective behavior of all Brevo users — which is why Brevo enforces strict anti-spam policies.
+
+On Brevo's Enterprise plan, dedicated IP addresses give you full control over your own sender reputation. With a dedicated IP, only your sending practices determine your reputation.
+
+### 2. Domain Authentication
+
+Three authentication protocols tell receiving servers that you are who you claim to be and that the email has not been tampered with:
+
+**SPF (Sender Policy Framework):** A DNS TXT record that lists the mail servers authorized to send email from your domain. When a receiving server gets an email claiming to be from you, it checks whether the sending IP is on your SPF record.
+
+**DKIM (DomainKeys Identified Mail):** A cryptographic signature added to the email header. The receiving server uses your public DKIM key (stored in DNS) to verify the signature. If the signature matches, the email has not been modified in transit.
+
+**DMARC (Domain-based Message Authentication, Reporting, and Conformance):** Builds on SPF and DKIM. You set a policy specifying what receiving servers should do with emails that fail SPF or DKIM checks — quarantine them (send to spam) or reject them (block entirely). DMARC also generates reports that show you who is sending email from your domain.
+
+**Setting up authentication in Brevo:**
+
+1. Go to "Settings" → "Senders and IPs" → "Domains"
+2. Add your sending domain
+3. Brevo provides the SPF, DKIM, and DMARC records to add to your DNS
+4. Add these records via your domain registrar
+5. Click "Verify" in Brevo to confirm the records are active
+
+All three authentication records are required for strong deliverability in 2024. Gmail and Yahoo now require DMARC for senders who send to their platforms at any significant volume.
+
+### 3. Bounce Rate
+
+A bounce occurs when an email cannot be delivered. There are two types:
+
+**Hard bounce:** The email address is invalid, does not exist, or the domain is not receiving email. Brevo automatically removes hard-bounced addresses from your active contact list and adds them to your blocked list.
+
+**Soft bounce:** A temporary delivery failure — the recipient's mailbox is full, the server is temporarily unavailable, or the message was too large. Brevo retries soft bounces automatically. After multiple consecutive soft bounces, Brevo may move the address to blocked.
+
+**Target:** Keep your hard bounce rate below 2% of total emails sent. A rate above 5% indicates serious list quality issues that will harm your sender reputation.
+
+### 4. Spam Complaint Rate
+
+When a recipient clicks "Mark as Spam" in their email client, it generates a complaint signal that is sent back to email providers and, via feedback loops, to Brevo.
+
+**Target:** Keep your complaint rate below 0.1% of emails delivered. Google requires senders to stay below 0.3% to maintain good standing — but at 0.1%, your reputation starts to take damage.
+
+High complaint rates are caused by:
+- Sending to people who did not explicitly opt in
+- Sending too frequently
+- Content that is misleading or unexpected based on what subscribers signed up for
+- Making the unsubscribe process difficult to find
+
+### 5. List Engagement
+
+Major email providers (especially Gmail) track how recipients interact with your emails as a proxy for quality. If large numbers of your subscribers:
+- Never open your emails
+- Mark them as spam
+- Move them from inbox to spam folder manually
+
+...your reputation and deliverability will decline, even if your bounce rate and complaint rate are technically within limits.
+
+Regularly removing unengaged subscribers from your list (or moving them to a low-frequency suppression list) protects your sender reputation.
+
+### 6. Sending Volume and Frequency Patterns
+
+Sudden spikes in sending volume are a red flag for spam filters. If you normally send 5,000 emails per week and then send 100,000 in a single day, spam filters will treat that spike with suspicion.
+
+Brevo recommends warming up your sending volume gradually when:
+- You start sending from a new IP address
+- You significantly increase your list size through an acquisition or import
+- You have not sent for a long period of time (90+ days)
+
+A warm-up schedule might look like: Week 1: 500/day, Week 2: 1,000/day, Week 3: 5,000/day, continuing to double until you reach your target volume.
+
+### 7. Content and HTML Quality
+
+Email spam filters analyze your email content alongside technical signals. Content factors that increase spam scores:
+
+- **Trigger words:** "FREE," "LIMITED TIME," "EARN MONEY," "GUARANTEED" — especially in all caps or the subject line
+- **Too many images, not enough text:** Image-to-text ratio matters. Emails that are entirely images with no text look like spam to filters.
+- **Broken or missing HTML:** Malformed HTML that is hard to render triggers spam filters
+- **Too many links:** An email with 50 links looks suspicious
+- **Links to blacklisted domains:** If you link to a domain that is on email blacklists, your email will be flagged
+- **Missing unsubscribe link:** Required by law and by email standards
+
+**Brevo's built-in spam score checker** reviews your email before sending and flags content issues. Use it for every campaign.
+
+## Brevo-Specific Deliverability Features
+
+### Dedicated IP Addresses
+
+For high-volume senders, dedicated IP addresses (available on Enterprise plans) ensure your reputation is entirely self-determined. Brevo provides warm-up guidance and tools for building IP reputation from scratch.
+
+### Real-Time Blacklist Monitoring
+
+Brevo monitors whether its shared IP pools are listed on major email blacklists (Spamhaus, Barracuda, etc.) and takes action when they are. Enterprise customers get additional monitoring for their dedicated IPs.
+
+### Inbox Preview Tool
+
+Available on Business and Enterprise plans, this tool shows you how your email renders in Gmail, Outlook, Apple Mail, and other clients — including whether it is likely to be placed in the Primary inbox, Promotions tab, or Spam folder.
+
+### Deliverability Score
+
+Brevo provides a deliverability score for your account based on your recent sending history. Review this regularly and investigate any sudden drops.
+
+## Deliverability Best Practices Checklist
+
+- Authenticate your domain with SPF, DKIM, and DMARC
+- Only send to contacts who explicitly opted in
+- Maintain a bounce rate below 2%
+- Maintain a complaint rate below 0.1%
+- Remove inactive subscribers every 90 days
+- Avoid spam trigger words in subject lines
+- Maintain a healthy image-to-text ratio
+- Always include a clear, functional unsubscribe link
+- Send from a consistent domain and sender address
+- Send on a regular, predictable schedule
+
+## Brevo Plan Comparison
+
+| Plan | Price | Emails/Month | Key Features |
+|------|-------|--------------|--------------|
+| Free | $0/month | 300/day | Shared IP, basic deliverability tools, domain authentication |
+| Starter | From $25/month | 20,000 | Full deliverability reports, real-time logs |
+| Business | From $65/month | 20,000+ | Inbox preview tool, advanced spam score analysis |
+| Enterprise | Custom pricing | Unlimited | Dedicated IP address, IP warm-up support, blacklist monitoring |
+
+Deliverability is not a one-time configuration — it is an ongoing practice. Combining Brevo's powerful infrastructure with clean sending habits and high-quality content is the formula for consistent inbox placement.

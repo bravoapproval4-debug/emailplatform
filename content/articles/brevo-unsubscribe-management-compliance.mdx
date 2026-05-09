@@ -1,0 +1,146 @@
+---
+title: "Brevo Unsubscribe Management: Staying CAN-SPAM and GDPR Compliant"
+description: "Learn how Brevo handles unsubscribes and how to stay fully compliant with CAN-SPAM, GDPR, and CASL. Includes preference centers, suppression lists, and audit trails."
+category: "Deliverability & List Management"
+categorySlug: "deliverability-list-management"
+readTime: "8 min read"
+---
+
+## Why Unsubscribe Management Is a Legal and Deliverability Issue
+
+Managing email unsubscribes correctly is not just good practice — in most countries, it is a legal requirement. The CAN-SPAM Act in the United States, GDPR in the European Union, CASL in Canada, and similar laws worldwide all impose strict requirements on how businesses handle subscriber opt-outs.
+
+Violations are not theoretical risks. Companies have been fined millions of dollars for continuing to send emails to people who have unsubscribed. Beyond legal risk, ignoring unsubscribes directly damages your sender reputation: contacts who receive emails after opting out will almost certainly mark them as spam, which compounds into deliverability problems that affect your entire sending program.
+
+Brevo automates most of the unsubscribe process, but understanding what happens behind the scenes — and how to configure your compliance setup correctly — is essential for any serious email marketer.
+
+## How Brevo Handles Unsubscribes
+
+### The Automatic Unsubscribe Link
+
+Every email sent through Brevo must contain an unsubscribe link. Brevo enforces this requirement — you cannot send a campaign that does not include an unsubscribe mechanism.
+
+By default, Brevo inserts an unsubscribe footer into every email campaign. This footer contains:
+- An unsubscribe link (managed by Brevo)
+- Your company's physical mailing address (required by CAN-SPAM)
+
+When a subscriber clicks the Brevo unsubscribe link, they are directed to a confirmation page. After confirming, they are immediately marked as "unsubscribed" in your Brevo account and suppressed from all future campaigns.
+
+The suppression is account-wide by default — a contact who unsubscribes from one list will not receive emails from any other list in your account. This is the safest compliance approach and matches the expectation of most subscribers.
+
+### Processing Time
+
+CAN-SPAM requires that unsubscribe requests be honored within 10 business days. Brevo processes them instantly — the contact is suppressed the moment they confirm the unsubscription. This ensures you exceed the legal requirement by a wide margin.
+
+### Blocking Manually Removed Contacts
+
+If you manually remove a contact from your list (for example, if a customer emails you directly requesting removal), you should add them to Brevo's suppression list to prevent them from being re-added through future imports.
+
+Go to "Contacts" → select the contact → click "Unsubscribe" rather than "Delete." This ensures their address is stored in your suppression history.
+
+## Customizing the Unsubscribe Experience
+
+The default Brevo unsubscribe page is functional but generic. For a better subscriber experience and potential list retention, customize it.
+
+### Custom Unsubscribe Landing Page
+
+In Brevo's settings, you can specify a custom URL for the unsubscribe confirmation page. This could be:
+- A page on your website that confirms the unsubscription and thanks the subscriber
+- A preference center page where subscribers can choose what emails they want to receive instead of unsubscribing entirely
+
+### Preference Center
+
+A preference center allows subscribers to manage their communication preferences rather than opting out completely. Instead of clicking "unsubscribe from all," they can choose:
+- Which topics they want to receive (Newsletter, Promotions, Product Updates)
+- How frequently they want to hear from you (Weekly, Monthly, Major announcements only)
+
+Brevo supports preference centers through its subscription forms. You can create a form that updates contact attributes (subscription preferences) and link to it from your email footer alongside the unsubscribe link.
+
+Preference centers reduce unsubscribes by 20-40% in many cases, because many subscribers who would otherwise opt out completely are actually just experiencing frequency fatigue or irrelevant content — issues that a preference center directly addresses.
+
+### List-Level Unsubscribes
+
+For advanced use cases, Brevo can be configured to allow list-specific unsubscribes rather than account-wide suppression. For example, a subscriber could unsubscribe from your "Weekly Newsletter" list while remaining on your "Product Alerts" list.
+
+This requires careful setup using Brevo's contact attribute management and custom unsubscribe flows, but can significantly improve subscriber retention for businesses with distinct email programs.
+
+## GDPR Compliance in Brevo
+
+The EU's General Data Protection Regulation (GDPR) imposes additional requirements on businesses that send email to EU residents.
+
+### Consent Requirements Under GDPR
+
+GDPR requires that consent for email marketing be:
+- **Freely given:** Not bundled with other terms (e.g., a checkbox pre-ticked during checkout)
+- **Specific:** Clear about what emails they will receive
+- **Informed:** Subscribers know who is collecting their data and how it will be used
+- **Unambiguous:** An opt-in action (checking a box) rather than an opt-out default
+
+Brevo's subscription forms support GDPR-compliant consent collection. You can add a consent checkbox with a custom label and privacy policy link to any Brevo signup form.
+
+### Storing Consent Records
+
+GDPR requires you to be able to prove that you have valid consent for each subscriber. Brevo stores consent data at the contact level, including:
+- The date and time of subscription
+- The form or source through which they subscribed
+- The IP address at the time of subscription (if collected)
+
+Access this data for any contact: "Contacts" → click on the contact → "Communication History."
+
+### Right to Erasure (Right to Be Forgotten)
+
+Under GDPR, EU residents can request that you delete all personal data you hold about them. For Brevo contacts, this means:
+- Deleting the contact record entirely
+- Ensuring the email address is not on any remaining lists
+
+Brevo's contact deletion feature permanently removes the contact and all associated data. After deletion, the email address is added to a suppression list so it is not re-imported.
+
+**Important:** Brevo recommends keeping a record of the deletion request and its fulfillment date for your own compliance documentation, even though the contact record is deleted.
+
+## CAN-SPAM Compliance Checklist
+
+For senders targeting US recipients:
+
+- Every email includes a clear, working unsubscribe link
+- Unsubscribes are processed within 10 business days (Brevo processes instantly)
+- Your physical mailing address is included in every email footer
+- The "From" name and email address accurately identify the sender
+- Subject lines are not deceptive about the email's content
+- The email is clearly identified as an advertisement if it is commercial in nature
+- You do not send to people who have previously opted out
+
+### CAN-SPAM Address in Brevo
+
+Brevo automatically includes your sender address in the email footer. To ensure this is correct, go to "Settings" → "Senders and IPs" and verify that the address associated with your sender profile is your current, valid business address.
+
+## CASL Compliance (Canada)
+
+Canada's Anti-Spam Legislation (CASL) is stricter than CAN-SPAM. Key requirements:
+
+- **Express consent required:** CASL does not allow implied consent for commercial email marketing. Contacts must have actively opted in.
+- **ID disclosure required:** Every email must identify your organization and provide contact information.
+- **Unsubscribe mechanism:** Must be functional within 10 business days (Brevo processes instantly).
+- **Two-year limit on implied consent:** Any implied consent (such as a business relationship) expires after two years.
+
+If you have Canadian contacts, ensure your signup forms use explicit, unchecked consent checkboxes. Do not pre-populate consent.
+
+## Monitoring Your Compliance Status
+
+Brevo provides visibility into your unsubscribe and compliance data:
+
+- **Unsubscribed contacts:** "Contacts" → filter by status "Unsubscribed"
+- **Blocked contacts:** "Contacts" → filter by status "Blocked" (hard bounced and spam complainers)
+- **Campaign unsubscribe rates:** Available for every campaign in "Campaigns" → statistics
+
+Review these regularly. An unsubscribe rate above 0.5% on a campaign typically signals a targeting, content, or frequency problem.
+
+## Brevo Plan Comparison
+
+| Plan | Price | Emails/Month | Key Features |
+|------|-------|--------------|--------------|
+| Free | $0/month | 300/day | Automatic unsubscribe, suppression list, GDPR consent forms |
+| Starter | From $25/month | 20,000 | Full compliance tools, no daily limit, audit history |
+| Business | From $65/month | 20,000+ | Preference centers, advanced segmentation, automation compliance |
+| Enterprise | Custom pricing | Unlimited | Legal compliance review, dedicated DPO support, custom retention |
+
+Brevo makes compliance manageable by automating the most critical elements. Combine Brevo's built-in tools with proper consent collection practices, and you will have a legally compliant email program that your subscribers trust.

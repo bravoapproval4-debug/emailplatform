@@ -1,0 +1,177 @@
+---
+title: "Brevo Welcome Series: Setting Up Your First Automation"
+description: "Build a high-converting Brevo welcome email series from scratch. Step-by-step instructions for creating triggers, writing sequences, and optimizing performance."
+category: "Automation & Workflows"
+categorySlug: "automation-workflows"
+readTime: "9 min read"
+---
+
+## Why a Welcome Series Is Your Most Valuable Automation
+
+The moment someone subscribes to your email list is the most valuable moment in your entire relationship with that subscriber. They have just made a deliberate choice to hear from you. Their attention is high, their memory of signing up is fresh, and they are in the best possible state to engage with your content.
+
+That is why a well-crafted welcome series consistently outperforms every other type of email you will send. Welcome emails generate 4x more opens and 5x more clicks than standard email broadcasts. They are the highest-leverage automation you can build in Brevo.
+
+This guide shows you exactly how to set up a complete welcome series inside Brevo — from the trigger to the final email.
+
+## What a Welcome Series Accomplishes
+
+A welcome series is not just a friendly greeting. It is a structured onboarding experience designed to:
+
+1. **Deliver on your promise** — Give subscribers whatever you offered in exchange for their email (a lead magnet, a discount, exclusive content)
+2. **Establish your brand voice** — Show subscribers who you are and what makes you worth reading
+3. **Educate** — Help subscribers understand the value of what you offer
+4. **Build trust** — Share proof, stories, and results before asking for anything
+5. **Convert** — Introduce your products or services at the right moment, after trust is established
+
+Most businesses make the mistake of sending one welcome email and moving on. A 5-7 email series is far more effective because it mimics a real relationship — one that develops over days, not seconds.
+
+## Planning Your Welcome Series
+
+Before you open Brevo's automation builder, plan your sequence on paper. Map out:
+
+- **How many emails?** A series of 5-7 emails over 10-14 days is a proven structure. You can start with fewer and expand later.
+- **What goes in each email?** Each email should have one clear topic and one primary call to action.
+- **What spacing?** Space early emails 1-2 days apart, later emails 2-3 days apart.
+- **What is the end goal?** The final email should make a clear, confident ask — whether that is to buy a product, book a call, or start a free trial.
+
+### Sample 6-Email Welcome Structure
+
+**Email 1 — Welcome (send immediately):**
+Deliver the promised resource. Thank the subscriber. Briefly tell them what to expect from your emails.
+
+**Email 2 — Your Best Free Content (Day 2):**
+Share your most useful blog post, guide, video, or resource. This email provides value without asking for anything.
+
+**Email 3 — Your Story (Day 4):**
+Tell the story behind your business or your own journey with the topic. People connect with stories. This builds the emotional foundation for everything that follows.
+
+**Email 4 — Social Proof (Day 6):**
+Share a customer success story, testimonial, or case study. Show results that are relevant to what the subscriber wants to achieve.
+
+**Email 5 — Introduce Your Offer (Day 8):**
+Now that you have established trust, introduce your product or service. Be clear about what it is, who it is for, and what it costs. Focus on the outcome it delivers, not its features.
+
+**Email 6 — Objection Handling (Day 11):**
+Address the main reasons someone would hesitate to take action. Price, time, uncertainty about results — acknowledge these concerns and respond to them honestly.
+
+**Email 7 (Optional) — Urgency or Incentive (Day 14):**
+A time-limited offer or bonus for subscribers who have been engaged but have not yet converted. This is your best opportunity to move fence-sitters to a decision.
+
+## Setting Up the Trigger in Brevo
+
+Log in to Brevo and navigate to "Automation" → "Create a Workflow." Choose "Start from scratch" for full control.
+
+**Trigger: Contact subscribes to a list**
+
+Configure the trigger:
+1. Click "Select a trigger"
+2. Choose "Contact subscribes to a list"
+3. Select the list that new subscribers are added to (for example, "Newsletter Subscribers")
+4. Click "Save"
+
+If you have multiple subscription sources (a website form, a landing page, an integration), make sure all of them add contacts to the same triggering list.
+
+## Adding Email Actions and Wait Steps
+
+After the trigger, add your first email action:
+
+1. Click the "+" below the trigger
+2. Select "Send an email"
+3. Click "Select a template" and choose the email you have prepared for Email 1
+4. Set the delivery time: send immediately
+
+Then add a wait step:
+1. Click "+" below the first email action
+2. Select "Wait"
+3. Set to "2 days"
+
+Then add your second email:
+1. Click "+" after the wait step
+2. Select "Send an email"
+3. Choose Email 2's template
+4. Set delivery: at a specific time (e.g., 9am)
+
+Continue this pattern — email, wait, email, wait — until all your emails are added.
+
+## Adding Conditional Branching
+
+Once you have the basic sequence in place, you can add intelligence with conditional branches. After Email 4 (social proof), add a condition:
+
+1. Click "+" after Email 4's wait step
+2. Select "If/Else"
+3. Condition: "Contact opened Email 4"
+4. Branch A (Yes — opened): Send Email 5A (a slightly more advanced offer)
+5. Branch B (No — did not open): Send Email 5B (a simpler version with a different subject line)
+
+This doubles as an A/B test for your content approach. Over time, you will learn which angle resonates better with your audience.
+
+## Writing the Emails
+
+Each email in your welcome series should:
+
+- Have a specific, non-clickbait subject line
+- Open with a sentence that establishes context (why you are writing, what this email is about)
+- Deliver on that promise in 150-300 words
+- End with a single call to action
+- Include a one-sentence PS — a surprisingly effective placement for a key message or secondary link
+
+Keep early emails short. As the series progresses and trust builds, you can write longer, more detailed emails without losing the reader.
+
+### Subject Line Examples
+
+- Email 1: "Your [lead magnet name] is right here, [first name]"
+- Email 2: "The [topic] guide I wish someone had sent me"
+- Email 3: "Why I started [Company Name] (the real story)"
+- Email 4: "[Customer name] went from [problem] to [result] in 30 days"
+- Email 5: "Here's what [Product Name] does for businesses like yours"
+- Email 6: "The honest answer to 'Is it worth it?'"
+- Email 7: "Last chance: [offer] expires at midnight"
+
+## Testing the Workflow
+
+Before activating, test your welcome series by adding yourself as a contact to the triggering list:
+
+1. Go to "Contacts" → "Add a Contact"
+2. Add your personal email address
+3. Assign it to the triggering list
+
+Watch the workflow run. Check each email as it arrives. Look for:
+- Subject line and preview text rendering correctly
+- Images loading
+- Links working
+- Personalization tags resolved (your first name appearing, not `{{ contact.FIRSTNAME }}`)
+- Wait steps firing at the correct intervals
+
+Once everything looks correct, remove your test contact and activate the workflow.
+
+## Key Metrics to Track
+
+After your welcome series has been running for a few weeks with real subscribers, review these metrics for each step:
+
+- **Open rate per email:** Should be highest for Email 1 and gradually decrease. If a middle email has a sudden drop, investigate its subject line.
+- **Click rate per email:** Shows which content resonates most. High click rates on the social proof email confirm your case study is compelling.
+- **Unsubscribe rate per email:** Above 1% on any single email is a warning sign — that email may be too aggressive or off-topic.
+- **Conversion rate:** How many subscribers who complete the series ultimately take your desired action? Track this with UTM parameters on your CTA links.
+
+## Optimizing Over Time
+
+A welcome series is never truly finished. As you collect data:
+
+- A/B test subject lines on your lowest-open emails
+- Swap in newer social proof or case studies as you collect them
+- Adjust the timing between emails based on unsubscribe patterns
+- Add or remove emails based on engagement drop-off points
+
+The goal is a sequence that steadily improves with each iteration, converting an increasing percentage of new subscribers into engaged readers and customers.
+
+## Brevo Plan Comparison
+
+| Plan | Price | Emails/Month | Key Features |
+|------|-------|--------------|--------------|
+| Free | $0/month | 300/day | Basic welcome automation |
+| Starter | From $25/month | 20,000 | Full automation workflows, no branding, no daily limit |
+| Business | From $65/month | 20,000+ | Advanced conditions, branching, send time optimization |
+| Enterprise | Custom pricing | Unlimited | Custom triggers, API events, dedicated support |
+
+A great welcome series is the single best investment you can make in your Brevo automation setup. Build it once, improve it over time, and let it do the work of turning new subscribers into loyal customers.

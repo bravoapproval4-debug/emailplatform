@@ -1,0 +1,163 @@
+---
+title: "Brevo Transactional Emails: Setup and Best Practices"
+description: "Learn how to set up and optimize transactional emails in Brevo. Covers SMTP setup, API integration, templates, and deliverability for order confirmations and notifications."
+category: "Automation & Workflows"
+categorySlug: "automation-workflows"
+readTime: "10 min read"
+---
+
+## What Are Transactional Emails?
+
+Transactional emails are automated messages triggered by a specific user action or system event. Unlike marketing campaigns, which are sent to a list of subscribers at a chosen time, transactional emails are sent to individuals in response to something they did or something that happened to them.
+
+Common examples include:
+
+- Order confirmation emails
+- Shipping notification emails
+- Password reset emails
+- Account activation or email verification messages
+- Invoice or payment receipt emails
+- Subscription renewal reminders
+- Two-factor authentication codes
+
+Transactional emails have the highest open rates of any email type — often above 50% — because recipients are expecting them. They have actively triggered the email by taking an action, so they are actively looking for it.
+
+Brevo provides a dedicated transactional email service that is separate from its marketing email system. This separation is important for deliverability: keeping your transactional and marketing email flows on separate infrastructure (or separate IP addresses) prevents marketing email issues from affecting the delivery of critical transactional messages.
+
+## Two Ways to Send Transactional Emails with Brevo
+
+### Option 1: SMTP Relay
+
+The SMTP relay option allows you to route emails from any application through Brevo's servers using standard SMTP credentials. This is the fastest way to set up transactional email if your platform or application already supports SMTP configuration.
+
+Examples of platforms that support SMTP:
+- WordPress (with WP Mail SMTP plugin or similar)
+- WooCommerce
+- Magento
+- PrestaShop
+- Any custom application with an SMTP email library
+
+**Setup steps:**
+
+1. Log into Brevo and go to "Transactional" → "Settings" → "SMTP and API"
+2. Click "Generate a New SMTP Key"
+3. Copy the SMTP credentials:
+   - **SMTP Server:** smtp-relay.brevo.com
+   - **Port:** 587 (TLS) or 465 (SSL)
+   - **Login:** your Brevo account email
+   - **Password:** the generated SMTP key (not your account password)
+4. Enter these credentials in your application's email settings
+
+Once configured, all emails sent through your application will route through Brevo's servers and appear in your Brevo transactional email logs.
+
+### Option 2: Brevo API
+
+For developers building custom applications, the Brevo API provides programmatic control over transactional email sending. The API allows you to:
+
+- Send emails from your backend code
+- Specify recipients, subject, content, and attachments dynamically
+- Use pre-built templates stored in Brevo with dynamic variables
+- Track delivery, opens, and clicks for each individual email
+
+The Brevo API is available in multiple languages with official SDKs: Node.js, Python, PHP, Ruby, Java, and C#.
+
+**Basic API send example (Node.js):**
+
+```
+const SibApiV3Sdk = require('sib-api-v3-sdk');
+const apiInstance = new SibApiV3Sdk.TransactionalEmailsApi();
+
+const sendSmtpEmail = {
+  to: [{ email: 'customer@example.com', name: 'John Doe' }],
+  templateId: 1,
+  params: { ORDER_ID: '12345', PRODUCT_NAME: 'Blue Sneakers' }
+};
+
+apiInstance.sendTransacEmail(sendSmtpEmail);
+```
+
+The `templateId` references a template you have created in Brevo's interface. The `params` object passes dynamic data that will be inserted into the template using Brevo's template syntax.
+
+## Creating Transactional Email Templates
+
+Brevo allows you to build transactional email templates in the same drag-and-drop editor used for marketing campaigns. Go to "Transactional" → "Templates" → "Create a Template."
+
+### Template Variables
+
+In transactional templates, you use double-curly-brace syntax to insert dynamic data:
+
+- `{{ params.ORDER_ID }}` — order number
+- `{{ params.CUSTOMER_NAME }}` — recipient's name
+- `{{ params.AMOUNT }}` — payment amount
+- `{{ params.TRACKING_URL }}` — shipment tracking link
+
+The variable names must match exactly what you pass in the `params` object when sending the email via API or SMTP (using supported platforms).
+
+### Best Practices for Transactional Template Design
+
+**Keep it simple and functional.** Transactional emails should be easy to scan and action quickly. Avoid heavy promotional design — it looks out of place in an order confirmation and can trigger spam filters.
+
+**Make the key information obvious.** For an order confirmation, the order number, items, and total should be visible in the first screenful without scrolling.
+
+**Include clear next steps.** What should the recipient do next? Track their order, download their purchase, reset their password? Make the next action obvious with a prominent button.
+
+**Add a human touch in the footer.** Include a support email address and a sentence like "Questions? Reply to this email or contact support." This reduces friction when customers need help.
+
+**Match your brand.** Use your logo, brand colors, and consistent typography even in transactional emails. Customers who receive beautiful transactional emails develop more trust in the brand.
+
+## Setting Up Domain Authentication for Transactional Email
+
+Deliverability for transactional emails depends heavily on proper authentication. Brevo requires you to authenticate your sending domain before you can send transactional emails reliably.
+
+Go to "Transactional" → "Settings" → "Sender Domains" and add your domain. Brevo will provide three DNS records to add:
+
+1. **SPF record (TXT):** Tells receiving servers that Brevo is authorized to send on behalf of your domain
+2. **DKIM record (TXT):** Cryptographically signs your emails so recipients can verify they have not been tampered with
+3. **DMARC record (TXT):** Tells receiving servers what to do if SPF or DKIM fails
+
+Log into your domain registrar's DNS management panel and add these records. Brevo provides detailed instructions for GoDaddy, Namecheap, Cloudflare, and other major registrars.
+
+After adding the records, click "Verify" in Brevo. Verification can take up to 24-48 hours, though it is often much faster.
+
+## Monitoring Transactional Email Performance
+
+Brevo provides a dedicated log for transactional emails. Go to "Transactional" → "Email Activity" to see every transactional email sent, along with its delivery status, open status, and click data.
+
+You can filter by:
+- Specific email address (see all emails sent to a particular customer)
+- Template ID
+- Event type (delivered, opened, clicked, bounced, spam complaint)
+- Date range
+
+This log is invaluable for debugging delivery issues. If a customer reports they did not receive an order confirmation, you can look up their email address in the log and see exactly what happened — whether it was delivered, bounced, or filtered.
+
+## Handling Bounces and Complaints
+
+Brevo automatically tracks bounces and spam complaints for transactional emails:
+
+**Hard bounces:** Email addresses that permanently reject email. These are typically invalid addresses. Brevo blocks future sends to hard-bounced addresses.
+
+**Soft bounces:** Temporary delivery failures (full mailbox, server temporarily unavailable). Brevo retries soft-bounced emails automatically.
+
+**Spam complaints:** Contacts who mark your email as spam. If you receive a complaint on a transactional email, it may indicate that your application is generating emails the recipient did not expect or recognize.
+
+Monitor your bounce and complaint rates regularly. Keeping your bounce rate below 2% and your complaint rate below 0.1% is essential for maintaining strong transactional email deliverability.
+
+## Dedicated IP for High-Volume Senders
+
+If you send large volumes of transactional email (typically 100,000+ emails per month), Brevo recommends a dedicated IP address. With a dedicated IP, your sender reputation is entirely determined by your own sending practices — not affected by other senders on the shared IP pool.
+
+Dedicated IPs require a "warm-up" period: you gradually increase your sending volume over 4-8 weeks to build a positive reputation with receiving email servers.
+
+Dedicated IPs are available on Brevo's Enterprise plan.
+
+## Brevo Plan Comparison
+
+| Plan | Price | Emails/Month | Key Features |
+|------|-------|--------------|--------------|
+| Free | $0/month | 300/day | SMTP relay, basic API access, transactional logs |
+| Starter | From $25/month | 20,000 | No daily limit, full API access, real-time logs |
+| Business | From $65/month | 20,000+ | Advanced analytics, webhook events, multi-user access |
+| Enterprise | Custom pricing | Unlimited | Dedicated IP, custom SLA, SSO, premium support |
+
+Brevo's transactional email infrastructure is enterprise-grade, fast, and affordable — making it an excellent choice for businesses of any size that need reliable delivery of their most critical automated messages.

@@ -1,0 +1,157 @@
+---
+title: "Brevo List Hygiene: Cleaning and Maintaining Your Email Database"
+description: "Keep your Brevo email list healthy and your deliverability strong. Learn how to remove bad addresses, manage unengaged subscribers, and maintain a clean database."
+category: "Deliverability & List Management"
+categorySlug: "deliverability-list-management"
+readTime: "9 min read"
+---
+
+## What Is Email List Hygiene?
+
+Email list hygiene refers to the ongoing process of cleaning, updating, and maintaining your email subscriber database to ensure it contains accurate, valid, and engaged contacts. A well-maintained list produces better deliverability, higher open rates, lower unsubscribe rates, and ultimately more revenue per email sent.
+
+Neglecting list hygiene is one of the most common reasons that email marketing programs underperform. As your list ages, contacts naturally become invalid (people change jobs and their email addresses become inactive), disengaged (people lose interest but do not unsubscribe), or harmful (spam traps planted by email providers to catch senders with poor acquisition practices).
+
+Brevo provides powerful tools for monitoring list health and taking action on problematic contacts. This guide covers the full process of keeping your Brevo list clean.
+
+## Why List Hygiene Matters for Deliverability
+
+Every email you send to an invalid, inactive, or harmful address has consequences beyond just that one failed delivery:
+
+**Hard bounces damage your sender reputation.** When a high percentage of your emails bounce (because addresses are invalid), email providers interpret this as a sign that you acquired your list improperly. Bounce rates above 2% can trigger deliverability penalties.
+
+**Spam trap hits are extremely damaging.** Email providers maintain "spam trap" addresses — old, abandoned email addresses that legitimate senders should not have on their lists. If you are sending to these addresses, it signals that your list acquisition practices are poor. A single spam trap hit can severely damage your sender reputation.
+
+**Low engagement hurts inbox placement.** Gmail and other major providers track whether recipients open, click, or engage with your emails. If large portions of your list consistently ignore your emails, providers interpret this as a signal that your content is unwanted and may route future emails to the spam folder.
+
+**Lower engagement inflates costs.** Sending emails to people who will never engage wastes send volume (especially on plans with sending caps) and obscures your true campaign performance metrics.
+
+## Types of Problematic Contacts
+
+### Hard Bounces
+
+Email addresses that return a permanent delivery error. These are typically:
+- Addresses that do not exist (typos in signup forms, made-up addresses)
+- Domains that are no longer active
+- Addresses that have been shut down (former employee addresses, closed accounts)
+
+Brevo automatically moves hard-bounced addresses to a "blocked" list after a single hard bounce. They will not receive future emails and do not count against your deliverability.
+
+### Soft Bounces
+
+Temporary delivery failures. Brevo retries these automatically. After multiple consecutive soft bounces (typically 5), Brevo may reclassify the contact as hard bounced or blocked. Common causes:
+- Recipient's mailbox is full
+- Server temporarily unavailable
+- Message too large for the recipient's server
+
+### Unsubscribed Contacts
+
+Contacts who have clicked the unsubscribe link. Brevo automatically suppresses these contacts — they will not receive future email campaigns. They remain in your contact database as "unsubscribed" for record-keeping purposes.
+
+### Spam Complainers
+
+Contacts who have marked your email as spam. Brevo receives these signals via feedback loops from major email providers and suppresses these contacts automatically.
+
+### Inactive / Unengaged Subscribers
+
+Valid email addresses that have never opened or clicked any of your emails in a long time (typically 90+ days). Brevo does not automatically remove these — that is your responsibility.
+
+## Identifying Unengaged Subscribers in Brevo
+
+Brevo's segmentation tools allow you to build a dynamic segment of unengaged subscribers. Go to "Contacts" → "Segments" → "Create a Segment":
+
+**Condition 1:** Contact was added to list [Newsletter] before 90 days ago  
+**AND**  
+**Condition 2:** Contact has not opened any campaign in the last 90 days  
+**AND**  
+**Condition 3:** Contact has not clicked any campaign in the last 90 days
+
+Save this segment as "Unengaged Subscribers 90 Days." This segment will dynamically update to always reflect your current unengaged contacts.
+
+You can also build more nuanced versions:
+- "Never opened": contacts who have never opened a single email since subscribing
+- "Unengaged 180 days": contacts who have not engaged in 6 months
+- "Ghost subscribers": in your list for 12+ months with zero engagement
+
+## Running a Re-Engagement Campaign
+
+Before removing unengaged subscribers from your list, run a re-engagement campaign to identify anyone who might still be interested. Many subscribers stop opening emails for reasons unrelated to interest — busy periods, changed devices, inbox filter changes.
+
+A re-engagement sequence in Brevo:
+
+**Email 1 — "Are we still friends?"**
+Subject: "We miss you, [firstname]"
+Content: Acknowledge that they have not been hearing from you recently. Remind them of the value you provide. Ask them to click a button to stay subscribed.
+
+**Wait 5 days**
+
+**Email 2 — Final notice**
+Subject: "This is goodbye (unless you say otherwise)"
+Content: Make it clear this is the last email they will receive unless they take action. Include a clear "Keep me subscribed" button.
+
+**Condition:** Did the contact click the keep-me-subscribed button?
+- Yes: Move to "Re-engaged" list, continue sending normally
+- No: Proceed to removal process
+
+Typically 5-20% of unengaged subscribers will re-engage during this sequence. The rest should be removed.
+
+## Removing Unengaged Contacts
+
+After the re-engagement campaign, remove non-responsive contacts from your sending lists. In Brevo:
+
+1. Build a segment of unengaged contacts who did not re-engage
+2. Navigate to that segment
+3. Select all contacts
+4. Use the "Delete" or "Unsubscribe from all lists" action
+
+Do not delete the contact record entirely if you need it for legal compliance (GDPR requires you to maintain a record of consent and unsubscribes). Instead, remove them from all active sending lists — they will no longer receive campaigns.
+
+## Verifying New Contacts at the Point of Capture
+
+The best time to ensure list quality is before a bad contact gets onto your list.
+
+### Double Opt-In
+
+The most effective protection against fake, mistyped, or spam-trap email addresses is a double opt-in (confirmed opt-in) process. After someone enters their email address in your signup form, they receive a confirmation email with a link they must click to complete their subscription.
+
+This ensures:
+- The email address is real and deliverable
+- The person who signed up is the person who controls that address
+- No one can maliciously add someone else to your list
+
+In Brevo, enable double opt-in in your subscription form settings: "Contacts" → "Forms" → edit your form → "Enable confirmation email."
+
+### Email Validation Tools
+
+For large imports of existing contact lists, consider running addresses through an email validation service before importing into Brevo. These services check each address for:
+- Valid format
+- Deliverable domain
+- Presence on known spam trap lists
+- Role-based addresses (info@, admin@) that should be treated with caution
+
+Tools like ZeroBounce, NeverBounce, and Kickbox integrate with Brevo and can clean lists before import.
+
+## Regular Maintenance Schedule
+
+Treat list hygiene as an ongoing process, not a one-time cleanup:
+
+| Frequency | Action |
+|-----------|--------|
+| After every campaign | Review bounce and complaint rates |
+| Monthly | Check bounce accumulation, remove hard bounces if any got through |
+| Quarterly | Run re-engagement campaign for 90-day inactive segment |
+| Bi-annually | Full list audit: remove "never opened" contacts from import |
+| Annually | Review all suppression lists, archive old campaigns |
+
+Maintaining this schedule prevents the gradual deterioration that affects most email lists over time.
+
+## Brevo Plan Comparison
+
+| Plan | Price | Emails/Month | Key Features |
+|------|-------|--------------|--------------|
+| Free | $0/month | 300/day | Automatic bounce handling, unsubscribe management, basic segmentation |
+| Starter | From $25/month | 20,000 | Full segmentation for list hygiene, no daily sending cap |
+| Business | From $65/month | 20,000+ | Advanced behavioral segments, automation for re-engagement |
+| Enterprise | Custom pricing | Unlimited | Dedicated IP, advanced suppression management, custom support |
+
+A clean list is a profitable list. Invest the time in regular list hygiene and you will see steady improvements in your open rates, click rates, and overall Brevo campaign performance.

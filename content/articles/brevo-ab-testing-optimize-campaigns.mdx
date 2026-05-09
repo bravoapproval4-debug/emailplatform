@@ -1,0 +1,152 @@
+---
+title: "Brevo A/B Testing: How to Optimize Your Campaigns"
+description: "Learn how to run effective A/B tests in Brevo to improve open rates, click rates, and conversions. Covers what to test, how to set up tests, and how to interpret results."
+category: "Analytics & Reporting"
+categorySlug: "analytics-reporting"
+readTime: "9 min read"
+---
+
+## What Is A/B Testing and Why It Matters in Email Marketing
+
+A/B testing — also called split testing — is the practice of sending two or more versions of an email to segments of your audience to determine which version performs better, then using the winner for the remainder of your list or for future campaigns.
+
+Without A/B testing, email marketing decisions are based on intuition. With A/B testing, they are based on evidence from your actual audience. The difference in results over time is substantial — marketers who A/B test consistently report 25-50% improvements in key metrics over those who do not.
+
+Brevo includes A/B testing functionality on its Business and Enterprise plans. This guide covers how to use it effectively — from planning your test to interpreting results and applying learnings.
+
+## What Can You A/B Test in Brevo?
+
+Brevo's A/B testing feature allows you to test:
+
+- **Subject lines:** The most impactful variable to test. Even a 5% improvement in open rate compounds significantly over time.
+- **Sender name / From name:** Testing "Sarah from Acme" vs. "Acme" vs. "Acme Team" can reveal significant differences in recognition and trust.
+- **Preview text (preheader):** The second line of text subscribers see before opening.
+- **Send time:** Test whether sending at 9am vs. 2pm vs. 6pm produces better opens and clicks for your audience.
+- **Email design:** Compare two completely different layouts, color schemes, or structural approaches.
+- **Content and copy:** Test long-form vs. short-form emails, or two different angles for the same offer.
+- **Call-to-action button text:** "Get started" vs. "Claim your offer" vs. "See how it works."
+
+## The Golden Rule of A/B Testing: Test One Variable at a Time
+
+Changing multiple elements between version A and version B makes it impossible to know which change caused the difference in performance. If you change the subject line, the CTA button color, and the email length all at once, you cannot attribute the winning performance to any specific change.
+
+Always test exactly one variable at a time. Test your subject lines first (because they have the highest impact on open rate), then move to testing content, design, and CTAs.
+
+## Setting Up an A/B Test in Brevo
+
+### Step 1: Start a New Campaign
+
+Navigate to "Campaigns" → "Create an email campaign." At the campaign setup step, you will see an option for "A/B test." Select this.
+
+### Step 2: Configure Your A/B Test
+
+**Choose what to test:**
+Select the element you want to compare. The most common starting point is subject lines.
+
+**Define your variations:**
+Enter the content for Version A and Version B. If you are testing subject lines:
+- Version A: "Your exclusive discount expires tonight"
+- Version B: "24 hours left — 30% off everything in your cart"
+
+**Set the test size:**
+Choose what percentage of your total audience will receive the test. Common splits are:
+- 50/50: Equal split with no automatic winner — you manually review and choose
+- 20/80: 20% of your list receives the test (10% each to A and B), 80% held back for the winner
+- 30/70: 30% in the test, 70% for the winner
+
+The 20/80 or 30/70 approach is ideal when you want to maximize performance for the largest portion of your audience.
+
+**Choose the winner determination method:**
+- **By open rate:** Best for testing subject lines and sender names
+- **By click rate:** Best for testing content and CTAs
+- **Manually:** You review the results and choose the winner yourself
+
+**Set the test duration:**
+How long will you let the test run before declaring a winner? Brevo recommends at least 4-6 hours for a meaningful sample. For smaller lists, longer periods (12-24 hours) provide better statistical significance.
+
+### Step 3: Design Your Email
+
+Design both versions of the email. If you are only testing the subject line, both versions will have identical email body content — only the subject lines differ.
+
+### Step 4: Send and Wait
+
+Send the campaign. Brevo will automatically distribute version A to half the test group and version B to the other half.
+
+Once the test period completes, Brevo will either automatically send the winning version to the remainder of your list (if you set automatic winner selection) or notify you to review the results and choose manually.
+
+## Planning a Testing Roadmap
+
+Rather than testing at random, plan a systematic testing program. Start with the variables that have the highest impact, then work down to smaller optimizations:
+
+**Phase 1 — Subject Line Testing (Month 1-3)**
+Test subject line styles:
+- Question vs. statement
+- Short (under 30 char) vs. medium (30-50 char)
+- Personalized vs. non-personalized
+- Specific number/data vs. vague promise
+
+**Phase 2 — CTA Testing (Month 4-6)**
+Test call-to-action variables:
+- Button text (action-oriented vs. benefit-oriented)
+- Button placement (above the fold vs. below content)
+- Button color (brand color vs. contrasting color)
+
+**Phase 3 — Content Testing (Month 7-9)**
+Test email structure:
+- Long-form vs. short-form
+- Image-heavy vs. text-heavy
+- Single column vs. two column
+- Formal tone vs. conversational tone
+
+**Phase 4 — Send Time Testing (Ongoing)**
+Test when to send:
+- Morning vs. afternoon
+- Weekday vs. weekend
+- Different day-of-week combinations
+
+## Interpreting A/B Test Results
+
+### Statistical Significance
+
+A/B test results are only meaningful when the difference between variants is statistically significant — i.e., large enough that it is unlikely to be due to random variation.
+
+Brevo indicates statistical significance in its test results. Look for:
+- A confidence level of 95% or higher before declaring a winner
+- A large enough sample size (generally at least 1,000 recipients per variant for reliable results)
+
+**Common A/B testing mistake:** Declaring a winner too early. If version A has a 25% open rate and version B has a 22% open rate after only 100 recipients each, this difference could easily be random. Wait for sufficient sample size.
+
+### Effect Size Matters
+
+A statistically significant result is not automatically a meaningful result. A 0.5% improvement in open rate (from 20.0% to 20.5%) is statistically significant with a large enough sample, but it has minimal practical impact.
+
+Focus on changes that produce improvements of 2-5% or more in the metric you are optimizing. Small improvements compound over time but are not worth overhauling your entire approach.
+
+### Document and Apply Learnings
+
+Create a testing log to track every test:
+
+| Date | Variable Tested | Version A | Version B | Winner | Improvement |
+|------|----------------|-----------|-----------|--------|-------------|
+| Month 1 | Subject line | Question style | Statement style | Version A | +4.2% OR |
+| Month 2 | CTA text | "Get started" | "Claim offer" | Version B | +1.8% CTR |
+| Month 3 | Email length | Short | Long | Version A | +2.1% CTR |
+
+Over 12 months of systematic testing, the compounded improvements from your documented learnings will fundamentally transform your email performance.
+
+## A/B Testing in Automation Workflows
+
+In addition to campaign-level A/B testing, Brevo's automation workflows support branching logic that functions as a form of conditional A/B testing. You can send different emails to contacts based on their behavior (did they open email 3?) and compare the performance of each branch.
+
+This is particularly useful for welcome sequences and post-purchase onboarding, where you can test different paths through the sequence and continuously optimize the flow.
+
+## Brevo Plan Comparison
+
+| Plan | Price | Emails/Month | Key Features |
+|------|-------|--------------|--------------|
+| Free | $0/month | 300/day | No A/B testing feature |
+| Starter | From $25/month | 20,000 | No A/B testing feature |
+| Business | From $65/month | 20,000+ | Full A/B testing on campaigns, automatic winner sending |
+| Enterprise | Custom pricing | Unlimited | A/B testing at scale, dedicated optimization support |
+
+A/B testing is available on Brevo's Business and Enterprise plans. If you are on Starter, upgrading to Business for A/B testing access alone is often worth it — the improvement in results from systematic testing typically pays for the plan difference many times over.

@@ -1,0 +1,170 @@
+---
+title: "Brevo Automation: Complete Guide to Email Workflows"
+description: "Master Brevo marketing automation from start to finish. Learn how to build email workflows, set triggers, create conditions, and automate your entire customer journey."
+category: "Automation & Workflows"
+categorySlug: "automation-workflows"
+readTime: "11 min read"
+---
+
+## What Is Brevo Marketing Automation?
+
+Brevo's marketing automation feature allows you to send emails automatically based on triggers, conditions, and time delays — without any manual work after the initial setup. Instead of sending a campaign to your whole list at a fixed time, automation sends the right message to the right person at the exact moment they are most likely to engage.
+
+Every business that does email marketing eventually reaches the same conclusion: automated emails outperform manual campaigns in almost every metric. They get higher open rates, higher click-through rates, and generate more revenue per email — because they are triggered by behavior, not a calendar.
+
+This guide covers everything you need to know to build effective automation workflows in Brevo.
+
+## The Building Blocks of Brevo Automation
+
+Every Brevo automation workflow consists of three fundamental components:
+
+### 1. Triggers
+
+A trigger is the event that starts the workflow for a contact. Brevo supports multiple trigger types:
+
+- **Contact activity:** A contact subscribes to a list, fills out a form, is added manually
+- **Email activity:** A contact opens a campaign, clicks a specific link, does not open within X days
+- **Website activity:** A contact visits a specific page (requires Brevo tracking code installed on your site)
+- **Contact attribute change:** An attribute value changes, for example, a plan upgrade or a purchase date
+- **API trigger:** A custom event sent from your application via Brevo's API
+
+### 2. Conditions
+
+After a trigger, conditions filter which contacts continue through the workflow and which are excluded. Conditions check contact attributes or behavior:
+
+- Is the contact's country "France"?
+- Has the contact purchased in the last 30 days?
+- Is the contact's email domain a business domain?
+
+### 3. Actions
+
+Actions are what Brevo does when a contact reaches that step in the workflow:
+
+- **Send email:** Send a specific email template
+- **Send SMS:** Send a text message (requires SMS credits)
+- **Wait:** Pause the workflow for a fixed time (1 hour, 2 days, 1 week)
+- **Wait until:** Pause until a specific day or time
+- **Update contact attribute:** Change a contact's data
+- **Add/remove from list:** Move a contact between lists
+- **Notify a team member:** Send an internal email notification
+- **Webhook:** Send data to an external system
+
+## Accessing Brevo Automation
+
+From your Brevo dashboard, click "Automation" in the left sidebar. This opens the Automation overview, where you can see all your existing workflows, their status (active, paused, or draft), and how many contacts have entered each one.
+
+To create a new workflow, click "Create a Workflow."
+
+You will be offered two starting options:
+
+**Pre-built templates:** Brevo provides ready-made workflows for the most common use cases — welcome series, abandoned cart, birthday emails, and re-engagement. These are an excellent starting point.
+
+**Start from scratch:** Build a custom workflow using the visual drag-and-drop workflow builder.
+
+## The Brevo Workflow Builder
+
+The workflow builder displays your automation as a visual flowchart. Steps are connected by arrows, and you can add, remove, reorder, or branch steps using the drag-and-drop interface.
+
+### Setting Up a Trigger
+
+Click "Select a trigger" at the top of the workflow canvas. Choose from the available trigger categories and configure the specific trigger.
+
+For example, if you choose "Contact subscribes to a list," you will then select which list. If you choose "Contact visits a page," you will enter the page URL.
+
+### Adding Wait Steps
+
+Wait steps are critical for pacing your automation correctly. If you trigger a welcome email series, you do not want to send five emails in one hour. Use wait steps to space emails 1-3 days apart.
+
+Brevo wait steps offer two options:
+- **Wait for a fixed duration:** e.g., "Wait 2 days"
+- **Wait until a specific time:** e.g., "Wait until 9am on the next weekday"
+
+Combining both types gives you precise control over when each email is delivered.
+
+### Adding Conditions (If/Else Branches)
+
+Conditions create branches in your workflow. A contact who meets the condition goes one way; a contact who does not goes another.
+
+For example, after sending email 2 in a welcome series, add a condition: "Did the contact open email 2?" Contacts who opened it receive a more advanced email (email 3A). Contacts who did not open it receive a simpler re-send or a different angle (email 3B).
+
+This branching logic is what makes automation so powerful — you are effectively having a different conversation with each contact based on their behavior.
+
+## The Most Important Automation Workflows for Every Business
+
+### 1. Welcome Series
+
+The welcome series is the most important automation you can build. New subscribers are at peak engagement right after they sign up — they chose to hear from you, they remember who you are, and they are ready to learn.
+
+A standard welcome series:
+
+- **Email 1 (Immediate):** Welcome, deliver the promised lead magnet if applicable, introduce yourself or your brand
+- **Email 2 (Day 2):** Share your most useful free content — best blog post, most popular guide
+- **Email 3 (Day 4):** Social proof — customer stories, testimonials, or results
+- **Email 4 (Day 6):** Introduce your product or service with a clear, low-pressure CTA
+- **Email 5 (Day 8):** FAQ or objection handling — address the main reasons someone would not buy
+- **Email 6 (Day 10):** Special offer or urgency — a time-limited discount or bonus for new subscribers
+
+Welcome series emails typically generate 3-4x more revenue per email than standard broadcasts because of when they are sent.
+
+### 2. Abandoned Cart Automation (E-commerce)
+
+When a shopper adds items to their cart but does not complete the purchase, an automated sequence can recover a significant percentage of those sales.
+
+- **Email 1 (1 hour after abandonment):** Gentle reminder, show the items in the cart
+- **Email 2 (24 hours after abandonment):** Reinforce the product's value, add social proof
+- **Email 3 (72 hours after abandonment):** Offer a discount or free shipping to close the sale
+
+For Shopify, WooCommerce, and Prestashop users, Brevo has native integrations that automatically identify when a contact has abandoned a cart.
+
+### 3. Re-Engagement Campaign
+
+For subscribers who have not opened or clicked an email in 90+ days, an automated re-engagement workflow can revive some and identify others who should be removed.
+
+- **Email 1:** "Do we still have your attention?" — compelling subject line, honest message
+- **Wait 5 days**
+- **Email 2:** Final chance message — "We'll remove you from our list unless you click here to stay"
+- **Condition:** Did they click the keep-me-subscribed link?
+  - Yes: Add to "Engaged" list, remove from "Inactive" list
+  - No: Unsubscribe or delete from list
+
+### 4. Post-Purchase Onboarding (SaaS)
+
+For software businesses, automation can walk new users through the product step by step:
+
+- Day 0: Welcome, login link, getting started guide
+- Day 2: Tutorial on the most important feature
+- Day 5: Case study showing results from a similar customer
+- Day 10: Check-in: how is it going? Offer support
+- Day 14: Upgrade prompt or introduction of advanced features
+
+## Testing and Activating Your Workflow
+
+Before activating a workflow, test it with your own email address:
+
+1. Create a test contact with your email address
+2. Add that contact to the triggering list (or perform the triggering action)
+3. Observe the workflow running in real time — check that emails arrive, conditions work correctly, and wait steps fire at the right intervals
+
+Once testing is complete, click "Activate" to make the workflow live. Brevo will begin processing new contacts who match the trigger from that point forward.
+
+## Monitoring Automation Performance
+
+Go to "Automation" and click on an active workflow to see performance data:
+
+- **Contacts entered:** Total who have started the workflow
+- **Contacts in progress:** Currently active in the workflow
+- **Emails sent per step:** Total sends for each email action
+- **Open and click rates per step:** See exactly which emails perform best
+
+Use this data to identify weak steps — low open rates suggest subject lines need work; low click rates suggest the email content or CTA needs revision.
+
+## Brevo Plan Comparison
+
+| Plan | Price | Emails/Month | Key Features |
+|------|-------|--------------|--------------|
+| Free | $0/month | 300/day | Basic automation (limited workflows) |
+| Starter | From $25/month | 20,000 | Unlimited basic workflows, no Brevo branding |
+| Business | From $65/month | 20,000+ | Advanced automation, behavioral triggers, multi-step branching |
+| Enterprise | Custom pricing | Unlimited | Custom event triggers, API automation, SSO, dedicated support |
+
+Automation is where Brevo truly shines. Once your workflows are running, they generate revenue and nurture relationships around the clock — with zero additional effort from you.

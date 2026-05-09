@@ -1,0 +1,159 @@
+---
+title: "Brevo Campaigns: Step-by-Step Guide to Sending Your First Email"
+description: "A complete walkthrough for creating and sending your first Brevo email campaign. Covers subject lines, design, testing, scheduling, and analyzing results."
+category: "Email Marketing Basics"
+categorySlug: "email-marketing-basics"
+readTime: "10 min read"
+---
+
+## Your First Brevo Campaign: From Zero to Sent
+
+Sending your first email campaign with Brevo is a straightforward process, but there are several decisions along the way that significantly affect your results. This guide walks you through every step — from initial setup to analyzing results after sending — so your first campaign gets off to the right start.
+
+## Before You Start: The Campaign Checklist
+
+Before you begin creating your campaign in Brevo, make sure you have the following in place:
+
+- A verified sending domain (SPF and DKIM records added)
+- A list of contacts who have given explicit permission to receive emails from you
+- A clear goal for this campaign (what do you want subscribers to do?)
+- The main content or offer you want to communicate
+- A destination URL if your campaign links to a webpage
+
+If any of these are missing, resolve them first. Sending to an unverified domain or an unverified list will damage your deliverability and potentially suspend your account.
+
+## Step 1: Create a New Campaign
+
+Log into your Brevo dashboard and navigate to "Campaigns" in the left sidebar. Click the green "Create an email campaign" button.
+
+You will be asked to give your campaign an **internal name** — this is only for your reference and will not be seen by subscribers. Use a naming convention that will help you find it later, such as "June 2024 Newsletter" or "Product Launch — Spring Collection."
+
+## Step 2: Write Your Subject Line and Preview Text
+
+This is arguably the most important decision you will make for this campaign. The subject line and preview text are the only things subscribers see before deciding whether to open your email.
+
+### Writing a Strong Subject Line
+
+- Keep it under 50 characters so it displays fully on mobile
+- Be specific about the value inside — vague subject lines get ignored
+- Avoid ALL CAPS and excessive exclamation marks — both reduce open rates
+- Do not mislead subscribers about what the email contains
+- Consider including the subscriber's name using personalization: `{{ contact.FIRSTNAME }}, your invite is here`
+
+### Preview Text (Preheader)
+
+The preview text appears in the inbox immediately after the subject line. Most people treat it as an afterthought, which means using it well is a competitive advantage. It should complement the subject line, not repeat it.
+
+Subject: Your exclusive offer expires tonight
+Preview text: Save 30% on everything — just for loyal subscribers like you
+
+## Step 3: Set Your Sender Name and Address
+
+The "From" name and email address tell subscribers who sent this email. Use your company name or a recognizable personal name — never a generic "noreply@" address. Subscribers who cannot identify the sender will mark the email as spam or simply delete it without opening.
+
+If you have multiple senders configured in Brevo (different departments, different brands), choose the most appropriate one for this campaign.
+
+## Step 4: Select Your Recipients
+
+Click "Add recipients" and select the list or lists you want to send this campaign to. You can select multiple lists — Brevo will automatically deduplicate contacts who appear in more than one list, so they will only receive one copy.
+
+You can also use segments here to send to a dynamic subset of your contacts. For example, send only to contacts who have opened at least one of your previous campaigns.
+
+### Exclusion Lists
+
+If you have contacts you want to skip for this particular campaign — for example, contacts who are already in a separate promotional sequence, or contacts in a certain country — you can exclude specific lists. Click "Exclude contacts" and select the lists to suppress.
+
+## Step 5: Design Your Email
+
+Now you will build the actual email. Select your preferred editing method: drag-and-drop, rich text, or HTML.
+
+### Starting From a Template
+
+Click "Choose a template" to browse Brevo's library of pre-designed templates. Categories include newsletter, promotional, e-commerce, welcome, and seasonal. Select one that matches the purpose of your campaign and customize it.
+
+### Building From Scratch
+
+If you want full control, start from a blank canvas. Begin with a header block containing your logo, add a hero section with your main message and image, follow with body copy organized into 2-3 clear sections, and close with a call-to-action button and a footer.
+
+### The Footer Is Not Optional
+
+Your email footer must include:
+- Your company's physical mailing address (required by CAN-SPAM and GDPR)
+- An unsubscribe link (Brevo adds this automatically)
+- Optionally: social media links, your privacy policy link, and a preference center link
+
+Brevo includes a default footer block that handles the unsubscribe link and address requirement.
+
+## Step 6: Preview and Test Your Email
+
+Never send a campaign without previewing and testing it first.
+
+### Desktop and Mobile Preview
+
+In the Brevo editor, click the preview button to see how your email will look on desktop and mobile. Toggle between the two views and look for:
+
+- Text that is too small to read on mobile
+- Images that are not scaling correctly
+- Buttons that are too small to tap
+- Content that appears cut off
+
+### Send a Test Email
+
+Click "Send a test email" and enter the addresses you want to test to. Always test to at least two different email clients — for example, Gmail and Outlook — since they render emails differently.
+
+Review the test for:
+- Subject line and preview text display
+- Images loading correctly
+- Links pointing to the right URLs
+- Personalization tags resolving correctly (first name showing up, not `{{ contact.FIRSTNAME }}`)
+
+### Check Your Spam Score
+
+Brevo includes a basic spam score check. A score above 5 means your email has characteristics that spam filters commonly flag. Common causes: excessive use of all caps, too many links, missing text in an image-heavy email, or trigger words like "FREE" or "GUARANTEED."
+
+## Step 7: Schedule or Send Immediately
+
+Once your campaign is ready and tested, choose to send it now or schedule it for a specific date and time.
+
+### Best Times to Send
+
+General benchmarks (test with your own audience to find what works):
+
+- **Best days:** Tuesday, Wednesday, Thursday
+- **Best times:** 9am-11am and 1pm-3pm in your subscribers' time zones
+- **Avoid:** Monday mornings (inbox overload), Friday afternoons (heading into the weekend)
+
+Brevo's "Send at the best time" feature (available on Business and Enterprise plans) uses machine learning to send each email at the time each individual subscriber is most likely to open it.
+
+### A/B Testing (Business and Enterprise)
+
+If you want to test two subject lines, sender names, or email designs, Brevo allows you to run A/B tests. Define the percentage of your list to use as a test group (typically 20-40%), let Brevo run the test for a set period, and automatically send the winner to the remainder of your list.
+
+## Step 8: Monitor Your Results
+
+After sending, the campaign performance data becomes available in real time. Navigate to "Campaigns" and click on your completed campaign to see:
+
+- **Delivered rate:** Should be above 98%
+- **Open rate:** Industry average is 20-25%. If yours is below 15%, your subject lines need work or you need to clean your list.
+- **Click rate:** Industry average is 2-5%. If yours is below 1%, your email content or CTA needs improvement.
+- **Bounce rate:** Hard bounces above 2% signal a list quality problem
+- **Unsubscribe rate:** Above 0.5% suggests you are sending to the wrong people or at the wrong frequency
+
+Use these metrics as a baseline for your next campaign. Every campaign teaches you something about your audience.
+
+## What to Do After Your First Send
+
+Review your metrics 24 and 72 hours after sending (many subscribers open on day 2 or 3). Note what worked and what did not. Write down one specific change you will make to the next campaign based on what you learned.
+
+Email marketing compounds over time. Each campaign builds on the data from the previous one, and within 6-12 months of consistent sending and optimization, you will have a deeply informed understanding of exactly what your audience responds to.
+
+## Brevo Plan Comparison
+
+| Plan | Price | Emails/Month | Key Features |
+|------|-------|--------------|--------------|
+| Free | $0/month | 300/day | Unlimited contacts, campaigns, basic analytics |
+| Starter | From $25/month | 20,000 | No daily cap, real-time reporting, no Brevo branding |
+| Business | From $65/month | 20,000+ | A/B testing, send time optimization, advanced analytics |
+| Enterprise | Custom pricing | Unlimited | Dedicated IP, custom onboarding, SSO, priority support |
+
+Your first campaign is just the beginning. Keep sending, keep testing, and let the data guide your decisions.
