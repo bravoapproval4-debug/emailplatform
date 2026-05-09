@@ -8,9 +8,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        brand: '#0B996E',
-        'brand-10': 'rgba(11,153,110,0.10)',
-        'brand-40': 'rgba(11,153,110,0.40)',
+        brand: '#FFD14F',
+        'brand-10': 'rgba(255,209,79,0.10)',
+        'brand-40': 'rgba(255,209,79,0.40)',
         card: '#111111',
         border: '#1E1E1E',
       },

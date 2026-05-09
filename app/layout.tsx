@@ -3,6 +3,7 @@ import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import CookieBanner from '@/components/CookieBanner'
+import CardAnimations from '@/components/CardAnimations'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://emailplatformadvisor.online'),
@@ -43,6 +44,7 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
         <CookieBanner />
+        <CardAnimations />
       </body>
     </html>
   )

@@ -20,9 +20,9 @@ export default function AboutPage() {
         <div
           style={{
             display: 'inline-block',
-            background: 'rgba(11,153,110,0.12)',
-            border: '1px solid rgba(11,153,110,0.25)',
-            color: '#0B996E',
+            background: 'rgba(255,209,79,0.12)',
+            border: '1px solid rgba(255,209,79,0.25)',
+            color: '#FFD14F',
             padding: '5px 14px',
             borderRadius: '20px',
             fontSize: '12px',
@@ -36,7 +36,7 @@ export default function AboutPage() {
           About Us
         </div>
         <h1 style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 800, fontSize: 'clamp(2rem, 4vw, 2.75rem)', color: '#f9fafb', margin: '0 0 1rem' }}>
-          About <span style={{ color: '#0B996E' }}>Email Advisor</span>
+          About <span style={{ color: '#FFD14F' }}>Email Advisor</span>
         </h1>
         <p style={{ color: '#6b7280', fontSize: '18px', lineHeight: 1.7 }}>
           Email Advisor is an independent educational platform dedicated to helping marketers, founders, and business owners get the most out of Brevo email marketing.
@@ -87,7 +87,7 @@ export default function AboutPage() {
         </p>
         <p>
           Reach us at:{' '}
-          <a href="mailto:Support@emailplatformadvisor.online" style={{ color: '#0B996E' }}>
+          <a href="mailto:Support@emailplatformadvisor.online" style={{ color: '#FFD14F' }}>
             Support@emailplatformadvisor.online
           </a>
         </p>
@@ -97,8 +97,8 @@ export default function AboutPage() {
         <Link
           href="/blog"
           style={{
-            background: '#0B996E',
-            color: '#fff',
+            background: '#FFD14F',
+            color: '#1A1200',
             padding: '0.7rem 1.75rem',
             borderRadius: '6px',
             textDecoration: 'none',

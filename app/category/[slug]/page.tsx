@@ -51,7 +51,7 @@ export default async function CategoryPage({
         <span style={{ color: '#374151' }}>/</span>
         <span style={{ color: '#6b7280', fontSize: '13px' }}>Topics</span>
         <span style={{ color: '#374151' }}>/</span>
-        <span style={{ color: '#0B996E', fontSize: '13px', fontWeight: 600 }}>{category.name}</span>
+        <span style={{ color: '#FFD14F', fontSize: '13px', fontWeight: 600 }}>{category.name}</span>
       </div>
 
       {/* Header */}
@@ -59,9 +59,9 @@ export default async function CategoryPage({
         <div
           style={{
             display: 'inline-block',
-            background: 'rgba(11,153,110,0.12)',
-            border: '1px solid rgba(11,153,110,0.25)',
-            color: '#0B996E',
+            background: 'rgba(255,209,79,0.12)',
+            border: '1px solid rgba(255,209,79,0.25)',
+            color: '#FFD14F',
             padding: '5px 14px',
             borderRadius: '20px',
             fontSize: '12px',
@@ -83,7 +83,7 @@ export default async function CategoryPage({
             margin: '0 0 0.75rem',
           }}
         >
-          <span style={{ color: '#0B996E' }}>Brevo</span> {category.name}
+          <span style={{ color: '#FFD14F' }}>Brevo</span> {category.name}
         </h1>
         <p style={{ color: '#6b7280', fontSize: '17px', lineHeight: 1.7, maxWidth: '600px', margin: 0 }}>
           {category.description}

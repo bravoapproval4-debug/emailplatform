@@ -19,9 +19,9 @@ export default function ContactPage() {
         <div
           style={{
             display: 'inline-block',
-            background: 'rgba(11,153,110,0.12)',
-            border: '1px solid rgba(11,153,110,0.25)',
-            color: '#0B996E',
+            background: 'rgba(255,209,79,0.12)',
+            border: '1px solid rgba(255,209,79,0.25)',
+            color: '#FFD14F',
             padding: '5px 14px',
             borderRadius: '20px',
             fontSize: '12px',
@@ -35,7 +35,7 @@ export default function ContactPage() {
           Get in Touch
         </div>
         <h1 style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 800, fontSize: 'clamp(2rem, 4vw, 2.75rem)', color: '#f9fafb', margin: '0 0 1rem' }}>
-          Contact <span style={{ color: '#0B996E' }}>Us</span>
+          Contact <span style={{ color: '#FFD14F' }}>Us</span>
         </h1>
         <p style={{ color: '#6b7280', fontSize: '17px', lineHeight: 1.7, margin: 0 }}>
           Have a question about Brevo, a topic suggestion, or found something in one of our guides that needs updating? We would love to hear from you.
@@ -63,8 +63,8 @@ export default function ContactPage() {
             display: 'inline-flex',
             alignItems: 'center',
             gap: '8px',
-            background: '#0B996E',
-            color: '#fff',
+            background: '#FFD14F',
+            color: '#1A1200',
             padding: '0.75rem 1.75rem',
             borderRadius: '6px',
             textDecoration: 'none',
@@ -92,7 +92,7 @@ export default function ContactPage() {
               padding: '1.25rem',
             }}
           >
-            <h3 style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 600, fontSize: '14px', color: '#0B996E', margin: '0 0 0.5rem' }}>{item.title}</h3>
+            <h3 style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 600, fontSize: '14px', color: '#FFD14F', margin: '0 0 0.5rem' }}>{item.title}</h3>
             <p style={{ color: '#6b7280', fontSize: '13px', lineHeight: 1.6, margin: 0 }}>{item.desc}</p>
           </div>
         ))}

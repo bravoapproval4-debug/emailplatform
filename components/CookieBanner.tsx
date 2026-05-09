@@ -48,7 +48,7 @@ export default function CookieBanner() {
       <div>
         <p style={{ color: '#9ca3af', fontSize: '14px', lineHeight: 1.6, margin: 0 }}>
           We use cookies to improve your experience. By continuing, you agree to our{' '}
-          <Link href="/cookies-policy" style={{ color: '#0B996E', textDecoration: 'underline' }}>
+          <Link href="/cookies-policy" style={{ color: '#FFD14F', textDecoration: 'underline' }}>
             Cookie Policy
           </Link>
           .
@@ -74,15 +74,15 @@ export default function CookieBanner() {
         <button
           onClick={handleAccept}
           style={{
-            background: '#0B996E',
+            background: '#FFD14F',
             border: 'none',
-            color: '#fff',
+            color: '#1A1200',
             padding: '0.5rem 1.25rem',
             borderRadius: '6px',
             cursor: 'pointer',
             fontSize: '14px',
             fontFamily: 'Poppins, sans-serif',
-            fontWeight: 600,
+            fontWeight: 700,
           }}
         >
           Accept

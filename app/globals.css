@@ -7,7 +7,7 @@
 }
 
 :root {
-  --brand: #0B996E;
+  --brand: #FFD14F;
   --bg: #0A0A0A;
   --card: #111111;
   --border: #1E1E1E;
@@ -31,15 +31,35 @@ h1, h2, h3, h4, h5, h6 {
   font-style: normal !important;
 }
 
+/* ===== CARD HOVER ===== */
 .card-hover {
-  transition: border-color 0.2s ease, transform 0.2s ease;
+  transition: border-color 0.25s ease, transform 0.25s ease;
 }
 
 .card-hover:hover {
-  border-color: rgba(11, 153, 110, 0.40) !important;
-  transform: translateY(-2px);
+  border-color: rgba(255, 209, 79, 0.4) !important;
+  transform: translateY(-4px);
 }
 
+/* Article card left-border highlight */
+.article-card-wrap:hover .article-card-inner {
+  border-left-color: #FFD14F !important;
+}
+
+/* ===== CARD ANIMATIONS ===== */
+.animate-card {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  transition-delay: var(--anim-delay, 0s);
+}
+
+.animate-card.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== PROSE ARTICLE ===== */
 .prose-article h1 {
   font-family: 'Poppins', sans-serif;
   font-size: 2rem;
@@ -98,7 +118,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .prose-article a {
-  color: #0B996E;
+  color: #FFD14F;
   text-decoration: underline;
 }
 
@@ -110,7 +130,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .prose-article th {
-  background-color: rgba(11, 153, 110, 0.15);
+  background-color: rgba(255, 209, 79, 0.15);
   color: #f9fafb;
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
@@ -130,7 +150,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .prose-article blockquote {
-  border-left: 3px solid #0B996E;
+  border-left: 3px solid #FFD14F;
   padding-left: 1rem;
   margin: 1.5rem 0;
   color: #6b7280;
@@ -138,7 +158,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .prose-article code {
   background-color: #1a1a1a;
-  color: #0B996E;
+  color: #FFD14F;
   padding: 0.2em 0.4em;
   border-radius: 3px;
   font-size: 0.875em;
@@ -157,16 +177,6 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0;
 }
 
-/* Orbit animation */
-@keyframes orbitSpin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-.orbit-ring-animated {
-  animation: orbitSpin 40s linear infinite;
-}
-
 /* Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
@@ -179,5 +189,5 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #0B996E;
+  background: #FFD14F;
 }

@@ -36,13 +36,13 @@ export default function Header() {
                 width: '32px',
                 height: '32px',
                 borderRadius: '6px',
-                background: '#0B996E',
+                background: '#FFD14F',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
               }}
             >
-              <span style={{ color: '#fff', fontFamily: 'Poppins, sans-serif', fontWeight: 700, fontSize: '14px' }}>E</span>
+              <span style={{ color: '#1A1200', fontFamily: 'Poppins, sans-serif', fontWeight: 700, fontSize: '14px' }}>E</span>
             </div>
             <span style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 700, fontSize: '18px', color: '#f9fafb' }}>
               Email Advisor
@@ -102,7 +102,7 @@ export default function Header() {
                         fontSize: '14px',
                         transition: 'color 0.2s',
                       }}
-                      onMouseEnter={(e) => { e.currentTarget.style.color = '#0B996E' }}
+                      onMouseEnter={(e) => { e.currentTarget.style.color = '#FFD14F' }}
                       onMouseLeave={(e) => { e.currentTarget.style.color = '#9ca3af' }}
                     >
                       {cat.name}
@@ -127,13 +127,13 @@ export default function Header() {
               target="_blank"
               rel="noopener noreferrer"
               style={{
-                background: '#0B996E',
-                color: '#fff',
+                background: '#FFD14F',
+                color: '#1A1200',
                 padding: '0.5rem 1.25rem',
                 borderRadius: '6px',
                 textDecoration: 'none',
                 fontSize: '14px',
-                fontWeight: 600,
+                fontWeight: 700,
                 fontFamily: 'Poppins, sans-serif',
                 whiteSpace: 'nowrap',
               }}

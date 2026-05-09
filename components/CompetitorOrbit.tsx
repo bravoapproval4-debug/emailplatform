@@ -32,7 +32,6 @@ export default function CompetitorOrbit() {
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '2rem' }}>
-      {/* Watermark text */}
       <div style={{ position: 'relative', width: '520px', height: '520px', maxWidth: '100%' }}>
         {/* Faint Brevo watermark */}
         <div
@@ -46,7 +45,7 @@ export default function CompetitorOrbit() {
             fontSize: '96px',
             fontFamily: 'Poppins, sans-serif',
             fontWeight: 900,
-            color: '#0B996E',
+            color: '#FFD14F',
             opacity: 0.04,
             userSelect: 'none',
             pointerEvents: 'none',
@@ -61,7 +60,6 @@ export default function CompetitorOrbit() {
           viewBox="0 0 520 520"
           style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', zIndex: 1 }}
         >
-          {/* Dashed orbit ring */}
           <circle
             cx={CENTER_X}
             cy={CENTER_Y}
@@ -71,8 +69,6 @@ export default function CompetitorOrbit() {
             strokeWidth="1.5"
             strokeDasharray="6,6"
           />
-
-          {/* Lines from center to each competitor */}
           {competitors.map((c) => {
             const pos = getPosition(c.angle)
             return (
@@ -82,7 +78,7 @@ export default function CompetitorOrbit() {
                 y1={CENTER_Y}
                 x2={pos.x}
                 y2={pos.y}
-                stroke={hovered === c.name ? '#0B996E' : '#1E1E1E'}
+                stroke={hovered === c.name ? '#FFD14F' : '#1E1E1E'}
                 strokeWidth="1"
                 strokeDasharray="4,4"
                 style={{ transition: 'stroke 0.2s' }}
@@ -103,17 +99,17 @@ export default function CompetitorOrbit() {
             transform: 'translate(-50%, -50%)',
             width: '96px',
             height: '96px',
-            background: '#0B996E',
+            background: '#FFD14F',
             borderRadius: '50%',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             zIndex: 10,
             textDecoration: 'none',
-            boxShadow: '0 0 0 8px rgba(11,153,110,0.12)',
+            boxShadow: '0 0 0 8px rgba(255,209,79,0.12)',
           }}
         >
-          <span style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 700, color: '#fff', fontSize: '18px' }}>
+          <span style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 700, color: '#1A1200', fontSize: '18px' }}>
             Brevo
           </span>
         </a>
@@ -135,14 +131,14 @@ export default function CompetitorOrbit() {
                 left: pos.x,
                 top: pos.y,
                 transform: 'translate(-50%, -50%)',
-                background: isHovered ? 'rgba(11,153,110,0.15)' : '#111111',
-                border: `1px solid ${isHovered ? 'rgba(11,153,110,0.4)' : '#1E1E1E'}`,
+                background: isHovered ? 'rgba(255,209,79,0.15)' : '#111111',
+                border: `1px solid ${isHovered ? 'rgba(255,209,79,0.4)' : '#1E1E1E'}`,
                 borderRadius: '20px',
                 padding: '6px 14px',
                 fontSize: '12px',
                 fontWeight: 600,
                 fontFamily: 'Poppins, sans-serif',
-                color: isHovered ? '#0B996E' : '#9ca3af',
+                color: isHovered ? '#FFD14F' : '#9ca3af',
                 textDecoration: 'none',
                 zIndex: 5,
                 whiteSpace: 'nowrap',
@@ -159,8 +155,8 @@ export default function CompetitorOrbit() {
         href="/category/vs-competitors"
         style={{
           background: 'transparent',
-          border: '1px solid #0B996E',
-          color: '#0B996E',
+          border: '1px solid #FFD14F',
+          color: '#FFD14F',
           padding: '0.65rem 1.75rem',
           borderRadius: '6px',
           textDecoration: 'none',

@@ -30,28 +30,28 @@ const PRICING_PLANS = [
     name: 'Free',
     price: '$0',
     period: 'forever',
-    features: ['300 emails/day', 'Unlimited contacts', 'Email campaigns', 'Basic CRM', 'Email support'],
+    features: ['300 emails/day', 'Unlimited contacts', 'Basic templates', 'Email support', 'Basic CRM'],
     popular: false,
   },
   {
     name: 'Starter',
-    price: 'From $25',
+    price: 'From $9',
     period: '/month',
-    features: ['20,000 emails/month', 'No daily sending limit', 'Basic reporting', 'No Brevo branding', 'Email & phone support'],
+    features: ['5,000 emails/month', 'No daily limit', 'No Brevo logo', 'Basic reporting', 'Email & phone support'],
     popular: false,
   },
   {
     name: 'Business',
-    price: 'From $65',
+    price: 'From $18',
     period: '/month',
-    features: ['20,000 emails/month', 'Marketing automation', 'A/B testing', 'Advanced statistics', 'Multi-user access'],
+    features: ['20,000 emails/month', 'Marketing automation', 'A/B testing', 'Advanced stats', 'Multi-user access'],
     popular: true,
   },
   {
     name: 'Enterprise',
     price: 'Custom',
     period: 'pricing',
-    features: ['Unlimited sending volume', 'Dedicated IP address', 'SSO & SAML', 'Custom onboarding', 'Dedicated account manager'],
+    features: ['Unlimited sending', 'Dedicated IP', 'SSO & SAML', 'Custom onboarding', 'Dedicated manager'],
     popular: false,
   },
 ]
@@ -93,9 +93,9 @@ export default async function HomePage() {
             <div
               style={{
                 display: 'inline-block',
-                background: 'rgba(11,153,110,0.12)',
-                border: '1px solid rgba(11,153,110,0.25)',
-                color: '#0B996E',
+                background: 'rgba(255,209,79,0.12)',
+                border: '1px solid rgba(255,209,79,0.25)',
+                color: '#FFD14F',
                 padding: '6px 16px',
                 borderRadius: '20px',
                 fontSize: '12px',
@@ -119,7 +119,7 @@ export default async function HomePage() {
               }}
             >
               Master{' '}
-              <span style={{ color: '#0B996E' }}>Brevo</span>{' '}
+              <span style={{ color: '#FFD14F' }}>Brevo</span>{' '}
               Email Marketing
             </h1>
             <p
@@ -137,8 +137,8 @@ export default async function HomePage() {
               <Link
                 href="/blog"
                 style={{
-                  background: '#0B996E',
-                  color: '#fff',
+                  background: '#FFD14F',
+                  color: '#1A1200',
                   padding: '0.75rem 1.75rem',
                   borderRadius: '6px',
                   textDecoration: 'none',
@@ -165,12 +165,12 @@ export default async function HomePage() {
                   fontSize: '15px',
                 }}
               >
-                Try Brevo Free
+                Try Brevo Free →
               </a>
             </div>
           </div>
 
-          {/* Right — Notification Cards */}
+          {/* Right — Staggered notification cards */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', maxWidth: '380px' }}>
             {[
               { label: 'Daily Sending', value: '300 emails/day, free forever' },
@@ -182,7 +182,7 @@ export default async function HomePage() {
                 style={{
                   background: '#111111',
                   border: '1px solid #1E1E1E',
-                  borderLeft: '3px solid #0B996E',
+                  borderLeft: '3px solid #FFD14F',
                   borderRadius: '8px',
                   padding: '1rem 1.25rem',
                   transform: i === 1 ? 'translateX(24px)' : i === 2 ? 'translateX(12px)' : 'none',
@@ -228,7 +228,7 @@ export default async function HomePage() {
                 fontWeight: 500,
               }}
             >
-              <span style={{ color: '#0B996E', fontWeight: 700 }}>✓</span>
+              <span style={{ color: '#FFD14F', fontWeight: 700 }}>✓</span>
               {badge}
             </div>
           ))}
@@ -240,7 +240,7 @@ export default async function HomePage() {
         <div style={sectionStyle}>
           <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
             <h2 style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 700, fontSize: 'clamp(1.5rem, 3vw, 2rem)', color: '#f9fafb', margin: 0 }}>
-              <span style={{ color: '#0B996E' }}>Brevo</span> by the Numbers
+              <span style={{ color: '#FFD14F' }}>Brevo</span> by the Numbers
             </h2>
           </div>
           <div
@@ -255,23 +255,25 @@ export default async function HomePage() {
               { stat: '180+', label: 'Countries Reached' },
               { stat: '8B+', label: 'Emails Sent Monthly' },
               { stat: '99%', label: 'Inbox Deliverability' },
-            ].map((item) => (
+            ].map((item, i) => (
               <div
                 key={item.stat}
+                className="animate-card"
                 style={{
-                  background: 'rgba(11,153,110,0.07)',
-                  border: '1px solid rgba(11,153,110,0.15)',
+                  '--anim-delay': `${i * 0.1}s`,
+                  background: 'rgba(255,209,79,0.07)',
+                  border: '1px solid rgba(255,209,79,0.15)',
                   borderRadius: '10px',
                   padding: '2rem',
                   textAlign: 'center',
-                }}
+                } as React.CSSProperties}
               >
                 <div
                   style={{
                     fontFamily: 'Poppins, sans-serif',
                     fontWeight: 800,
                     fontSize: 'clamp(2rem, 4vw, 2.75rem)',
-                    color: '#0B996E',
+                    color: '#FFD14F',
                     lineHeight: 1,
                     marginBottom: '0.5rem',
                   }}
@@ -290,25 +292,26 @@ export default async function HomePage() {
         <div style={sectionStyle}>
           <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
             <h2 style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 700, fontSize: 'clamp(1.5rem, 3vw, 2rem)', color: '#f9fafb', margin: '0 0 0.75rem' }}>
-              What You Will Learn with <span style={{ color: '#0B996E' }}>Brevo</span>
+              What You Will Learn with <span style={{ color: '#FFD14F' }}>Brevo</span>
             </h2>
             <p style={{ color: '#6b7280', fontSize: '16px', maxWidth: '560px', margin: '0 auto' }}>
               Every guide is written to give you actionable knowledge you can apply immediately inside the Brevo platform.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.25rem' }}>
-            {LEARN_CARDS.map((card) => (
+            {LEARN_CARDS.map((card, i) => (
               <div
                 key={card.title}
-                className="card-hover"
+                className="card-hover animate-card"
                 style={{
+                  '--anim-delay': `${i * 0.1}s`,
                   background: '#111111',
                   border: '1px solid #1E1E1E',
                   borderRadius: '10px',
                   padding: '1.5rem',
-                }}
+                } as React.CSSProperties}
               >
-                <h3 style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 600, fontSize: '1rem', color: '#0B996E', margin: '0 0 0.6rem' }}>
+                <h3 style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 600, fontSize: '1rem', color: '#FFD14F', margin: '0 0 0.6rem' }}>
                   {card.title}
                 </h3>
                 <p style={{ color: '#6b7280', fontSize: '14px', lineHeight: 1.6, margin: 0 }}>{card.desc}</p>
@@ -319,7 +322,7 @@ export default async function HomePage() {
       </section>
 
       {/* ===== SECTION 5 — ENTERPRISE HUB ===== */}
-      <section style={{ borderBottom: '1px solid #1E1E1E', background: 'rgba(11,153,110,0.03)' }}>
+      <section style={{ borderBottom: '1px solid #1E1E1E', background: 'rgba(255,209,79,0.02)' }}>
         <div
           style={{
             maxWidth: '1200px',
@@ -336,9 +339,9 @@ export default async function HomePage() {
             <div
               style={{
                 display: 'inline-block',
-                background: 'rgba(11,153,110,0.12)',
-                border: '1px solid rgba(11,153,110,0.25)',
-                color: '#0B996E',
+                background: 'rgba(255,209,79,0.12)',
+                border: '1px solid rgba(255,209,79,0.25)',
+                color: '#FFD14F',
                 padding: '6px 14px',
                 borderRadius: '20px',
                 fontSize: '11px',
@@ -361,7 +364,7 @@ export default async function HomePage() {
                 lineHeight: 1.3,
               }}
             >
-              Scale your business with <span style={{ color: '#0B996E' }}>Brevo</span> Enterprise
+              Scale your business with <span style={{ color: '#FFD14F' }}>Brevo</span> Enterprise
             </h2>
             <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 2rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
               {[
@@ -370,7 +373,7 @@ export default async function HomePage() {
                 'SSO, SAML, and enterprise-grade security',
               ].map((point) => (
                 <li key={point} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', color: '#9ca3af', fontSize: '15px' }}>
-                  <span style={{ color: '#0B996E', fontWeight: 700, marginTop: '2px', flexShrink: 0 }}>✓</span>
+                  <span style={{ color: '#FFD14F', fontWeight: 700, marginTop: '2px', flexShrink: 0 }}>✓</span>
                   {point}
                 </li>
               ))}
@@ -380,8 +383,8 @@ export default async function HomePage() {
               target="_blank"
               rel="noopener noreferrer"
               style={{
-                background: '#0B996E',
-                color: '#fff',
+                background: '#FFD14F',
+                color: '#1A1200',
                 padding: '0.7rem 1.75rem',
                 borderRadius: '6px',
                 textDecoration: 'none',
@@ -401,10 +404,10 @@ export default async function HomePage() {
               viewBox="0 0 500 360"
               style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', zIndex: 1 }}
             >
-              <line x1="250" y1="180" x2="80" y2="70" stroke="#0B996E" strokeWidth="1" strokeDasharray="5,5" opacity="0.35" />
-              <line x1="250" y1="180" x2="420" y2="70" stroke="#0B996E" strokeWidth="1" strokeDasharray="5,5" opacity="0.35" />
-              <line x1="250" y1="180" x2="80" y2="290" stroke="#0B996E" strokeWidth="1" strokeDasharray="5,5" opacity="0.35" />
-              <line x1="250" y1="180" x2="420" y2="290" stroke="#0B996E" strokeWidth="1" strokeDasharray="5,5" opacity="0.35" />
+              <line x1="250" y1="180" x2="80" y2="70" stroke="#FFD14F" strokeWidth="1" strokeDasharray="5,5" opacity="0.35" />
+              <line x1="250" y1="180" x2="420" y2="70" stroke="#FFD14F" strokeWidth="1" strokeDasharray="5,5" opacity="0.35" />
+              <line x1="250" y1="180" x2="80" y2="290" stroke="#FFD14F" strokeWidth="1" strokeDasharray="5,5" opacity="0.35" />
+              <line x1="250" y1="180" x2="420" y2="290" stroke="#FFD14F" strokeWidth="1" strokeDasharray="5,5" opacity="0.35" />
             </svg>
 
             {/* Center circle */}
@@ -419,17 +422,17 @@ export default async function HomePage() {
                 transform: 'translate(-50%, -50%)',
                 width: '88px',
                 height: '88px',
-                background: '#0B996E',
+                background: '#FFD14F',
                 borderRadius: '50%',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 zIndex: 10,
                 textDecoration: 'none',
-                boxShadow: '0 0 0 10px rgba(11,153,110,0.1)',
+                boxShadow: '0 0 0 10px rgba(255,209,79,0.1)',
               }}
             >
-              <span style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 700, color: '#fff', fontSize: '16px' }}>Brevo</span>
+              <span style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 700, color: '#1A1200', fontSize: '16px' }}>Brevo</span>
             </a>
 
             {/* Corner cards */}
@@ -441,6 +444,7 @@ export default async function HomePage() {
             ].map((card) => (
               <div
                 key={card.title}
+                className="animate-card"
                 style={{
                   position: 'absolute',
                   top: card.top,
@@ -453,9 +457,9 @@ export default async function HomePage() {
                   padding: '0.85rem',
                   width: '140px',
                   zIndex: 5,
-                }}
+                } as React.CSSProperties}
               >
-                <div style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 600, fontSize: '12px', color: '#0B996E', marginBottom: '6px' }}>{card.title}</div>
+                <div style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 600, fontSize: '12px', color: '#FFD14F', marginBottom: '6px' }}>{card.title}</div>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '3px' }}>
                   {card.items.map((item) => (
                     <li key={item} style={{ fontSize: '11px', color: '#6b7280' }}>— {item}</li>
@@ -472,22 +476,23 @@ export default async function HomePage() {
         <div style={sectionStyle}>
           <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
             <h2 style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 700, fontSize: 'clamp(1.5rem, 3vw, 2rem)', color: '#f9fafb', margin: '0 0 0.75rem' }}>
-              Browse <span style={{ color: '#0B996E' }}>Brevo</span> Topics
+              Browse <span style={{ color: '#FFD14F' }}>Brevo</span> Topics
             </h2>
             <p style={{ color: '#6b7280', fontSize: '16px', maxWidth: '480px', margin: '0 auto' }}>
               Pick a category to find the guides most relevant to where you are in your Brevo journey.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(210px, 1fr))', gap: '1.25rem' }}>
-            {categories.map((cat) => (
+            {categories.filter(c => c.slug !== 'brevo-vs-competitors').map((cat, i) => (
               <Link
                 key={cat.slug}
                 href={`/category/${cat.slug}`}
                 style={{ textDecoration: 'none' }}
               >
                 <div
-                  className="card-hover"
+                  className="card-hover animate-card"
                   style={{
+                    '--anim-delay': `${i * 0.1}s`,
                     background: '#111111',
                     border: '1px solid #1E1E1E',
                     borderRadius: '10px',
@@ -496,11 +501,11 @@ export default async function HomePage() {
                     display: 'flex',
                     flexDirection: 'column',
                     gap: '0.6rem',
-                  }}
+                  } as React.CSSProperties}
                 >
                   <h3 style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 600, fontSize: '15px', color: '#f9fafb', margin: 0 }}>{cat.name}</h3>
                   <p style={{ color: '#6b7280', fontSize: '13px', lineHeight: 1.6, margin: 0, flex: 1 }}>{cat.description}</p>
-                  <span style={{ color: '#0B996E', fontSize: '13px', fontWeight: 600, fontFamily: 'Poppins, sans-serif' }}>Read guides →</span>
+                  <span style={{ color: '#FFD14F', fontSize: '13px', fontWeight: 600, fontFamily: 'Poppins, sans-serif' }}>Read guides →</span>
                 </div>
               </Link>
             ))}
@@ -513,45 +518,47 @@ export default async function HomePage() {
         <div style={sectionStyle}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '2.5rem', flexWrap: 'wrap', gap: '1rem' }}>
             <h2 style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 700, fontSize: 'clamp(1.4rem, 3vw, 1.85rem)', color: '#f9fafb', margin: 0 }}>
-              Featured <span style={{ color: '#0B996E' }}>Brevo</span> Guides
+              Featured <span style={{ color: '#FFD14F' }}>Brevo</span> Guides
             </h2>
-            <Link href="/blog" style={{ color: '#0B996E', textDecoration: 'none', fontSize: '14px', fontWeight: 600, fontFamily: 'Poppins, sans-serif' }}>
+            <Link href="/blog" style={{ color: '#FFD14F', textDecoration: 'none', fontSize: '14px', fontWeight: 600, fontFamily: 'Poppins, sans-serif' }}>
               View all →
             </Link>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.25rem' }}>
-            {featuredArticles.map((article) => (
-              <ArticleCard key={article.slug} article={article} />
+            {featuredArticles.map((article, i) => (
+              <ArticleCard key={article.slug} article={article} animDelay={`${i * 0.1}s`} />
             ))}
           </div>
         </div>
       </section>
 
       {/* ===== SECTION 8 — BREVO PRICING ===== */}
-      <section style={{ borderBottom: '1px solid #1E1E1E', background: 'rgba(11,153,110,0.03)' }}>
+      <section style={{ borderBottom: '1px solid #1E1E1E', background: 'rgba(255,209,79,0.02)' }}>
         <div style={sectionStyle}>
           <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
             <h2 style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 700, fontSize: 'clamp(1.5rem, 3vw, 2rem)', color: '#f9fafb', margin: '0 0 0.75rem' }}>
-              <span style={{ color: '#0B996E' }}>Brevo</span> Pricing Plans
+              <span style={{ color: '#FFD14F' }}>Brevo</span> Pricing Plans
             </h2>
             <p style={{ color: '#6b7280', fontSize: '16px', maxWidth: '480px', margin: '0 auto' }}>
               Start free and scale as your business grows. Every plan includes unlimited contacts.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1.25rem', marginBottom: '1.75rem' }}>
-            {PRICING_PLANS.map((plan) => (
+            {PRICING_PLANS.map((plan, i) => (
               <div
                 key={plan.name}
+                className="animate-card"
                 style={{
+                  '--anim-delay': `${i * 0.1}s`,
                   background: '#111111',
-                  border: plan.popular ? '2px solid #0B996E' : '1px solid #1E1E1E',
+                  border: plan.popular ? '2px solid #FFD14F' : '1px solid #1E1E1E',
                   borderRadius: '10px',
                   padding: '1.75rem',
                   position: 'relative',
                   display: 'flex',
                   flexDirection: 'column',
                   gap: '1.25rem',
-                }}
+                } as React.CSSProperties}
               >
                 {plan.popular && (
                   <div
@@ -560,8 +567,8 @@ export default async function HomePage() {
                       top: '-13px',
                       left: '50%',
                       transform: 'translateX(-50%)',
-                      background: '#0B996E',
-                      color: '#fff',
+                      background: '#FFD14F',
+                      color: '#1A1200',
                       padding: '3px 14px',
                       borderRadius: '20px',
                       fontSize: '11px',
@@ -576,14 +583,14 @@ export default async function HomePage() {
                 <div>
                   <div style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 700, fontSize: '18px', color: '#f9fafb', marginBottom: '0.5rem' }}>{plan.name}</div>
                   <div style={{ display: 'flex', alignItems: 'baseline', gap: '4px' }}>
-                    <span style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 800, fontSize: '1.75rem', color: '#0B996E' }}>{plan.price}</span>
+                    <span style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 800, fontSize: '1.75rem', color: '#FFD14F' }}>{plan.price}</span>
                     <span style={{ color: '#4b5563', fontSize: '13px' }}>{plan.period}</span>
                   </div>
                 </div>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                   {plan.features.map((feature) => (
                     <li key={feature} style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#9ca3af', fontSize: '13px' }}>
-                      <span style={{ color: '#0B996E', fontWeight: 700 }}>✓</span>
+                      <span style={{ color: '#FFD14F', fontWeight: 700 }}>✓</span>
                       {feature}
                     </li>
                   ))}
@@ -593,15 +600,15 @@ export default async function HomePage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{
-                    background: plan.popular ? '#0B996E' : 'transparent',
+                    background: plan.popular ? '#FFD14F' : 'transparent',
                     border: plan.popular ? 'none' : '1px solid #1E1E1E',
-                    color: plan.popular ? '#fff' : '#9ca3af',
+                    color: plan.popular ? '#1A1200' : '#9ca3af',
                     padding: '0.6rem',
                     borderRadius: '6px',
                     textDecoration: 'none',
                     textAlign: 'center',
                     fontFamily: 'Poppins, sans-serif',
-                    fontWeight: 600,
+                    fontWeight: 700,
                     fontSize: '14px',
                     marginTop: 'auto',
                   }}
@@ -616,7 +623,7 @@ export default async function HomePage() {
               href="https://www.brevo.com"
               target="_blank"
               rel="noopener noreferrer"
-              style={{ color: '#0B996E', textDecoration: 'underline', fontSize: '14px' }}
+              style={{ color: '#FFD14F', textDecoration: 'underline', fontSize: '14px' }}
             >
               View full pricing on brevo.com →
             </a>
@@ -629,7 +636,7 @@ export default async function HomePage() {
         <div style={sectionStyle}>
           <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
             <h2 style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 700, fontSize: 'clamp(1.5rem, 3vw, 2rem)', color: '#f9fafb', margin: '0 0 0.75rem' }}>
-              How to Use This Site with <span style={{ color: '#0B996E' }}>Brevo</span>
+              How to Use This Site with <span style={{ color: '#FFD14F' }}>Brevo</span>
             </h2>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '2rem' }}>
@@ -637,14 +644,22 @@ export default async function HomePage() {
               { num: '01', title: 'Pick a Topic', desc: 'Browse our categories or search for a specific Brevo feature you want to master.' },
               { num: '02', title: 'Read and Apply', desc: 'Follow our step-by-step guides and apply each lesson directly inside your Brevo account.' },
               { num: '03', title: 'See Results', desc: 'Track your improvements in open rates, click rates, and revenue using Brevo analytics.' },
-            ].map((step) => (
-              <div key={step.num} style={{ textAlign: 'center', padding: '1rem' }}>
+            ].map((step, i) => (
+              <div
+                key={step.num}
+                className="animate-card"
+                style={{
+                  '--anim-delay': `${i * 0.15}s`,
+                  textAlign: 'center',
+                  padding: '1rem',
+                } as React.CSSProperties}
+              >
                 <div
                   style={{
                     width: '64px',
                     height: '64px',
                     borderRadius: '50%',
-                    border: '2px solid rgba(11,153,110,0.35)',
+                    border: '2px solid rgba(255,209,79,0.35)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -652,8 +667,8 @@ export default async function HomePage() {
                     fontFamily: 'Poppins, sans-serif',
                     fontWeight: 800,
                     fontSize: '20px',
-                    color: '#0B996E',
-                    background: 'rgba(11,153,110,0.07)',
+                    color: '#FFD14F',
+                    background: 'rgba(255,209,79,0.07)',
                   }}
                 >
                   {step.num}
@@ -671,7 +686,7 @@ export default async function HomePage() {
         <div style={sectionStyle}>
           <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
             <h2 style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 700, fontSize: 'clamp(1.5rem, 3vw, 2rem)', color: '#f9fafb', margin: '0 0 0.75rem' }}>
-              How Does <span style={{ color: '#0B996E' }}>Brevo</span> Compare?
+              How Does <span style={{ color: '#FFD14F' }}>Brevo</span> Compare?
             </h2>
             <p style={{ color: '#6b7280', fontSize: '16px', maxWidth: '480px', margin: '0 auto' }}>
               We compare Brevo side-by-side with every major platform so you have all the facts.
@@ -684,22 +699,23 @@ export default async function HomePage() {
       </section>
 
       {/* ===== SECTION 11 — INTEGRATIONS ===== */}
-      <section style={{ borderBottom: '1px solid #1E1E1E', background: 'rgba(11,153,110,0.02)' }}>
+      <section style={{ borderBottom: '1px solid #1E1E1E', background: 'rgba(255,209,79,0.02)' }}>
         <div style={sectionStyle}>
           <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
             <h2 style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 700, fontSize: 'clamp(1.5rem, 3vw, 2rem)', color: '#f9fafb', margin: '0 0 0.75rem' }}>
-              <span style={{ color: '#0B996E' }}>Brevo</span> Integrations
+              <span style={{ color: '#FFD14F' }}>Brevo</span> Integrations
             </h2>
             <p style={{ color: '#6b7280', fontSize: '16px', maxWidth: '480px', margin: '0 auto' }}>
               Connect Brevo to the tools your team already uses and automate your entire marketing stack.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1.25rem' }}>
-            {INTEGRATIONS.map((integration) => (
+            {INTEGRATIONS.map((integration, i) => (
               <div
                 key={integration.name}
-                className="card-hover"
+                className="card-hover animate-card"
                 style={{
+                  '--anim-delay': `${i * 0.1}s`,
                   background: '#111111',
                   border: '1px solid #1E1E1E',
                   borderRadius: '10px',
@@ -707,11 +723,11 @@ export default async function HomePage() {
                   display: 'flex',
                   flexDirection: 'column',
                   gap: '0.75rem',
-                }}
+                } as React.CSSProperties}
               >
                 <h3 style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 700, fontSize: '16px', color: '#f9fafb', margin: 0 }}>{integration.name}</h3>
                 <p style={{ color: '#6b7280', fontSize: '14px', lineHeight: 1.6, margin: 0, flex: 1 }}>{integration.desc}</p>
-                <Link href={`/blog/${integration.slug}`} style={{ color: '#0B996E', fontSize: '13px', fontWeight: 600, fontFamily: 'Poppins, sans-serif', textDecoration: 'none' }}>
+                <Link href={`/blog/${integration.slug}`} style={{ color: '#FFD14F', fontSize: '13px', fontWeight: 600, fontFamily: 'Poppins, sans-serif', textDecoration: 'none' }}>
                   Read guide →
                 </Link>
               </div>
@@ -740,7 +756,7 @@ export default async function HomePage() {
               lineHeight: 1.2,
             }}
           >
-            Start growing with <span style={{ color: '#0B996E' }}>Brevo</span> today
+            Start growing with <span style={{ color: '#FFD14F' }}>Brevo</span> today
           </h2>
           <p style={{ color: '#6b7280', fontSize: '17px', lineHeight: 1.7, marginBottom: '2.5rem' }}>
             Read our free guides, learn at your own pace, and put every lesson to work inside Brevo.
@@ -749,8 +765,8 @@ export default async function HomePage() {
             <Link
               href="/blog"
               style={{
-                background: '#0B996E',
-                color: '#fff',
+                background: '#FFD14F',
+                color: '#1A1200',
                 padding: '0.8rem 2.25rem',
                 borderRadius: '6px',
                 textDecoration: 'none',
@@ -767,8 +783,8 @@ export default async function HomePage() {
               rel="noopener noreferrer"
               style={{
                 background: 'transparent',
-                border: '1px solid rgba(11,153,110,0.5)',
-                color: '#0B996E',
+                border: '1px solid rgba(255,209,79,0.5)',
+                color: '#FFD14F',
                 padding: '0.8rem 2.25rem',
                 borderRadius: '6px',
                 textDecoration: 'none',

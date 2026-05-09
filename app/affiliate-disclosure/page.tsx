@@ -13,7 +13,7 @@ export default function AffiliateDisclosurePage() {
       <h1 style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 800, fontSize: '2.25rem', color: '#f9fafb', marginBottom: '0.5rem' }}>
         Affiliate Disclosure
       </h1>
-      <p style={{ color: '#4b5563', fontSize: '14px', marginBottom: '2.5rem' }}>Last updated: 2024</p>
+      <p style={{ color: '#4b5563', fontSize: '14px', marginBottom: '2.5rem' }}>Last updated: 2026</p>
 
       <div className="prose-article">
         <p>Email Advisor is committed to full transparency with our readers. This page discloses our affiliate relationships and how they may affect the content we publish.</p>

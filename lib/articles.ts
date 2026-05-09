@@ -53,6 +53,11 @@ export const categories: Category[] = [
     slug: 'vs-competitors',
     description: 'See how Brevo compares to popular alternatives in the market.',
   },
+  {
+    name: 'Brevo vs Competitors',
+    slug: 'brevo-vs-competitors',
+    description: 'Detailed side-by-side comparisons of Brevo against leading email marketing tools.',
+  },
 ]
 
 const articlesDirectory = path.join(process.cwd(), 'content', 'articles')

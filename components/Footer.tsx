@@ -33,9 +33,9 @@ export default function Footer() {
                   key={article.slug}
                   href={`/blog/${article.slug}`}
                   style={{
-                    background: 'rgba(11,153,110,0.08)',
-                    border: '1px solid rgba(11,153,110,0.2)',
-                    color: '#0B996E',
+                    background: 'rgba(255,209,79,0.08)',
+                    border: '1px solid rgba(255,209,79,0.2)',
+                    color: '#FFD14F',
                     padding: '4px 14px',
                     borderRadius: '20px',
                     fontSize: '12px',
@@ -71,22 +71,22 @@ export default function Footer() {
       {/* 2. CTA Banner */}
       <div
         style={{
-          background: 'rgba(11,153,110,0.07)',
-          borderBottom: '1px solid rgba(11,153,110,0.15)',
+          background: 'rgba(255,209,79,0.07)',
+          borderBottom: '1px solid rgba(255,209,79,0.15)',
           padding: '2.5rem 1.5rem',
           textAlign: 'center',
         }}
       >
         <h3 style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 700, fontSize: '1.4rem', color: '#f9fafb', margin: '0 0 1rem' }}>
-          Ready to start with <span style={{ color: '#0B996E' }}>Brevo</span>?
+          Ready to start with <span style={{ color: '#FFD14F' }}>Brevo</span>?
         </h3>
         <a
           href="https://www.brevo.com"
           target="_blank"
           rel="noopener noreferrer"
           style={{
-            background: '#0B996E',
-            color: '#fff',
+            background: '#FFD14F',
+            color: '#1A1200',
             padding: '0.7rem 2rem',
             borderRadius: '6px',
             textDecoration: 'none',
@@ -109,11 +109,11 @@ export default function Footer() {
             gap: '2.5rem',
           }}
         >
-          {/* Brand column */}
+          {/* Brand */}
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '1rem' }}>
-              <div style={{ width: '28px', height: '28px', borderRadius: '5px', background: '#0B996E', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <span style={{ color: '#fff', fontFamily: 'Poppins, sans-serif', fontWeight: 700, fontSize: '12px' }}>E</span>
+              <div style={{ width: '28px', height: '28px', borderRadius: '5px', background: '#FFD14F', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <span style={{ color: '#1A1200', fontFamily: 'Poppins, sans-serif', fontWeight: 700, fontSize: '12px' }}>E</span>
               </div>
               <span style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 700, fontSize: '16px', color: '#f9fafb' }}>Email Advisor</span>
             </div>
@@ -152,7 +152,7 @@ export default function Footer() {
                 </li>
               ))}
               <li>
-                <Link href="/category/vs-competitors" style={{ color: '#0B996E', textDecoration: 'none', fontSize: '13px' }}>
+                <Link href="/category/vs-competitors" style={{ color: '#FFD14F', textDecoration: 'none', fontSize: '13px' }}>
                   All Comparisons
                 </Link>
               </li>

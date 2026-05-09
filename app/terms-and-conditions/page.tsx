@@ -13,7 +13,7 @@ export default function TermsPage() {
       <h1 style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 800, fontSize: '2.25rem', color: '#f9fafb', marginBottom: '0.5rem' }}>
         Terms and Conditions
       </h1>
-      <p style={{ color: '#4b5563', fontSize: '14px', marginBottom: '2.5rem' }}>Last updated: 2024</p>
+      <p style={{ color: '#4b5563', fontSize: '14px', marginBottom: '2.5rem' }}>Last updated: 2026</p>
 
       <div className="prose-article">
         <p>Please read these Terms and Conditions carefully before using emailplatformadvisor.online (the "Site") operated by Email Advisor ("we", "us", or "our").</p>

@@ -80,8 +80,8 @@ export default async function ArticlePage({
               <Link
                 href={`/category/${article.categorySlug}`}
                 style={{
-                  background: 'rgba(11,153,110,0.12)',
-                  color: '#0B996E',
+                  background: 'rgba(255,209,79,0.12)',
+                  color: '#FFD14F',
                   padding: '4px 12px',
                   borderRadius: '20px',
                   fontSize: '12px',
@@ -131,16 +131,17 @@ export default async function ArticlePage({
           {/* CTA Card */}
           <div
             style={{
-              background: '#0B996E',
+              background: 'rgba(255,209,79,0.1)',
+              border: '1px solid rgba(255,209,79,0.25)',
               borderRadius: '10px',
               padding: '1.5rem',
               textAlign: 'center',
             }}
           >
-            <div style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 700, fontSize: '16px', color: '#fff', marginBottom: '0.4rem' }}>
+            <div style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 700, fontSize: '16px', color: '#f9fafb', marginBottom: '0.4rem' }}>
               Try Brevo Free
             </div>
-            <div style={{ color: 'rgba(255,255,255,0.8)', fontSize: '13px', marginBottom: '1.25rem' }}>
+            <div style={{ color: '#9ca3af', fontSize: '13px', marginBottom: '1.25rem' }}>
               300 emails/day · No credit card
             </div>
             <a
@@ -148,8 +149,8 @@ export default async function ArticlePage({
               target="_blank"
               rel="noopener noreferrer"
               style={{
-                background: '#fff',
-                color: '#0B996E',
+                background: '#FFD14F',
+                color: '#1A1200',
                 padding: '0.6rem 1.25rem',
                 borderRadius: '6px',
                 textDecoration: 'none',
@@ -173,7 +174,7 @@ export default async function ArticlePage({
               <Link
                 href={`/category/${article.categorySlug}`}
                 style={{
-                  color: '#0B996E',
+                  color: '#FFD14F',
                   textDecoration: 'none',
                   fontFamily: 'Poppins, sans-serif',
                   fontWeight: 600,
@@ -213,7 +214,7 @@ export default async function ArticlePage({
                   key={cat.slug}
                   href={`/category/${cat.slug}`}
                   style={{
-                    color: cat.slug === article.categorySlug ? '#0B996E' : '#6b7280',
+                    color: cat.slug === article.categorySlug ? '#FFD14F' : '#6b7280',
                     textDecoration: 'none',
                     fontSize: '13px',
                     fontWeight: cat.slug === article.categorySlug ? 600 : 400,
