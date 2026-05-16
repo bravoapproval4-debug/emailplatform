@@ -43,7 +43,9 @@ export default async function ArticlePage({
   const article = getArticleBySlug(slug)
   if (!article) notFound()
 
-  const htmlContent = String(marked.parse(article.content))
+  const rawHtml = String(marked.parse(article.content))
+  // Remove first <h1> from content since title is already shown above
+  const htmlContent = rawHtml.replace(/^<h1[^>]*>.*?<\/h1>\s*/i, '')
 
   const allArticles = getAllArticles()
   const relatedArticles = [
