@@ -1,0 +1,158 @@
+---
+title: "Brevo Segmentation: Target the Right Subscribers"
+description: "Use Brevo's advanced segmentation features to send hyper-targeted emails to the right people at the right time for maximum engagement and conversions."
+category: "Deliverability & List Management"
+categorySlug: "deliverability-and-list-management"
+readTime: "9 min read"
+---
+
+# Brevo Segmentation: Target the Right Subscribers
+
+Sending the same email to your entire list is the single biggest missed opportunity in email marketing. Every subscriber on your list has different needs, different interests, and different relationships with your brand. Segmentation is the practice of grouping contacts by shared characteristics so you can send each group the most relevant message possible. In Brevo, this translates directly into higher open rates, higher click rates, and higher conversions.
+
+## Why Segmentation Matters
+
+The numbers tell a clear story. Segmented campaigns generate:
+- 14% higher open rates than non-segmented sends
+- 101% higher click rates
+- 76% of revenue from segmented rather than unsegmented campaigns (DMA)
+- Significantly lower unsubscribe rates (subscribers do not unsubscribe from relevant email)
+
+Beyond the performance metrics, segmentation protects your deliverability. Sending relevant email to engaged audiences maintains the positive engagement signals (high open rates, high click rates, few spam complaints) that keep your sender reputation strong.
+
+## Brevo's Segmentation Options
+
+Brevo supports two types of audience groupings:
+
+**Lists** — Static groups. A contact is in a list because they were added to it manually, through a form, or via automation. Lists do not automatically update based on contact behaviour. Use lists for: import sources ("Newsletter Signups — Website"), subscription status ("Active Customers"), or manual groupings.
+
+**Segments** — Dynamic groups defined by conditions. Brevo automatically adds and removes contacts from segments as their data changes or as they perform actions. Segments always reflect the current state. Use segments for: behavioural targeting, engagement-based campaigns, and real-time audience filtering.
+
+## Building Segments in Brevo
+
+Go to **Contacts → Segments → Create a Segment**. The segment builder uses a visual condition editor with the following field types:
+
+**Contact attributes:**
+Any standard or custom field on the contact record.
+- `Email contains @gmail.com`
+- `First name is not empty`
+- `Country is United States`
+- `Industry is ecommerce`
+- `Plan type is Free`
+- `Company size is 1-10`
+
+**Contact list membership:**
+- `Contact is in list [Newsletter Subscribers]`
+- `Contact is not in list [Customers]`
+
+**Email campaign engagement:**
+- `Has opened [Campaign Name]` in the last X days
+- `Has clicked [Campaign Name]` in the last X days
+- `Has not opened any campaign` in the last 90 days
+- `Has not clicked any campaign` in the last 60 days
+
+**Workflow activity:**
+- `Has entered workflow [Workflow Name]`
+- `Has received email [Email Name]` from a workflow
+
+**Combine conditions** using AND (all conditions must be true) or OR (any condition must be true). Nest conditions to create complex logic.
+
+## Behavioral Segmentation
+
+Behavioral segments group contacts based on what they have done, not just who they are. These are your most powerful segments because they reflect actual intent.
+
+**High-engagement segment:**
+- Has opened a campaign in the last 30 days
+- AND has clicked a link in the last 30 days
+
+Use for: Sending your most important announcements. This audience is primed to engage.
+
+**At-risk segment:**
+- Has not opened any campaign in the last 60 days
+- AND has not clicked any campaign in the last 60 days
+- AND was added more than 60 days ago
+
+Use for: Re-engagement campaigns. This audience is sliding toward inactive status.
+
+**Active trial users:**
+- Contact attribute `trial_status = active`
+- AND was added to list in the last 14 days
+
+Use for: Onboarding sequences, feature education, conversion push.
+
+**Recent purchasers:**
+- Has been updated with `last_purchase_date` in the last 7 days
+
+Use for: Thank-you emails, upsell sequences, review requests.
+
+## Demographic Segmentation
+
+Demographic segments use contact attribute data to group people by who they are rather than what they have done.
+
+**Geographic segments:**
+- `Country is United Kingdom` → UK-specific promotions, content about GDPR
+- `Timezone contains America` → Adjust send times for US-friendly morning delivery
+
+**Role-based segments:**
+- `job_title contains Marketing` → Marketing-focused content
+- `job_title contains CEO OR job_title contains Founder` → Executive-level positioning
+
+**Company size segments:**
+- `company_size is 1-10` → Small business content, self-service emphasis
+- `company_size is 51-200` → Mid-market messaging, team features
+- `company_size is 201+` → Enterprise content, security, compliance features
+
+## Using Custom Attributes for Advanced Segmentation
+
+The real power of Brevo segmentation comes from custom contact attributes. Go to **Contacts → Settings → Contact Attributes** to create fields that match your business model.
+
+**SaaS example attributes:**
+- `plan_type` (Free, Starter, Business, Enterprise)
+- `feature_used_automation` (Yes/No)
+- `trial_days_remaining` (Number)
+- `last_login_date` (Date)
+- `account_health_score` (Number, 1-100)
+
+**E-commerce example attributes:**
+- `total_orders` (Number)
+- `lifetime_value` (Number)
+- `last_purchase_category` (Text)
+- `preferred_brand` (Text)
+- `vip_status` (Yes/No)
+
+Once these attributes are populated (via API, integration, or Brevo automation), you can build incredibly precise segments:
+
+"Send to contacts where `plan_type = Free` AND `feature_used_automation = No` AND `account_age_days > 14`" → Onboarding nudge for free users who have not discovered automation yet.
+
+## Dynamic Segments in Automation
+
+Segments are not just for one-off campaigns — they are the entry point for automation workflows.
+
+Use a segment as a workflow trigger: "When a contact joins segment [At Risk — No Open 60 Days]" → Enter them into your re-engagement workflow automatically.
+
+When a contact's attributes change (for example, their `plan_type` changes from "Free" to "Starter"), use this as a workflow trigger to send an upgrade congratulations email and onboarding sequence for the new plan tier.
+
+## Advanced Filters and Compound Logic
+
+Brevo's segment builder supports multi-level condition nesting. Here is an example of a compound segment for a targeted upsell campaign:
+
+**Target:** Free users who have used the automation feature but have not upgraded, in companies with more than 10 employees, who have opened at least one email in the last 30 days.
+
+**Conditions:**
+- `plan_type = Free`
+- AND `feature_used_automation = Yes`
+- AND `company_size > 10`
+- AND `has opened any campaign in last 30 days`
+
+This segment defines a highly qualified, warm audience for an automation-focused upgrade campaign. Sending this campaign to this specific group will dramatically outperform sending it to all free users.
+
+## Brevo Plan Comparison
+
+| Plan | Price | Emails/Month | Key Features |
+|------|-------|--------------|--------------|
+| Free | $0/forever | 300/day | Unlimited contacts, email campaigns, basic CRM, Brevo branding |
+| Starter | From $9/month | 5,000 | No daily cap, no Brevo logo, basic reporting, email & phone support |
+| Business | From $18/month | 20,000 | Marketing automation, A/B testing, advanced stats, multi-user access |
+| Enterprise | Custom pricing | Unlimited | Dedicated IP, SSO/SAML, custom onboarding, dedicated account manager |
+
+Start building your first segment today — even a simple high-engagement segment will dramatically improve the performance of your next campaign.

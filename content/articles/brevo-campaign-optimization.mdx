@@ -1,0 +1,130 @@
+---
+title: "Brevo Campaign Optimization: Boost Your Open Rates"
+description: "Learn proven strategies to optimize your Brevo email campaigns for higher open rates, better click-through rates, and improved conversions."
+category: "Email Marketing Basics"
+categorySlug: "email-marketing-basics"
+readTime: "9 min read"
+---
+
+# Brevo Campaign Optimization: Boost Your Open Rates
+
+Sending an email is easy. Sending an email that gets opened, read, and acted upon is a skill that you build through data, testing, and continuous refinement. This guide covers every lever available in Brevo to maximise the performance of every campaign you send.
+
+## Start With Your Benchmark Data
+
+Before optimising anything, you need a baseline. After sending at least five campaigns, review your average performance in **Reports → Email Reports**:
+
+- Average open rate
+- Average click rate
+- Average unsubscribe rate
+- Average bounce rate
+
+Compare these numbers against industry averages for your sector. Email benchmark data from 2026 shows:
+- **Average open rate (all industries):** 21-28%
+- **Average click rate:** 2.3-3.5%
+- **Average unsubscribe rate:** 0.1-0.4%
+
+If you are below these benchmarks, this guide will help you close the gap. If you are already above them, optimisation will help you push further.
+
+## Subject Line Optimisation
+
+The subject line is the single most important factor in whether an email gets opened. Everything else is secondary. Here is what works:
+
+**Keep it under 50 characters.** Most mobile email clients truncate subject lines at 40-50 characters. Write the most important information first.
+
+**Be specific.** "5 automation triggers to set up this week" outperforms "Email marketing tips" every time. Specificity signals that the email contains real value.
+
+**Use numbers.** Numbers stand out visually in an inbox. "3 ways to..." "Your 7-day plan..." "47% of marketers..."
+
+**Create urgency when genuine.** "Last day: 40% off Brevo upgrade" works because the urgency is real. Manufactured urgency ("Act now!!!") damages trust.
+
+**Avoid spam trigger words.** Words like "Free," "Guaranteed," "Act now," "Click here," "Make money," and excessive punctuation (!!!) are flagged by spam filters and also reduce open rates even in the inbox.
+
+**Personalise when relevant.** Including the subscriber's first name in the subject line still provides a small lift in open rates, but only when it feels natural. "Sarah, your weekly report is ready" works. "Sarah, don't miss this!" feels manipulative.
+
+**Use Brevo's subject line A/B testing** to test two subject lines against a small portion of your list before sending the winner to the remainder. Find this option in the campaign setup screen.
+
+## Preview Text Optimisation
+
+Preview text is the snippet of text displayed after the subject line in most email clients. Many marketers ignore it and end up with "View this email in your browser" or the first line of their email body appearing instead.
+
+Write preview text that extends your subject line's promise. Together they function as a two-part headline:
+
+*Subject:* Your Q1 email strategy starts here  
+*Preview:* 6 campaigns to run before March that drive real results
+
+Set preview text in Brevo's campaign setup before opening the email editor — there is a dedicated field for it. Keep it under 90 characters.
+
+## Personalisation Beyond First Name
+
+True personalisation uses data you have collected about your subscribers to make every email feel individually relevant. In Brevo, you insert contact attributes using the `{{ contact.ATTRIBUTE_NAME }}` syntax.
+
+Examples:
+- `{{ contact.FIRSTNAME }}` — First name
+- `{{ contact.company }}` — Company name (if you collect it)
+- `{{ contact.plan_type }}` — Their current plan (for SaaS)
+- `{{ contact.city }}` — Their city
+
+Beyond simple merge tags, Brevo supports conditional content blocks. You can show different content to different segments within the same campaign. For example, show a "Upgrade to Business" block to Free users and a "Refer a friend" block to Business users — in a single campaign send.
+
+## Send Time Optimisation
+
+When you send matters almost as much as what you send. Brevo offers two approaches:
+
+**Manual scheduling** — Choose a specific day and time based on industry benchmarks and your own historical data. Tuesday, Wednesday, and Thursday between 9-11am in your subscribers' time zones consistently produce the strongest results across most industries.
+
+**Send Time Optimisation (STO)** — A Brevo Business feature that analyses each contact's individual email behaviour and sends the campaign at the time each person is most likely to open it. In practice, this means the campaign is delivered over a 24-hour window, with each subscriber receiving it at their personal optimal time. STO typically produces open rate lifts of 5-15%.
+
+## Segmentation for Relevance
+
+The fastest way to improve open rates is to send more relevant email to smaller, more targeted audiences. A campaign sent to 200 highly relevant subscribers will almost always outperform the same campaign sent to 2,000 loosely matched ones.
+
+Before every campaign, ask: who is this email actually for? Build a segment in Brevo that matches that description precisely.
+
+Examples:
+- Sending a product update? Send it only to customers who have used that product feature.
+- Announcing a webinar? Send it only to contacts who have not already registered.
+- Running a re-engagement campaign? Target only subscribers who have not opened an email in 90 days.
+
+Segmented campaigns in Brevo see 14% higher open rates and 101% higher click rates than unsegmented broadcasts, based on internal platform data.
+
+## A/B Testing Basics
+
+A/B testing (also called split testing) lets you test one variable at a time against a portion of your audience to find the version that performs better.
+
+In Brevo, go to campaign creation and select **A/B Test Campaign**. You can test:
+- Subject line A vs Subject line B
+- From name A vs From name B
+- Send time A vs Send time B
+
+Brevo sends version A to a portion of your list (e.g., 20%), version B to another portion (20%), waits for a period you define (4-24 hours), then automatically sends the winner to the remaining 60%.
+
+**Rules for valid A/B tests:**
+- Test only one variable at a time. If you change both the subject line and the from name, you cannot know which change caused the result.
+- Give the test enough time to reach statistical significance — at least 4 hours, ideally 8-24.
+- Your test group needs to be large enough. A/B testing a list of 200 people produces unreliable results. Aim for at least 500 people per variant.
+
+## Analysing Campaign Results
+
+After every campaign, review the detailed report in **Reports → Email Reports → [Campaign Name]**.
+
+**Open rate by device** — Are most opens on mobile or desktop? This affects your design decisions.
+
+**Click map** — A heat map showing which links got the most clicks. If your primary CTA gets fewer clicks than a secondary link lower in the email, reconsider your layout.
+
+**Open timeline** — When did most opens happen? A spike in the first hour followed by a long tail is typical. If you see very few opens in the first hour, your email may have been delayed by filtering.
+
+**Geography** — Where are your openers located? Useful for time zone considerations.
+
+**Unsubscribes and complaints** — Any campaign that generates a complaint rate above 0.1% needs investigation. What was different about that send?
+
+## Brevo Plan Comparison
+
+| Plan | Price | Emails/Month | Key Features |
+|------|-------|--------------|--------------|
+| Free | $0/forever | 300/day | Unlimited contacts, email campaigns, basic CRM, Brevo branding |
+| Starter | From $9/month | 5,000 | No daily cap, no Brevo logo, basic reporting, email & phone support |
+| Business | From $18/month | 20,000 | Marketing automation, A/B testing, advanced stats, multi-user access |
+| Enterprise | Custom pricing | Unlimited | Dedicated IP, SSO/SAML, custom onboarding, dedicated account manager |
+
+Start optimising your campaigns today — every percentage point of open rate improvement translates directly into more clicks, more conversions, and more revenue.

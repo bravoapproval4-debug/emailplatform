@@ -1,0 +1,119 @@
+---
+title: "Brevo Analytics Dashboard: Track Campaign Performance"
+description: "Master Brevo's analytics dashboard to track opens, clicks, conversions, and revenue so you can make data-driven decisions to improve your campaigns."
+category: "Analytics & Reporting"
+categorySlug: "analytics-and-reporting"
+readTime: "8 min read"
+---
+
+# Brevo Analytics Dashboard: Track Campaign Performance
+
+Every email you send generates data. Open timestamps, click locations, device types, geographic distribution, unsubscribe events — Brevo captures all of it and organises it into a reporting suite that lets you make decisions based on evidence rather than intuition. This guide walks you through every section of the Brevo analytics dashboard and explains how to use the data to continuously improve your campaigns.
+
+## Accessing Your Reports
+
+Navigate to **Reports** in the left sidebar. Brevo organises reporting into several sections:
+
+- **Email Reports** — Performance data for all your email campaigns
+- **Automation Reports** — Workflow performance and email performance within automations
+- **Transactional Reports** — Delivery and engagement data for transactional emails
+- **SMS Reports** — If you send SMS through Brevo
+- **WhatsApp Reports** — If you use WhatsApp campaigns
+
+For most users, **Email Reports** is the primary destination.
+
+## The Campaign Overview
+
+Click on any campaign in the Email Reports list to open its full performance dashboard. The overview shows:
+
+**Delivered** — The number of emails that reached the recipient's mail server. This is your total sends minus hard bounces. A delivery rate below 95% signals a list quality issue.
+
+**Opened** — The number of delivered emails that were opened. Note: open tracking requires loading a 1-pixel transparent image Brevo embeds in your email. If a recipient has images blocked (common in some corporate environments), their open may not be tracked. Treat open rates as directional, not perfectly accurate.
+
+**Clicked** — The number of recipients who clicked at least one link in your email. Click tracking is more reliable than open tracking since it does not depend on image loading.
+
+**Bounced** — Emails that could not be delivered. Brevo shows both hard bounces (permanent failures) and soft bounces (temporary failures) separately.
+
+**Unsubscribed** — Recipients who clicked the unsubscribe link in this campaign.
+
+**Spam** — Recipients who marked the email as spam through their email client. Even one or two spam reports on a small send is significant — this is your most damaging engagement signal.
+
+## Key Metrics Explained
+
+**Open Rate = Opens ÷ Delivered**
+This is the most commonly reported email metric. Industry averages by sector:
+- E-commerce: 15-20%
+- SaaS / Technology: 22-28%
+- Media / Publishing: 25-35%
+- Non-profit: 28-35%
+- Financial services: 20-26%
+
+Open rate tells you whether your subject line is working and whether your audience recognises and trusts your from name.
+
+**Click-to-Open Rate (CTOR) = Clicks ÷ Opens**
+CTOR measures content effectiveness independently of whether the email got opened. A high CTOR with a low open rate means your content is great but your subject line is not pulling people in. A low CTOR with a high open rate means people are opening but the content is not compelling them to act.
+
+**Click Rate = Clicks ÷ Delivered**
+Also called CTR (click-through rate). This is the percentage of your entire audience that clicked something. It factors in both the open rate and the quality of the content.
+
+**Conversion Rate** — Not tracked natively in Brevo without additional setup (see the conversion tracking section below). This is the percentage of email recipients who completed the goal action on your website.
+
+**Bounce Rate = Bounces ÷ Sends**
+Keep hard bounce rates below 2% to protect your sender reputation. Higher rates suggest your list contains outdated or invalid addresses.
+
+**Unsubscribe Rate = Unsubscribes ÷ Delivered**
+Aim to keep this below 0.5%. Rates above 0.5% persistently indicate you are sending to people who do not want your email, either because of list quality issues or relevance problems.
+
+**Spam Complaint Rate = Spam Reports ÷ Delivered**
+Keep below 0.1%. Gmail's threshold for bulk senders is 0.1% — above this, they begin filtering your emails aggressively.
+
+## The Click Map (Heatmap)
+
+Inside each campaign report, click **Click Map** to see a visual heat map of your email with click counts and percentages overlaid on each link.
+
+This is one of the most useful diagnostic tools available. Common insights from click maps:
+
+- Your primary CTA button gets fewer clicks than a secondary text link lower in the email → elevate the text link or redesign the email hierarchy
+- A specific section of the email gets the most clicks → this topic resonates most with your audience; write more about it
+- Nobody clicked the social media icons in your footer → these links may be consuming space that could be used more productively
+- A link to an older blog post in your newsletter gets more clicks than the featured article → the older topic is more relevant to your current audience than you thought
+
+## Geographic and Device Reports
+
+Scroll down in the campaign report to see:
+
+**Opens by country** — Shows where in the world your email was opened. Useful for understanding your audience's geographic distribution and planning time zone-based sending strategies.
+
+**Opens by device** — Desktop vs mobile vs tablet split. If 70%+ of your opens are on mobile, your email design must be flawless on small screens.
+
+**Opens by email client** — Gmail, Outlook, Apple Mail, mobile Gmail, and others. This tells you which clients to prioritise in your rendering tests.
+
+**Timeline** — A chart showing opens and clicks plotted over time after the campaign was sent. Most opens happen within the first 2-4 hours. The shape of this curve tells you whether your email was well-received (steep initial spike) or landed in spam for some recipients (slow, flat curve).
+
+## Tracking Revenue and Conversions
+
+Brevo does not natively track revenue from email clicks without additional setup. Here are the two main approaches:
+
+**UTM Parameters** — Add UTM tracking parameters to all links in your email:
+`?utm_source=email&utm_medium=campaign&utm_campaign=summer-sale-2026`
+
+When recipients click through and convert on your website, Google Analytics (or any other analytics tool) attributes the conversion to the email campaign. Create a standard UTM naming convention and apply it consistently.
+
+**Brevo Conversion Tracking** — Brevo supports direct conversion tracking via a tracking script on your website. When a contact who received a Brevo campaign visits your thank-you page (after a purchase, signup, etc.), the conversion is attributed to the campaign in Brevo's reports. Set this up under **Campaigns → Settings → Conversion Tracking**.
+
+## Custom Reports and Data Export
+
+Brevo's built-in reports cover the most important metrics, but sometimes you need custom analysis. Export full campaign data as CSV from the **Reports** page — all metrics, contact-level open and click data, and timeline data are available for download.
+
+Use the exported data in Excel, Google Sheets, or your BI tool of choice to build custom dashboards, calculate metrics that Brevo does not display natively, or combine email data with revenue data from your e-commerce platform.
+
+## Brevo Plan Comparison
+
+| Plan | Price | Emails/Month | Key Features |
+|------|-------|--------------|--------------|
+| Free | $0/forever | 300/day | Unlimited contacts, email campaigns, basic CRM, Brevo branding |
+| Starter | From $9/month | 5,000 | No daily cap, no Brevo logo, basic reporting, email & phone support |
+| Business | From $18/month | 20,000 | Marketing automation, A/B testing, advanced stats, multi-user access |
+| Enterprise | Custom pricing | Unlimited | Dedicated IP, SSO/SAML, custom onboarding, dedicated account manager |
+
+Review your last five campaigns tonight using the Brevo analytics dashboard — you will find at least one clear opportunity to improve in your next send.

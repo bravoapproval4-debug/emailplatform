@@ -1,0 +1,140 @@
+---
+title: "Brevo Contact Scoring: Identify Your Best Leads"
+description: "Implement lead scoring in Brevo to automatically identify your most engaged subscribers and prioritize them for sales outreach and special offers."
+category: "Analytics & Reporting"
+categorySlug: "analytics-and-reporting"
+readTime: "8 min read"
+---
+
+# Brevo Contact Scoring: Identify Your Best Leads
+
+Not all subscribers are equal. Some have opened every email you have ever sent, clicked on product pages, visited your pricing page, and are clearly on the verge of buying. Others signed up two years ago and have never opened a single message. Treating these two contacts identically — sending them the same email at the same time with the same message — is a missed opportunity in both directions.
+
+Lead scoring is the system that makes this distinction automatic. It assigns numerical scores to each contact based on their behaviour and attributes, giving you a real-time signal of who is most engaged and most likely to convert.
+
+## The Lead Scoring Concept
+
+A lead score is a number — typically ranging from 0 to 100 — that represents how sales-ready or engaged a contact is. The score increases when a contact takes positive actions and can decrease when they become inactive.
+
+High scorers are your warmest leads: they are engaged, interested, and ready for a more direct sales conversation or a compelling offer. Low scorers either have low engagement (need nurturing) or are not a good fit (should eventually be cleaned from your list).
+
+Used well, lead scoring lets you:
+- Automatically trigger personalised campaigns when a lead hits a score threshold
+- Alert your sales team when a lead becomes hot
+- Identify contacts who have gone cold before they churn completely
+- Prioritise your sales outreach on contacts most likely to convert
+
+## Setting Up Contact Scoring in Brevo
+
+Brevo does not have a native lead scoring module in the same way as some enterprise platforms. Instead, you implement scoring using a **custom numeric contact attribute** updated by automation workflows. This approach is flexible and powerful.
+
+**Step 1: Create a score attribute**
+Go to **Contacts → Settings → Contact Attributes → Add Attribute**.
+- Name: `lead_score`
+- Type: Number
+- Default value: 0
+
+**Step 2: Build scoring workflows in automation**
+Each scoring rule is an automation workflow that increases or decreases the `lead_score` attribute when a specific event occurs.
+
+Navigate to **Automation → Workflows → Create Workflow**.
+
+Example scoring workflow for "Email opened":
+- Trigger: "Contact opened campaign [any campaign]"
+- Action: "Update contact attribute" → `lead_score` → Increment by +2
+
+Example scoring workflow for "Link clicked":
+- Trigger: "Contact clicked link in campaign [any campaign]"
+- Action: "Update contact attribute" → `lead_score` → Increment by +5
+
+Create a separate workflow for each scoring rule.
+
+## Behavioural Scoring Rules
+
+Assign points based on actions that indicate genuine interest and buying intent. Higher-intent actions receive more points.
+
+**Email engagement:**
+- Opened any email: +2
+- Clicked any link: +5
+- Clicked pricing page link: +15
+- Clicked "Book a Demo" link: +20
+- Replied to an email: +25
+
+**Website behaviour (requires Brevo tracking script):**
+- Visited your website: +3
+- Visited the pricing page: +10
+- Visited the product page: +8
+- Visited the about/team page: +5
+- Visited the case studies page: +12
+
+**Form submissions:**
+- Submitted a contact form: +20
+- Downloaded a lead magnet: +10
+- Registered for a webinar: +15
+- Started a free trial: +30
+
+**Recency bonus:**
+- Actions in the last 7 days: double points
+- Actions in the last 30 days: standard points
+- No activity in 90+ days: subtract 10 points (score decay)
+
+## Engagement Scoring
+
+Beyond specific behavioural events, track cumulative engagement patterns.
+
+**Email frequency engagement:**
+Build a workflow that runs weekly and checks: "Has opened an email in the last 7 days?"
+- Yes → Add +5 to `weekly_engagement_streak`
+- No → Reset `weekly_engagement_streak` to 0
+
+Contacts with long engagement streaks are your most reliable readers — treat them accordingly.
+
+**Campaign-specific scoring:**
+Some campaigns are more intent-revealing than others. Create a specific score bonus for clicking through a campaign about your most purchased product or service. Clicking that campaign demonstrates more specific intent than clicking a general newsletter.
+
+## Using Scores in Automation
+
+The real power of lead scoring is what happens when contacts cross score thresholds.
+
+**Score threshold workflow: Hot lead notification**
+- Trigger: Contact attribute `lead_score` becomes greater than 75
+- Action: Send internal notification to your sales team with the contact's name, email, company, and the page or campaign that pushed them over the threshold
+- Action: Add contact to "Hot Leads" list for priority outreach
+
+**Score threshold workflow: Engagement campaign**
+- Trigger: Contact attribute `lead_score` reaches 40 (engaged but not yet hot)
+- Action: Add contact to a targeted mid-funnel campaign focused on case studies and social proof
+
+**Score threshold workflow: Re-engagement**
+- Trigger: Contact attribute `lead_score` drops below 10
+- Action: Enter contact into re-engagement campaign
+- If they do not re-engage within 30 days: Move to suppression list
+
+## CRM Integration for Sales Handoff
+
+If you use a CRM — including Brevo's built-in CRM, Salesforce, or HubSpot — sync your Brevo contact scores so your sales team always has current engagement data.
+
+In Brevo's CRM (accessible via **Contacts → Deals**), you can see each contact's full activity timeline — every email opened, every link clicked, every form submitted — giving your sales team full context before they reach out.
+
+For Salesforce and HubSpot integrations, Brevo syncs contact attributes including your custom `lead_score` field, so CRM records are always current with the latest engagement data from your email campaigns.
+
+## Scoring Best Practices
+
+**Start simple.** Build five or six scoring rules first, let them run for 30-60 days, and evaluate the distribution of scores. Are your known best customers clustering at the top? Are clearly unengaged contacts at the bottom? If not, revisit your point values.
+
+**Calibrate points to behaviour frequency.** If email opens happen 10x more often than demo requests, open points should be proportionally smaller than demo points. Otherwise, frequent email openers with no purchase intent will score higher than occasional visitors who have viewed your pricing page.
+
+**Use score decay.** Engagement that happened six months ago is less meaningful than engagement last week. Build a monthly workflow that reduces scores by a small amount for contacts who have been inactive in the past 30 days. This keeps scores current and prevents stale high scores from triggering false-positive "hot lead" alerts.
+
+**Review and refine quarterly.** After the first quarter, analyse which high-scoring contacts actually converted and which did not. Adjust your point values based on real conversion data, not assumptions.
+
+## Brevo Plan Comparison
+
+| Plan | Price | Emails/Month | Key Features |
+|------|-------|--------------|--------------|
+| Free | $0/forever | 300/day | Unlimited contacts, email campaigns, basic CRM, Brevo branding |
+| Starter | From $9/month | 5,000 | No daily cap, no Brevo logo, basic reporting, email & phone support |
+| Business | From $18/month | 20,000 | Marketing automation, A/B testing, advanced stats, multi-user access |
+| Enterprise | Custom pricing | Unlimited | Dedicated IP, SSO/SAML, custom onboarding, dedicated account manager |
+
+Set up your first scoring attribute today — even a simple five-rule scoring system will immediately help you identify and prioritise your most engaged leads.

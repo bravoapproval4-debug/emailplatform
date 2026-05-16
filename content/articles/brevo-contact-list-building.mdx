@@ -1,0 +1,122 @@
+---
+title: "Brevo Contact Management: Build and Organize Your List"
+description: "Master Brevo's contact management features to segment your audience, import subscribers, and maintain a healthy email list for better results."
+category: "Email Marketing Basics"
+categorySlug: "email-marketing-basics"
+readTime: "6 min read"
+---
+
+# Brevo Contact Management: Build and Organize Your List
+
+Your email list is your most valuable marketing asset. Unlike social media followers who can be cut off by algorithm changes or platform shutdowns, your email subscribers belong to you. Brevo gives you the tools to import, organise, segment, and maintain your list professionally — at no extra cost, regardless of how many contacts you have.
+
+## Brevo's Contact Model: Unlimited by Default
+
+Unlike platforms such as Mailchimp or MailerLite that charge based on the number of contacts you store, Brevo charges based on how many emails you send. This means you can store 10 contacts or 1,000,000 contacts and pay exactly the same amount. This is a significant structural advantage if you have a large list that you do not email at full volume every month.
+
+## Importing Contacts
+
+To import existing contacts, go to **Contacts → Import Contacts** and select your import method:
+
+**CSV File** — The most common option. Brevo accepts CSV files with columns for email, first name, last name, phone number, and any custom attributes. During import, you map each column to the correct Brevo field.
+
+**Copy and Paste** — For small lists, paste your data directly into the import window.
+
+**Integrations** — Brevo connects natively to Shopify, WordPress, Salesforce, and dozens of other platforms that can sync contacts automatically.
+
+### Import Compliance Requirements
+
+Brevo requires that every imported contact has explicitly opted in to receive email from you. During import, you confirm this by checking an opt-in declaration. Importing purchased lists or scraped addresses violates Brevo's Terms of Service and will result in account suspension.
+
+What counts as explicit opt-in:
+- A subscriber who filled out a signup form on your website
+- A customer who checked "I agree to receive marketing emails" at checkout
+- Someone who subscribed through a lead magnet or content offer
+
+What does NOT count:
+- Business cards collected at events (unless they specifically agreed to email marketing)
+- LinkedIn connections
+- Email addresses found on websites
+- Any purchased, rented, or third-party list
+
+## Organising Contacts with Lists
+
+Brevo uses Lists to group contacts. Think of a list as a bucket: "Newsletter Subscribers," "Customers," "Trial Users," "Event Attendees." One contact can belong to multiple lists simultaneously.
+
+Create a new list under **Contacts → Lists → Add a List**. Assign contacts to lists during import or manually by editing individual contacts.
+
+**Best practice:** Create lists based on how contacts entered your database. "Newsletter Signups — Website," "Customers — Shopify," "Webinar Registrants — January 2026." This makes it easy to understand your audience's composition and tailor content accordingly.
+
+## Custom Contact Attributes
+
+Beyond standard fields (email, first name, last name, phone), Brevo lets you create custom contact attributes to store any data relevant to your business. Go to **Contacts → Settings → Contact Attributes** to create new fields.
+
+Common custom attributes:
+- **Plan type** — Free, Starter, Business (for SaaS companies)
+- **Industry** — Retail, Healthcare, Finance
+- **Location** — City or country
+- **Purchase date** — Last order date from e-commerce integration
+- **Lead score** — Numeric value updated by automation
+
+These attributes become powerful when you use them for segmentation and personalisation. For example, you can send a campaign only to contacts with `plan_type = Free` to promote an upgrade offer.
+
+## Segmentation: Send the Right Email to the Right Person
+
+Brevo segments allow you to define a dynamic subset of your contacts based on conditions. Unlike static lists, segments update automatically as contacts meet or no longer meet the conditions.
+
+Go to **Contacts → Segments → Add a Segment** and build your conditions:
+
+**Attribute-based conditions:**
+- Email contains "@gmail.com"
+- City is "London"
+- Plan type is "Free"
+
+**Engagement-based conditions:**
+- Opened campaign "Summer Sale" in the last 30 days
+- Clicked link in any campaign in the last 60 days
+- Has not opened any campaign in the last 90 days
+
+**Combination conditions:**
+- Plan type is "Free" AND has not opened any campaign in 90 days → re-engagement or churned user segment
+
+**Compound segments:**
+- Contacts who joined in the last 30 days AND are from the United Kingdom
+
+Segments are the foundation of relevant email marketing. Sending the same message to your entire list regardless of who they are is the fastest route to high unsubscribe rates and low engagement.
+
+## GDPR Compliance in Brevo
+
+If you have subscribers in the European Union, GDPR compliance is mandatory. Brevo is built with GDPR in mind:
+
+**Opt-in confirmation** — Brevo's signup forms support double opt-in, where new subscribers must click a confirmation link in a welcome email before being added to your list. Enable this under form settings.
+
+**Consent records** — Brevo stores the opt-in source and date for each contact, providing an audit trail you can produce if challenged.
+
+**Unsubscribe handling** — Every Brevo email includes a legally required unsubscribe link. When a subscriber clicks it, they are automatically suppressed from future campaigns — no manual action required.
+
+**Data export and deletion** — If a subscriber requests their data or asks to be deleted (their right under GDPR), you can export their data or delete their contact record from the Brevo dashboard.
+
+**Data processing agreement** — Brevo offers a standard Data Processing Agreement (DPA) that you can sign to fulfil the GDPR requirement for having a written agreement with your email processor.
+
+## List Hygiene Basics
+
+A healthy list is not just large — it is engaged. High volumes of unengaged contacts hurt your sender reputation and increase your spam complaint rate.
+
+**Remove hard bounces immediately.** A hard bounce means the email address is permanently invalid. Brevo suppresses these automatically after the first bounce.
+
+**Monitor soft bounces.** Soft bounces are temporary delivery failures. Brevo automatically handles soft bounce management, but watch for contacts that soft bounce repeatedly — they may eventually become hard bounces.
+
+**Watch your unsubscribe rate.** If your unsubscribe rate climbs above 0.5% on any campaign, investigate the cause. The content may be irrelevant, the frequency may be too high, or the audience may not remember opting in.
+
+**Run re-engagement campaigns.** Before removing inactive subscribers (those who have not opened an email in 6+ months), send a re-engagement sequence asking if they still want to hear from you. Some will re-engage; others will unsubscribe. Both outcomes are good for list health.
+
+## Brevo Plan Comparison
+
+| Plan | Price | Emails/Month | Key Features |
+|------|-------|--------------|--------------|
+| Free | $0/forever | 300/day | Unlimited contacts, email campaigns, basic CRM, Brevo branding |
+| Starter | From $9/month | 5,000 | No daily cap, no Brevo logo, basic reporting, email & phone support |
+| Business | From $18/month | 20,000 | Marketing automation, A/B testing, advanced stats, multi-user access |
+| Enterprise | Custom pricing | Unlimited | Dedicated IP, SSO/SAML, custom onboarding, dedicated account manager |
+
+Build your list the right way from day one — engaged subscribers who want to hear from you are worth far more than a large, disengaged database.

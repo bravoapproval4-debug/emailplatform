@@ -1,0 +1,115 @@
+---
+title: "Brevo List Cleaning: Remove Inactive Subscribers"
+description: "Keep your Brevo email list healthy by identifying and removing inactive subscribers, reducing bounce rates, and improving overall campaign performance."
+category: "Deliverability & List Management"
+categorySlug: "deliverability-and-list-management"
+readTime: "7 min read"
+---
+
+# Brevo List Cleaning: Remove Inactive Subscribers
+
+It is counterintuitive but true: a smaller, cleaner email list consistently outperforms a large, stale one. A 5,000-contact list with 45% average open rates will generate more clicks, more conversions, and more revenue than a 50,000-contact list with 5% open rates. And crucially, the smaller, engaged list will not damage your sender reputation and deliverability the way the inflated one will. This guide explains how to identify, re-engage, and remove inactive subscribers in Brevo.
+
+## Why List Hygiene Matters
+
+**Sender reputation** — ISPs like Gmail and Outlook monitor whether recipients engage with your emails. A consistent pattern of low open rates signals that you are sending unwanted email, which progressively degrades your deliverability. Cleaning inactive subscribers breaks this cycle.
+
+**Cost efficiency** — On email platforms that charge by contact count, inactive subscribers cost money without generating any return. Even on Brevo (which charges by send volume), you are wasting sends on addresses that never open.
+
+**Spam complaint risk** — Inactive subscribers are more likely to mark your email as spam when it eventually arrives, because they have forgotten who you are. High complaint rates (above 0.1%) will get your account flagged by ISPs.
+
+**Bounce rate management** — Lists that are not regularly cleaned accumulate invalid addresses. High bounce rates damage your sender reputation rapidly.
+
+**Accurate metrics** — Inflated subscriber counts and suppressed open rates make your analytics misleading. Cleaning your list gives you accurate data to make real decisions.
+
+## Types of Email Bounces
+
+**Hard bounce** — A permanent delivery failure. The email address does not exist, the domain is no longer active, or the receiving server has permanently blocked your emails. Brevo automatically suppresses hard bounces after the first occurrence. Never attempt to re-send to hard bounce addresses.
+
+**Soft bounce** — A temporary delivery failure. The recipient's inbox is full, the server was temporarily unavailable, or the message was too large. Soft bounces often resolve themselves. Brevo automatically retries soft bounces and suppresses addresses that repeatedly soft bounce over time.
+
+## Identifying Inactive Subscribers
+
+In Brevo, go to **Contacts → Segments → Create Segment** and build a segment for inactive subscribers:
+
+**Condition 1:** Contact has not opened any campaign in the past 90 days
+**Condition 2:** Contact has not clicked any link in the past 90 days
+**Condition 3:** Contact was added more than 90 days ago (exclude brand new contacts)
+
+This gives you a segment of contacts who have been reachable but consistently non-responsive for three months.
+
+You can adjust the time window based on your sending frequency:
+- If you send weekly: 90 days (13+ sends with no engagement)
+- If you send bi-weekly: 120 days (8+ sends with no engagement)
+- If you send monthly: 180 days (6+ sends with no engagement)
+
+## Running a Re-Engagement Campaign
+
+Before deleting inactive subscribers, give them one last chance to re-engage. A well-executed re-engagement campaign will recover 10-25% of your inactive list.
+
+**Email 1: The Re-engagement Ask**
+Subject line options that work:
+- "We miss you — still want to hear from us?"
+- "Is this goodbye, [First Name]?"
+- "Quick question before we go..."
+
+Content: Acknowledge that they have not engaged recently. Remind them of the value you deliver. Ask them to click a link if they want to stay subscribed.
+
+Include a very clear unsubscribe option. Making it easy to leave is not weakness — it keeps your list clean and prevents spam complaints from reluctant subscribers.
+
+**Email 2: The Reminder (send 5-7 days later to non-openers)**
+Subject line: "Last chance — we are updating our list"
+
+Content: More direct. Inform them that you will be removing them from your list unless they confirm they want to stay. Include a single "Keep me subscribed" button and a clear unsubscribe option.
+
+**Tag and remove non-responders**
+After both emails in the re-engagement sequence, anyone who has not opened, clicked, or responded should be removed from your active list. In Brevo, use the automation to automatically tag them as "Inactive — Removed" and move them to a suppression list.
+
+## Hard vs Soft Bounce Management
+
+**Hard bounces:** Brevo suppresses these automatically. Review your suppression list quarterly under **Contacts → Blocklists** to understand patterns. If you see a high number of hard bounces from a specific domain, your sending from that domain may be blocked.
+
+**Soft bounces:** Brevo manages soft bounce retries automatically. Check your email logs if you are concerned about soft bounce patterns.
+
+**Blocked contacts:** Some mail servers actively block your emails. These are contacts whose email addresses are valid, but the receiving server refuses delivery. Review blocked contacts in your email logs and investigate domain-level blocks if you see patterns.
+
+## Creating a Cleaning Schedule
+
+List hygiene is not a one-time event — it is an ongoing discipline. Build it into your regular workflow:
+
+**Monthly:**
+- Review your campaign metrics for bounce rate and complaint rate
+- Check for any new hard bounces and verify they are suppressed
+- Monitor your overall list engagement trend
+
+**Quarterly:**
+- Run a re-engagement campaign for contacts who have been inactive for 90+ days
+- Remove non-responders from the re-engagement campaign
+- Review your suppression lists for patterns
+
+**Annually:**
+- Conduct a full list audit: review all segments, remove duplicate contacts, verify custom attributes are populated correctly
+- Benchmark your list health (engagement rate, bounce rate, growth rate) against the same period last year
+
+## Suppression Lists in Brevo
+
+Brevo maintains several suppression lists automatically:
+
+**Unsubscribes:** Any contact who clicks "unsubscribe" in any Brevo email is permanently added to your unsubscribe list. You cannot send to them without re-obtaining explicit consent.
+
+**Bounces:** Hard bounce addresses are suppressed permanently. Soft bounce addresses may be suppressed after repeated failures.
+
+**Spam complaints:** If a contact marks your email as spam through their email client, Brevo receives a feedback loop notification (for mail providers that support them) and suppresses the address.
+
+View your suppression lists under **Contacts → Blocklists**. You can also manually add addresses to suppression lists — useful if you receive a "please remove me" reply to an email.
+
+## Brevo Plan Comparison
+
+| Plan | Price | Emails/Month | Key Features |
+|------|-------|--------------|--------------|
+| Free | $0/forever | 300/day | Unlimited contacts, email campaigns, basic CRM, Brevo branding |
+| Starter | From $9/month | 5,000 | No daily cap, no Brevo logo, basic reporting, email & phone support |
+| Business | From $18/month | 20,000 | Marketing automation, A/B testing, advanced stats, multi-user access |
+| Enterprise | Custom pricing | Unlimited | Dedicated IP, SSO/SAML, custom onboarding, dedicated account manager |
+
+Schedule your first re-engagement campaign today — you will be surprised how much your deliverability improves when your list reflects your actual engaged audience.

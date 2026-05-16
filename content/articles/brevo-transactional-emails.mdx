@@ -1,0 +1,144 @@
+---
+title: "Brevo Transactional Emails: Setup and Optimization"
+description: "Configure Brevo transactional emails for order confirmations, password resets, and notifications that reach the inbox every time reliably."
+category: "Automation & Workflows"
+categorySlug: "automation-and-workflows"
+readTime: "7 min read"
+---
+
+# Brevo Transactional Emails: Setup and Optimization
+
+Every time a customer places an order, resets their password, or receives a shipping notification, they expect an email within seconds. These are transactional emails — triggered automatically by actions in your app or website, not sent manually. They are the most reliable, most-read emails your business sends. Brevo handles them with the same platform you use for your marketing emails, making the entire email operation simpler and more consistent.
+
+## Transactional vs Marketing Emails
+
+Understanding the distinction matters both legally and technically.
+
+**Marketing emails** are sent to promote your products or services to subscribers who have opted in. They include newsletters, promotional campaigns, drip sequences, and re-engagement emails. They must include an unsubscribe link and honour opt-out requests.
+
+**Transactional emails** are triggered by a specific transaction or action the user took. They are sent regardless of marketing consent because they are service communications, not promotional. Common examples:
+- Order confirmation
+- Shipping notification with tracking number
+- Password reset
+- Account activation / email verification
+- Payment receipt or invoice
+- Appointment confirmation
+- Subscription renewal notice
+
+Transactional emails are opened at rates of 60-80% — far higher than any marketing campaign — because recipients are actively expecting them.
+
+## Setting Up Transactional Email in Brevo
+
+Brevo offers three methods to send transactional emails:
+
+### Method 1: SMTP Relay
+
+SMTP (Simple Mail Transfer Protocol) is the standard email sending protocol. Any application that can send email can use Brevo's SMTP server to deliver it through Brevo's infrastructure.
+
+**Setup:**
+1. Go to **Transactional → Settings → SMTP & API**
+2. Generate a new SMTP key
+3. In your application, configure the SMTP settings:
+   - Host: `smtp-relay.brevo.com`
+   - Port: 587 (TLS) or 465 (SSL)
+   - Username: Your Brevo account email address
+   - Password: Your SMTP key
+
+This method works with virtually any programming language, CMS, or application (WordPress, Magento, Laravel, Ruby on Rails, Node.js, etc.).
+
+### Method 2: API Integration
+
+Brevo's Transactional Email API gives you more control than SMTP. You can send emails programmatically, track their status in real time, and handle bounces and webhooks.
+
+**Basic API call to send a transactional email:**
+
+```
+POST https://api.brevo.com/v3/smtp/email
+Content-Type: application/json
+api-key: YOUR-API-KEY
+
+{
+  "sender": {"name": "Your Company", "email": "noreply@yourcompany.com"},
+  "to": [{"email": "customer@example.com", "name": "John Doe"}],
+  "subject": "Your order #12345 is confirmed",
+  "templateId": 5,
+  "params": {
+    "ORDER_ID": "12345",
+    "CUSTOMER_NAME": "John",
+    "ORDER_TOTAL": "$89.99"
+  }
+}
+```
+
+Brevo's API libraries are available for Node.js, Python, PHP, Ruby, Java, and Go. Find them on the Brevo GitHub.
+
+### Method 3: Direct Plugin Integration
+
+For WordPress sites, the Brevo plugin (formerly Sendinblue for WordPress) replaces WordPress's default PHP mail function with Brevo's SMTP relay automatically. Install from the WordPress plugin directory and authenticate with your API key.
+
+For Shopify, use the Brevo app from the Shopify App Store to connect your store's transactional emails (order confirmations, shipping updates) directly through Brevo.
+
+## Creating Transactional Email Templates
+
+Brevo lets you design beautiful transactional email templates using the same drag-and-drop editor as your marketing campaigns. Go to **Transactional → Templates → Create Template**.
+
+**Design principles for transactional emails:**
+
+**Clarity over aesthetics.** Transactional emails should be clean and easy to parse. The customer needs to find their order number, tracking link, or reset button in seconds.
+
+**Include all critical information prominently.** Order number, delivery address, items ordered, total amount — put the most important details at the top.
+
+**Match your brand.** Use the same logo, colours, and footer as your marketing emails. Consistency across all email types reinforces brand recognition.
+
+**Mobile first.** Many customers check their order confirmation on their phone seconds after purchasing. The email must be fully readable on mobile without zooming.
+
+**Test across clients.** Unlike marketing emails, transactional emails often reach contacts who have never explicitly opted in to your email design choices. Test in Gmail, Outlook, and Apple Mail.
+
+## Using Template Variables
+
+Transactional email templates use variables to insert dynamic data from your application. In Brevo templates, variables use the `{{ params.VARIABLE_NAME }}` syntax.
+
+Examples:
+- `{{ params.CUSTOMER_NAME }}` — The recipient's name
+- `{{ params.ORDER_ID }}` — The order number
+- `{{ params.TRACKING_NUMBER }}` — Shipping tracking number
+- `{{ params.RESET_LINK }}` — The password reset URL
+- `{{ params.INVOICE_TOTAL }}` — The invoice amount
+
+When you send the email via API, you pass the actual values for these variables in the `params` object. Brevo substitutes them automatically in the rendered email.
+
+## Deliverability for Transactional Emails
+
+Transactional emails have different deliverability requirements than marketing emails.
+
+**Dedicated sending domain** — Use a dedicated subdomain for transactional emails, separate from your marketing sends. For example: `mail.yourcompany.com` for transactional, `news.yourcompany.com` for marketing. This isolates any reputation issues in one category from affecting the other.
+
+**No marketing content in transactional emails** — Do not include promotions or upsells in order confirmation emails. This is both a legal risk (treating a transactional email as a marketing email without consent) and a deliverability risk (it makes filtering systems suspicious of your transactional traffic).
+
+**Authenticate your sending domain** — Set up SPF, DKIM, and DMARC for your transactional sending domain. Brevo provides the required DNS records in **Settings → Senders & IPs → Domains**.
+
+**Monitor your transactional email logs** — Go to **Transactional → Email Logs** to see the delivery status of every transactional email Brevo has sent. Filter by date, recipient, or status (delivered, bounced, blocked, spam).
+
+## Webhooks for Advanced Tracking
+
+Brevo's webhook system notifies your application in real time when specific events occur with your transactional emails:
+
+- `delivered` — Email successfully delivered
+- `opened` — Recipient opened the email
+- `clicked` — Recipient clicked a link
+- `bounced` — Email bounced (hard or soft)
+- `unsubscribed` — Recipient marked as unsubscribed
+- `spam` — Recipient marked the email as spam
+
+Configure webhooks under **Transactional → Settings → Webhooks**. Enter your endpoint URL and select the events to track. Your application receives a POST request with event data each time a tracked event occurs — enabling you to update order status, trigger follow-up actions, or flag problematic addresses in your database.
+
+## Brevo Plan Comparison
+
+| Plan | Price | Emails/Month | Key Features |
+|------|-------|--------------|--------------|
+| Free | $0/forever | 300/day | Unlimited contacts, email campaigns, basic CRM, Brevo branding |
+| Starter | From $9/month | 5,000 | No daily cap, no Brevo logo, basic reporting, email & phone support |
+| Business | From $18/month | 20,000 | Marketing automation, A/B testing, advanced stats, multi-user access |
+| Enterprise | Custom pricing | Unlimited | Dedicated IP, SSO/SAML, custom onboarding, dedicated account manager |
+
+Set up your transactional emails through Brevo today and deliver every order confirmation, password reset, and notification reliably — with full visibility into delivery performance.

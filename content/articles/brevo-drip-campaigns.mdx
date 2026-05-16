@@ -1,0 +1,130 @@
+---
+title: "Brevo Drip Campaigns: Nurture Leads to Customers"
+description: "Build effective Brevo drip campaigns that automatically nurture leads through your sales funnel and turn cold prospects into paying customers."
+category: "Automation & Workflows"
+categorySlug: "automation-and-workflows"
+readTime: "9 min read"
+---
+
+# Brevo Drip Campaigns: Nurture Leads to Customers
+
+Most people who find your business are not ready to buy immediately. Research shows that 80% of leads are not sales-ready when they first make contact. A drip campaign is the system that bridges the gap between "interested but not ready" and "ready to buy." Built correctly in Brevo, it works continuously — moving leads through your sales funnel without any manual effort.
+
+## What Is a Drip Campaign?
+
+A drip campaign is a sequence of pre-written emails sent automatically over time, triggered by a specific action a lead takes. The emails "drip" out at timed intervals, each one designed to move the lead one step closer to conversion.
+
+Unlike a broadcast campaign (which goes to everyone at once), each drip email is triggered by individual behaviour. This means the sequence feels personal and timely — arriving exactly when it is most relevant to each lead.
+
+Common drip campaign triggers:
+- Downloading a lead magnet (ebook, checklist, template)
+- Signing up for a free trial
+- Requesting a demo
+- Subscribing to a newsletter
+- Visiting a pricing page multiple times
+- Attending a webinar
+
+## The Lead Nurturing Funnel
+
+Effective drip campaigns map to the stages of your lead's decision journey:
+
+**Stage 1: Awareness**
+The lead has just discovered you. They are curious but not yet evaluating your product or service seriously. Emails at this stage should educate, not sell. Deliver your most useful content. Answer their most common questions. Build your authority.
+
+*Content types:* Educational blog posts, how-to guides, industry statistics, introductory videos, definitions and explainers.
+
+**Stage 2: Consideration**
+The lead is now comparing options. They know they have a problem and are evaluating different solutions. Emails at this stage should differentiate your offering and address objections.
+
+*Content types:* Case studies, comparison guides, feature deep-dives, testimonials, free trials or demos.
+
+**Stage 3: Decision**
+The lead is ready to choose. They need a final push: a strong offer, urgency, and risk reduction.
+
+*Content types:* Trial extension offers, discount codes, limited-time promotions, personal outreach from a sales team member, money-back guarantees.
+
+## Planning Your Drip Sequence
+
+Before building anything in Brevo, map your sequence on paper.
+
+**Define the trigger:** What action will enter a lead into this campaign? Be specific. "Downloaded the Brevo Automation Guide PDF" is better than "Visited our blog."
+
+**Define the goal:** What is the one action you want the lead to take at the end of this campaign? Purchase a plan? Book a demo? Start a free trial? Every email in the sequence should serve this single goal.
+
+**Plan the number of emails and timing:**
+- For a cold lead from a content download: 5-7 emails over 14-21 days
+- For a trial user: 6-9 emails over 14 days (more aggressive, shorter window)
+- For a warm lead who requested more information: 3-5 emails over 7-10 days
+
+**Outline each email:**
+| Email | Day | Topic | CTA |
+|-------|-----|-------|-----|
+| 1 | 0 | Deliver the resource they requested | Read the guide |
+| 2 | 2 | Most common problem you solve | Learn how |
+| 3 | 5 | Case study from a similar customer | See their results |
+| 4 | 8 | Handle the top objection | Start your free trial |
+| 5 | 12 | Time-limited offer | Claim your discount |
+
+## Building Your Drip Campaign in Brevo
+
+**Step 1: Create your emails**
+Write and design each email in the Brevo editor before building the workflow. Name them sequentially: "Drip 1 — Resource Delivery," "Drip 2 — Problem Education," etc. This makes workflow building easier.
+
+**Step 2: Create the automation workflow**
+Go to **Automation → Workflows → Create Workflow → Start from scratch**.
+
+**Step 3: Set the trigger**
+Choose the appropriate trigger. For a content download:
+- If using a Brevo form: "Contact submitted form [Form Name]"
+- If using an integration (e.g., Zapier from a third-party form): "Contact added to list [Drip Campaign List]"
+
+**Step 4: Build the sequence**
+Add Email action → Wait node → Email action → Wait node, repeating for each email in your sequence.
+
+**Step 5: Add engagement-based branching**
+After each email, add a condition: "Has clicked a link in [email name]?" If YES (they clicked), you can remove them from the standard drip and add them to a "hot lead" list for direct sales follow-up. If NO, continue the nurturing sequence.
+
+**Step 6: Add an exit condition**
+Build a way for leads to exit the drip campaign when they convert. If they purchase or start a trial, they should leave the drip immediately. Do this by adding a "Remove from list" action triggered by the purchase event, which removes them from the trigger list for this workflow.
+
+## Timing Optimisation
+
+The right intervals between emails depend on your industry and the lead's temperature.
+
+**Content leads (ebook downloaders):** Space emails 2-4 days apart. They are early in their journey and need time to absorb each piece of content before the next arrives.
+
+**Trial users:** Space emails 1-2 days apart during the first week. The window of active engagement is narrow — you need to demonstrate value before the trial ends.
+
+**Demo requests:** Send the first follow-up within 30 minutes (use Brevo's immediate trigger), then follow up at 24 hours and 72 hours if there is no response.
+
+**Long B2B sales cycles:** Space emails 5-7 days apart over a 60-90 day campaign. Aggressive follow-up for enterprise leads creates friction rather than conversion.
+
+## Conversion Tracking
+
+Knowing your drip campaign generated leads is good. Knowing which emails in the sequence drove the most conversions is far more valuable for optimisation.
+
+In Brevo, track conversions by:
+- Setting up conversion goals in your workflow (track when a contact completes a specific action, like visiting a thank-you page)
+- Using UTM parameters on all links in your drip emails to track website conversions in Google Analytics
+- Connecting Brevo to your CRM (Salesforce, HubSpot, or Brevo's built-in CRM) to see which deals originated from drip campaign leads
+
+## Continuous Improvement
+
+A drip campaign is never truly finished. After your first run, analyse:
+
+- Which email in the sequence has the highest click rate? (Move its strategy earlier in the sequence)
+- Where do leads most commonly drop off? (That email needs revision)
+- What is the overall conversion rate of the campaign? (Benchmark and try to beat it with the next iteration)
+
+Run A/B tests on your highest-traffic emails. Test subject lines, CTA copy, send timing, and content length. Small improvements compound: a 2% increase in conversion rate across a 6-email campaign adds up significantly at scale.
+
+## Brevo Plan Comparison
+
+| Plan | Price | Emails/Month | Key Features |
+|------|-------|--------------|--------------|
+| Free | $0/forever | 300/day | Unlimited contacts, email campaigns, basic CRM, Brevo branding |
+| Starter | From $9/month | 5,000 | No daily cap, no Brevo logo, basic reporting, email & phone support |
+| Business | From $18/month | 20,000 | Marketing automation, A/B testing, advanced stats, multi-user access |
+| Enterprise | Custom pricing | Unlimited | Dedicated IP, SSO/SAML, custom onboarding, dedicated account manager |
+
+The best time to build your drip campaign was when you generated your first lead. The second best time is right now.

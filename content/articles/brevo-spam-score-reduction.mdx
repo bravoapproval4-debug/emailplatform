@@ -1,0 +1,141 @@
+---
+title: "Brevo Spam Prevention: Keep Emails Out of Spam Folder"
+description: "Learn how to reduce your spam score in Brevo and ensure your emails consistently land in the inbox instead of the spam or promotions folder."
+category: "Deliverability & List Management"
+categorySlug: "deliverability-and-list-management"
+readTime: "8 min read"
+---
+
+# Brevo Spam Prevention: Keep Emails Out of Spam Folder
+
+Landing in the spam folder is a silent killer for email marketing. Your open rates drop, your click rates collapse, and subscribers who actually want your email stop receiving it — all without any error message or warning. Understanding how spam filters work and applying a systematic approach in Brevo will keep your emails consistently in the inbox.
+
+## How Modern Spam Filters Work
+
+Spam filters in 2026 are far more sophisticated than simple keyword detectors. Modern filters used by Gmail, Outlook, and Yahoo evaluate hundreds of signals simultaneously:
+
+**Sender reputation signals:**
+- IP address reputation
+- Domain age and history
+- Spam complaint rate
+- Bounce rate
+- Engagement history (open rates, click rates, replies)
+
+**Authentication signals:**
+- SPF pass/fail
+- DKIM valid/invalid
+- DMARC alignment
+
+**Content signals:**
+- Spam trigger words and phrases
+- HTML code quality
+- Image-to-text ratio
+- Link reputation and redirect chains
+- Missing or deceptive content (misleading subject line vs email body)
+
+**Engagement signals:**
+- Recipient behaviour patterns (do they open emails from you?)
+- Whether past emails were moved to spam by recipients
+- Whether recipients reply to your emails
+
+No single signal determines spam classification. Filters weigh all these factors together. A slightly spammy subject line from a highly trusted sender will sail into the inbox. A clean subject line from a new sender with no authentication will get filtered.
+
+## Brevo's Built-In Spam Check
+
+Before sending any campaign, use Brevo's spam check feature. In the campaign review step, click **Check for Spam**. Brevo analyses your email and provides:
+
+- **SpamAssassin score** — The industry-standard spam scoring tool. A score under 5.0 is generally safe; above 5.0 starts triggering filters for many providers.
+- **Specific flags** — Brevo identifies which elements contributed to your score and what to fix.
+
+Run the spam check for every campaign, even if your previous campaigns passed. Content changes can introduce new flags.
+
+## Avoiding Spam Trigger Words
+
+Certain words and phrases have been so heavily associated with spam over the years that their presence in a subject line or email body automatically increases your spam score. Common trigger phrases to avoid:
+
+**In subject lines:**
+- "Free!!!" / "FREE" (all caps)
+- "Guaranteed" / "100% guaranteed"
+- "Act now" / "Act immediately"
+- "Limited time offer" (used excessively)
+- "You have been selected"
+- "Winner" / "You've won"
+- "No credit card required" (ironic but flagged)
+- "Make money fast"
+- "Work from home"
+- "Earn cash"
+
+**In email body:**
+- "Click here" (as link anchor text — use descriptive text instead)
+- "Buy now" (in isolation — "Get your copy" or "Start your trial" is better)
+- "This is not spam" (a red flag that screams spam)
+- Dollar signs repeated: $$$, $$$$
+- "Dear friend" (classic spam opener)
+
+**Formatting spam signals:**
+- Excessive exclamation marks (!!!)
+- All-caps sentences or subject lines
+- Red, bright green, or yellow text (used for emphasis by spammers)
+- More than 1-2 emoji in subject lines
+
+## Content Best Practices
+
+**Maintain a healthy image-to-text ratio.** Emails that are mostly images contain very little text for spam filters to analyse, which makes them suspicious. Aim for at least 60% text by visible area. Never send an email that is a single large image with no text.
+
+**Write natural, flowing copy.** Spam often contains keyword-stuffed, grammatically poor copy. Write like a human communicating with another human. Good copy is also better spam-filter-bypassing copy.
+
+**Use consistent formatting.** Wildly varying font sizes, multiple font families in the same email, and inconsistent spacing are hallmarks of hastily assembled spam. Keep your typography consistent.
+
+**Include your physical address.** CAN-SPAM (US), CASL (Canada), and GDPR (EU) all require a physical mailing address in commercial emails. Missing this is both a legal risk and a spam signal. Add your business address to Brevo's email footer template.
+
+**Have a clear unsubscribe link.** Brevo adds this automatically, but make sure it is visible and easy to find. Hiding the unsubscribe link leads to spam complaints, which are far more damaging than unsubscribes.
+
+## Link Hygiene
+
+Every link in your email contributes to your spam score. Problematic links that filters scrutinise:
+
+**URL shorteners** — Links through bit.ly, tinyurl, or similar services obscure the destination and are commonly associated with spam. Use full URLs or your own branded short domain.
+
+**Redirect chains** — A link that goes through three or four redirects before reaching the destination is suspicious. Wherever possible, link directly to the destination page.
+
+**Mismatched anchor text** — A link that says "Visit our blog" but points to a checkout page is a deceptive practice flagged by spam filters. The anchor text should accurately describe the destination.
+
+**Links to low-reputation domains** — If you link to a website that appears on spam blocklists, your email inherits some of that reputation. Audit your external links.
+
+**Too many links** — An email with 20+ links looks like a link farm. Use the minimum number of links needed to serve your campaign goal.
+
+## Testing Tools
+
+Beyond Brevo's built-in spam check, use these external tools:
+
+**Mail Tester (mail-tester.com)** — Send a test email to a specific address and receive a detailed spam score report covering authentication, content, and blacklist status.
+
+**GlockApps** — A paid tool that shows exactly where your email lands (inbox, spam, or promotions tab) across Gmail, Outlook, Yahoo, and other major email clients.
+
+**MXToolbox** — Check if your sending IP or domain is on any major blacklist.
+
+**Litmus or Email on Acid** — Email rendering tools that also offer spam testing across multiple email clients.
+
+## Brevo's Spam Check Feature Walkthrough
+
+1. Complete your email design in the Brevo campaign editor
+2. In the campaign review step, click "Spam Check" or "Test"
+3. Review the SpamAssassin score
+4. Address each flagged issue:
+   - Score contributions from the subject line → rewrite the subject
+   - Score contributions from content → remove trigger phrases
+   - Score contributions from HTML errors → use the Brevo editor rather than pasting custom HTML
+   - Score contributions from missing unsubscribe → verify Brevo footer is intact
+5. Re-run the check after making changes
+6. Aim for a score below 3.0 for maximum inbox placement
+
+## Brevo Plan Comparison
+
+| Plan | Price | Emails/Month | Key Features |
+|------|-------|--------------|--------------|
+| Free | $0/forever | 300/day | Unlimited contacts, email campaigns, basic CRM, Brevo branding |
+| Starter | From $9/month | 5,000 | No daily cap, no Brevo logo, basic reporting, email & phone support |
+| Business | From $18/month | 20,000 | Marketing automation, A/B testing, advanced stats, multi-user access |
+| Enterprise | Custom pricing | Unlimited | Dedicated IP, SSO/SAML, custom onboarding, dedicated account manager |
+
+Run Brevo's spam check before every single campaign send — it takes 30 seconds and can save you from silently delivering to spam folders for your entire list.

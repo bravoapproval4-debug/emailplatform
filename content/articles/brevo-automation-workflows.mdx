@@ -1,0 +1,141 @@
+---
+title: "Brevo Automation Workflows: Complete Setup Guide"
+description: "Set up powerful Brevo automation workflows that run 24/7, nurture leads automatically, and convert subscribers into customers on autopilot."
+category: "Automation & Workflows"
+categorySlug: "automation-and-workflows"
+readTime: "10 min read"
+---
+
+# Brevo Automation Workflows: Complete Setup Guide
+
+Marketing automation is the difference between sending emails manually one at a time and building a system that nurtures every new subscriber, follows up on every purchase, and re-engages every dormant contact — automatically, 24/7, while you focus on other work. Brevo's automation builder is one of the most capable available at its price point, and this guide will take you from zero to your first running workflow.
+
+## What Is a Brevo Automation Workflow?
+
+A workflow is a pre-defined sequence of actions (sending an email, adding a tag, updating a contact attribute, waiting a set number of days) that triggers automatically based on a specific event. Once you build and activate a workflow, Brevo handles the execution for every contact who meets the trigger condition.
+
+Examples of workflows you can build:
+- Welcome series — 3 emails sent over 7 days to every new subscriber
+- Abandoned cart — Reminder sent 1 hour after a contact adds an item to cart but does not complete checkout
+- Post-purchase — Thank-you email and upsell sequence after a customer buys
+- Lead nurturing — Educational email series sent to leads who downloaded a guide
+- Birthday — Personalised offer sent on a contact's birthday
+- Re-engagement — Win-back sequence for contacts who have not opened an email in 90 days
+
+## Accessing the Workflow Builder
+
+Go to **Automation → Workflows → Create a Workflow**. Brevo offers two ways to start:
+
+**Use a template** — Pre-built workflows for the most common use cases (welcome series, abandoned cart, birthday). Templates include the trigger and a starter email sequence that you customise with your own content.
+
+**Start from scratch** — A blank canvas for building custom workflows with any trigger and action combination.
+
+## Understanding the Workflow Canvas
+
+The workflow canvas uses a node-based interface. Each node is a step in the sequence, and nodes connect to each other with arrows showing the flow of logic.
+
+**Trigger node** — The starting point. Defines the event that enters a contact into the workflow.
+
+**Action nodes** — What happens after the trigger. Can include: Send email, Send SMS, Add to list, Remove from list, Update contact attribute, Add tag, Remove tag, Notify a team member, Create a deal in CRM.
+
+**Condition nodes** — Decision points that split the workflow into branches based on contact data or behaviour. For example: "Has the contact opened the first email? Yes → send email 2. No → send a reminder."
+
+**Wait nodes** — Time delays between actions. "Wait 2 days" before sending the second email. "Wait until 9am Monday" before sending the next step.
+
+## Step-by-Step: Building a Welcome Series
+
+Here is a practical walkthrough of the most valuable automation any business can build.
+
+**Step 1: Create a new workflow**
+Go to **Automation → Workflows → Create Workflow → Start from scratch**.
+
+**Step 2: Set the trigger**
+Click the trigger node and select **Contact added to a specific list**. Choose your "New Subscribers" list. Any contact added to this list — through your website form, an import, or a manual addition — will enter this workflow.
+
+**Step 3: Add your first email action**
+Click the + button below the trigger and select **Send email**. Choose an existing email template or click "Create a new email" to design one in the Brevo editor. This is your welcome email — make it warm, helpful, and focused on what the subscriber should expect from you.
+
+**Step 4: Add a wait node**
+Below the first email action, add a **Wait** node. Set it to 2 days. This gives subscribers time to read email 1 before email 2 arrives.
+
+**Step 5: Add a condition node (optional but recommended)**
+Below the wait node, add a **Condition** node. Set the condition to "Has opened email [Welcome Email 1]." This splits the workflow:
+- YES branch: Send them email 2 (they engaged, keep the sequence going)
+- NO branch: Send them a gentler follow-up or a different version of email 1
+
+**Step 6: Add more emails**
+Continue adding wait nodes and email action nodes for each email in your series. A three-email welcome series might look like:
+- Email 1: Day 0 — Welcome + what to expect
+- Email 2: Day 3 — Your best content or most useful resource
+- Email 3: Day 7 — Social proof + soft CTA
+
+**Step 7: Activate the workflow**
+Click **Save and Activate**. The workflow is now live. Any contact added to your trigger list from this point forward will automatically enter the sequence.
+
+## Trigger Types Available in Brevo
+
+**Contact-based triggers:**
+- Contact added to list
+- Contact attribute updated (e.g., plan_type changed to "Business")
+- Specific date (e.g., birthday, subscription anniversary)
+
+**Campaign engagement triggers:**
+- Opened a specific campaign
+- Clicked a link in a specific campaign
+- Did not open a campaign within X days
+
+**Website behaviour triggers (requires Brevo tracking script):**
+- Visited a specific page
+- Visited a page containing a keyword
+
+**Transactional triggers:**
+- Purchase made
+- Cart abandoned
+- Order shipped
+
+**Form submission triggers:**
+- Submitted a specific Brevo form
+
+## Building Condition-Based Branches
+
+Conditions are what make automation feel personalised rather than robotic. A condition node asks a yes/no question about the contact and routes them down different paths accordingly.
+
+You can build conditions based on:
+- Contact attribute values (plan type, country, industry)
+- Email engagement history (opened, clicked, bounced)
+- List membership (is or is not in a specific list)
+- Workflow history (has or has not received a specific email)
+
+Combine multiple conditions with AND/OR logic to create precise targeting.
+
+## Testing Your Workflow Before Going Live
+
+Always test a workflow before activating it for real contacts.
+
+**Preview mode** — In the workflow builder, use the preview mode to walk through the logic of your workflow without actually sending emails.
+
+**Test contact** — Create a test contact (your own email address) and manually add them to the trigger list to run through the workflow in real time. Check that emails arrive correctly and that the timing matches your configuration.
+
+**Inspect node results** — After a workflow has been running for a while, click individual nodes to see how many contacts have passed through them and what percentage took the YES vs NO branch at each condition.
+
+## Monitoring Workflow Performance
+
+Go to **Automation → Workflows** and click on any active workflow to see its performance dashboard:
+
+- **Entries** — How many contacts have entered the workflow
+- **Currently active** — Contacts currently progressing through the workflow
+- **Completed** — Contacts who have finished the sequence
+- **Email performance** — Open rates, click rates for each email in the workflow
+
+Use this data to identify weak points. If email 2 has significantly lower open rates than email 1, the timing, subject line, or relevance of email 2 needs work.
+
+## Brevo Plan Comparison
+
+| Plan | Price | Emails/Month | Key Features |
+|------|-------|--------------|--------------|
+| Free | $0/forever | 300/day | Unlimited contacts, email campaigns, basic CRM, Brevo branding |
+| Starter | From $9/month | 5,000 | No daily cap, no Brevo logo, basic reporting, email & phone support |
+| Business | From $18/month | 20,000 | Marketing automation, A/B testing, advanced stats, multi-user access |
+| Enterprise | Custom pricing | Unlimited | Dedicated IP, SSO/SAML, custom onboarding, dedicated account manager |
+
+Build your first workflow today — even a simple three-email welcome series will immediately improve the experience of every new subscriber who joins your list.

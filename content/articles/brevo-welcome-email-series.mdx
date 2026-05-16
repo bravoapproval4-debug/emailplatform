@@ -1,0 +1,121 @@
+---
+title: "Brevo Welcome Email Series: Convert New Subscribers"
+description: "Create a high-converting welcome email series in Brevo that onboards new subscribers, builds trust, and drives early engagement with your brand."
+category: "Automation & Workflows"
+categorySlug: "automation-and-workflows"
+readTime: "8 min read"
+---
+
+# Brevo Welcome Email Series: Convert New Subscribers
+
+The welcome email is the most powerful email you will ever send. It arrives at the moment of peak interest — the instant someone raises their hand and says "I want to hear from you." Average open rates for welcome emails exceed 82%, compared to 21% for standard campaigns. A well-crafted welcome series turns that momentary interest into a lasting relationship. This guide shows you exactly how to build one in Brevo.
+
+## Why a Welcome Series Outperforms a Single Welcome Email
+
+A single welcome email is better than nothing. A three to five email welcome series is dramatically better than a single email.
+
+Here is why: a subscriber who joins your list has not yet decided whether they trust you. They have expressed interest, but trust is built through repeated, consistent, valuable contact over time. One email is a handshake. A welcome series is the first conversation.
+
+Data consistently shows that subscribers who receive a welcome series purchase at rates 3x higher than those who receive only one welcome email. They are also 5x more likely to remain engaged after 30 days.
+
+## The Anatomy of a High-Converting Welcome Series
+
+A well-structured welcome series has a clear arc: introduction → value delivery → social proof → call to action.
+
+**Email 1: The Welcome (Send immediately)**
+This is your introduction. It should arrive within minutes of signup — Brevo's automation makes this happen instantly.
+
+What to include:
+- A warm, personal greeting
+- Confirmation of what they signed up for and what they will receive
+- An immediate value delivery (your lead magnet, a discount code, your best content piece, or a useful resource)
+- What to expect going forward (frequency, content type)
+- A single, low-friction CTA (explore your best content, read your most popular guide, etc.)
+
+What to avoid:
+- A hard sell in the first email
+- A wall of text with no visual breathing room
+- Multiple competing calls to action
+
+**Email 2: Deliver Your Best Value (Send day 2-3)**
+Now that they know who you are, give them your single most useful piece of content, insight, or resource. This is not the time to sell — it is the time to demonstrate that subscribing was a good decision.
+
+For a software company, this might be "The 5 features that save our customers 3 hours a week." For a content publisher, it might be your most-read guide of the past year. For an e-commerce brand, it might be a styling guide or how-to content related to their purchase.
+
+**Email 3: Build Social Proof (Send day 5-7)**
+Social proof reduces risk in the reader's mind. It answers the question: "Is this worth my continued attention?"
+
+Options for social proof:
+- Customer testimonials or case studies with specific results
+- Numbers: "Over 50,000 marketers use Brevo to..."
+- Press mentions or awards
+- Before-and-after stories from real customers
+
+Keep this email warm and story-driven rather than a feature list. Real results from real people are more persuasive than any marketing copy you can write.
+
+**Email 4: The Soft Pitch (Send day 8-10)**
+By now you have delivered value, established authority, and built some trust. Now you can make an offer.
+
+The soft pitch is not a hard sales email. It is a natural progression: "Here is what we offer, and here is why it might be right for you." Include your main offer, a clear CTA, and address the most common objection.
+
+**Email 5: The Follow-Up or Pivot (Send day 12-14)**
+Depending on whether they responded to email 4, this email goes in one of two directions:
+
+If they clicked but did not convert: a gentle follow-up that handles objections and reinforces the value of your offer.
+
+If they did not click: pivot to delivering more value without selling. Some subscribers take longer to convert. Keep them engaged with useful content until they are ready.
+
+## Setting Up Your Welcome Series in Brevo
+
+**Step 1: Create your automation workflow**
+Go to **Automation → Workflows → Create Workflow**. Choose "Welcome message" from the template library or start from scratch.
+
+**Step 2: Set the trigger**
+Select "Contact added to a specific list" and choose your newsletter or subscriber list. This workflow will fire automatically for every new subscriber going forward.
+
+**Step 3: Create each email**
+Design your email sequence in the Brevo editor. Maintain consistent visual branding across all emails in the series — same colour scheme, same header design, same footer.
+
+**Step 4: Add wait nodes between emails**
+Insert wait nodes between each email action. Recommended timing:
+- Email 1 → immediate (no wait)
+- Wait 2 days → Email 2
+- Wait 3 days → Email 3
+- Wait 3 days → Email 4
+- Wait 4 days → Email 5
+
+**Step 5: Add engagement conditions (advanced)**
+After each email action, insert a condition node: "Has opened this email?" Send different follow-up emails to openers vs non-openers. Non-openers get a resend with a different subject line; openers advance to the next email in the main sequence.
+
+## Personalisation Tips for Welcome Emails
+
+**Use their name** — `{{ contact.FIRSTNAME }}` in the subject line and greeting adds immediacy. "Sarah, welcome to Email Advisor" feels personal in a way "Welcome to Email Advisor" does not.
+
+**Reference how they joined** — If someone signed up after downloading a guide about email deliverability, email 2 should be deeply relevant to email deliverability. Brevo lets you use different entry points into the same workflow or build separate workflows for different signup sources.
+
+**Segment by industry or role** — If your signup form includes a dropdown for industry or job role, use this in your welcome sequence. A "Marketing Manager at an ecommerce brand" cares about different topics than a "Solo freelancer managing client email lists."
+
+## Measuring Welcome Series Success
+
+Track these metrics in the Brevo workflow report:
+
+**Overall completion rate** — What percentage of subscribers who enter the workflow receive all five emails? If it drops sharply at any point, investigate that step.
+
+**Email-level open rates** — Your first email should have the highest open rate (70-85%). Each subsequent email will have a lower rate. If a later email has an unusually low open rate, the subject line or timing needs work.
+
+**Click rates** — For content emails (2 and 3), click rates of 5-10% are strong. For the pitch email (4), 2-4% clicking through to your offer is healthy.
+
+**Conversion rate** — What percentage of subscribers who enter the welcome series ultimately convert (purchase, sign up for a trial, book a call)? This is the bottom-line metric.
+
+**Unsubscribes per email** — Any email that generates more than 1% unsubscribes needs to be revised.
+
+## Brevo Plan Comparison
+
+| Plan | Price | Emails/Month | Key Features |
+|------|-------|--------------|--------------|
+| Free | $0/forever | 300/day | Unlimited contacts, email campaigns, basic CRM, Brevo branding |
+| Starter | From $9/month | 5,000 | No daily cap, no Brevo logo, basic reporting, email & phone support |
+| Business | From $18/month | 20,000 | Marketing automation, A/B testing, advanced stats, multi-user access |
+| Enterprise | Custom pricing | Unlimited | Dedicated IP, SSO/SAML, custom onboarding, dedicated account manager |
+
+Build your welcome series before your next campaign — the returns compound over time as every new subscriber automatically enters the sequence.

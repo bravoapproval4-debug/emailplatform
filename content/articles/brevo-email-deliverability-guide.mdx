@@ -1,0 +1,134 @@
+---
+title: "Brevo Email Deliverability: Reach the Inbox Every Time"
+description: "Improve your Brevo email deliverability with proven techniques for authentication, list hygiene, and sender reputation management in 2026."
+category: "Deliverability & List Management"
+categorySlug: "deliverability-and-list-management"
+readTime: "10 min read"
+---
+
+# Brevo Email Deliverability: Reach the Inbox Every Time
+
+You can write the perfect email — compelling subject line, relevant content, strong call to action — and it can still fail completely if it never reaches the inbox. Deliverability is the foundation on which all your email marketing results rest. This guide covers every factor that determines whether Brevo emails land in the inbox or disappear into spam, and exactly what you can do to improve each one.
+
+## Understanding Email Deliverability
+
+Deliverability is the percentage of emails you send that are successfully delivered to the recipient's inbox (as opposed to their spam folder, promotions tab, or not delivered at all). When email professionals talk about "improving deliverability," they mean moving emails from spam to inbox, not just from sent to received.
+
+Three main failure modes exist:
+1. **Bounced** — The email could not be delivered at all (invalid address, server refused it)
+2. **Spam-filtered** — Delivered to the spam folder by the recipient's mail server
+3. **Tabs-filtered** — Delivered to the Promotions or Updates tab (Gmail) rather than the primary inbox
+
+All three reduce your effective reach, but spam-filtering is the most damaging because it completely hides your email from the reader.
+
+## Authentication: The Non-Negotiable Foundation
+
+Email authentication proves to receiving mail servers that you are genuinely authorised to send email from your domain. Without proper authentication, your emails are far more likely to be rejected or spam-filtered.
+
+### SPF (Sender Policy Framework)
+
+SPF is a DNS TXT record that lists the mail servers authorised to send email from your domain. When a receiving server gets an email claiming to be from `@yourcompany.com`, it checks your domain's SPF record to verify the sending server is listed.
+
+To set up SPF for Brevo:
+1. Go to **Settings → Senders & IPs → Domains**
+2. Add your domain and click "Authenticate"
+3. Brevo provides a TXT record to add to your DNS
+4. The record looks like: `v=spf1 include:spf.brevo.com ~all`
+
+### DKIM (DomainKeys Identified Mail)
+
+DKIM adds a cryptographic signature to every email you send. The private key signs the email at the point of sending; the public key (stored in your DNS) allows receiving servers to verify the signature and confirm the email has not been tampered with in transit.
+
+Brevo provides a DKIM key pair during domain authentication. You add the public key as a TXT record in your DNS (the record name looks like `brevo._domainkey.yourcompany.com`).
+
+### DMARC (Domain-based Message Authentication)
+
+DMARC builds on SPF and DKIM, telling receiving servers what to do when an email fails authentication checks. It also provides reporting — you receive regular reports showing who is sending email using your domain.
+
+A basic DMARC record: `v=DMARC1; p=none; rua=mailto:dmarc-reports@yourcompany.com`
+
+Start with `p=none` (monitor only), review the reports for 30 days, then move to `p=quarantine` (send failing emails to spam) and eventually `p=reject` (block failing emails entirely).
+
+In 2024, Google and Yahoo made DMARC mandatory for bulk senders (those sending more than 5,000 emails per day). Brevo strongly recommends all senders complete DMARC setup regardless of volume.
+
+## Sender Reputation
+
+Your sender reputation is a score that Internet Service Providers (ISPs) like Gmail, Outlook, and Yahoo assign to your sending IP address and domain. It is the primary factor in whether your emails land in the inbox or spam.
+
+Factors that harm sender reputation:
+- **High spam complaint rate** — Above 0.1% is problematic; above 0.3% triggers serious filtering
+- **High bounce rate** — More than 5% indicates poor list quality
+- **Low engagement** — If your emails consistently go unopened, ISPs interpret this as unwanted email
+- **Sudden volume spikes** — Jumping from 100 emails/day to 10,000 emails/day without warming up
+
+Factors that help sender reputation:
+- **High open rates** — Signal that recipients want your email
+- **High click rates** — Stronger engagement signal
+- **Low unsubscribe rates** — Indicates relevance
+- **Replies** — Strongly positive signal; add "Reply to this email" CTAs in your campaigns
+
+## IP Warm-Up Strategy
+
+If you are new to Brevo or migrating from another platform, and you plan to send significant volumes, you need to warm up your sending IP. Sending large volumes from a cold IP triggers spam filters because ISPs have no reputation data for it.
+
+A gradual warm-up schedule for a new domain:
+- **Week 1:** 100-500 emails/day to your most engaged subscribers
+- **Week 2:** 500-2,000 emails/day
+- **Week 3:** 2,000-10,000 emails/day
+- **Week 4:** 10,000-50,000 emails/day
+
+During warm-up, send only to your most engaged contacts — those who have opened emails in the last 30-60 days. High engagement signals to ISPs that your email is wanted, building positive reputation before you scale to the full list.
+
+## Avoiding Blacklists
+
+Email blacklists are databases of IP addresses and domains known to send spam. If your sending IP or domain appears on a major blacklist, your emails will be rejected by any mail server that uses that list.
+
+Check your IP and domain health at:
+- MXToolbox Blacklist Check (mxtoolbox.com/blacklists)
+- Spamhaus (spamhaus.org)
+- Barracuda Central (barracudacentral.org)
+
+Common causes of blacklisting:
+- High spam complaint rates
+- Sending to spam trap addresses (abandoned or honeypot addresses used to catch bulk mailers)
+- Sudden volume spikes
+- Sending to purchased lists
+
+If you find yourself blacklisted, identify and fix the root cause first, then submit a delisting request to the blacklist operator. Brevo's deliverability team can assist Enterprise customers with blacklist issues.
+
+## Content and Spam Filter Checks
+
+Modern spam filters analyse email content alongside sender reputation. Brevo includes a built-in spam check tool — use it before every campaign by clicking **Check for Spam** in the campaign review step.
+
+Content factors that trigger spam filters:
+- Spam trigger words in the subject line or body ("Free money," "Guaranteed," "Act now," "Click here")
+- All-caps subject lines or excessive exclamation marks
+- Image-to-text ratio too high (emails with mostly images and little text)
+- Missing or deceptive from name
+- URLs that redirect through multiple domains before reaching the destination
+- Missing physical mailing address in the footer
+
+## Brevo's Deliverability Tools
+
+Brevo includes several built-in tools to help maintain deliverability:
+
+**Spam check** — Pre-send analysis that scores your email across multiple spam criteria.
+
+**Email preview** — Renders your email as it will appear across major email clients and devices.
+
+**Suppression list** — Automatically removes hard bounces, unsubscribes, and spam complaints from future campaigns.
+
+**Real-time logs** — View delivery status of every email sent through your account.
+
+**Dedicated IP (Business and Enterprise)** — Separates your sending reputation from other Brevo users. Essential for high-volume senders.
+
+## Brevo Plan Comparison
+
+| Plan | Price | Emails/Month | Key Features |
+|------|-------|--------------|--------------|
+| Free | $0/forever | 300/day | Unlimited contacts, email campaigns, basic CRM, Brevo branding |
+| Starter | From $9/month | 5,000 | No daily cap, no Brevo logo, basic reporting, email & phone support |
+| Business | From $18/month | 20,000 | Marketing automation, A/B testing, advanced stats, multi-user access |
+| Enterprise | Custom pricing | Unlimited | Dedicated IP, SSO/SAML, custom onboarding, dedicated account manager |
+
+Start with authentication — SPF, DKIM, and DMARC — today. These free, 15-minute setup steps will immediately improve your deliverability and protect your domain from spoofing.
